@@ -1,10 +1,11 @@
-import { Provider } from "app/provider";
 import { Stack } from "expo-router";
 
+import { SafeProvider } from "interface/layout";
+
 const Root = () => (
-	<Provider>
+	<SafeProvider>
 		<Stack />
-	</Provider>
+	</SafeProvider>
 );
 
 export default Root;

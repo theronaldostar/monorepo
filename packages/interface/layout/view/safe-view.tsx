@@ -1,20 +1,17 @@
 import { SafeAreaView } from "react-native";
-import { styled } from "nativewind";
+import { StyledComponent } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 
+import { overflowProp } from "./prototype";
 import type { TagViewProps } from "./tag-view";
 
-type SafeViewProps = TagViewProps;
+const SafeView = (props: TagViewProps) => {
+	const { className, overflow = "hidden", height = "", width = "", ...rest } = props;
 
-const SafeView = (props: SafeViewProps) => {
-	const { className, ...rest } = props;
+	const baseClass = useBuilder("flex-1", className, height, overflowProp(overflow), width);
 
-	const baseClass = useBuilder("", className);
-
-	const Component = styled(SafeAreaView, baseClass);
-
-	return <Component {...rest} />;
+	return <StyledComponent component={SafeAreaView} tw={baseClass} {...rest} />;
 };
 
-export { SafeView, type SafeViewProps };
+export { SafeView };

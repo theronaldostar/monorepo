@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Text, TextProps } from "react-native";
+import { Text, type TextProps } from "react-native";
 import { styled } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
@@ -8,7 +8,7 @@ import { fontColor, fontSize, fontWeight, textAlign, textDecoration } from "./pr
 
 type leading = "leading-none" | "leading-snug" | "leading-normal" | "leading-relaxed" | "leading-loose";
 
-type LabelProps = {
+interface LabelProps extends TextProps {
 	align?: "left" | "center" | "right" | "justify";
 	children?: ReactNode;
 	color?: "current" | "primary" | "secondary";
@@ -17,12 +17,16 @@ type LabelProps = {
 	size?: "xs" | "sm" | "base" | "lg" | "xl" | "1xl" | "2xl" | "3xl" | "4xl" | "5xl";
 	truncate?: boolean;
 	weight?: "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold";
-} & TextProps;
+	href?: string;
+	target?: "_blank";
+}
+
+const LabelComponent = styled(Text);
 
 const Label = (props: LabelProps) => {
-	const { align, className, color, decoration, height = "leading-tight", size, truncate = true, weight, ...rest } = props;
+	const { align, className, color, decoration, height, size, truncate = true, weight, ...rest } = props;
 
-	const classBuilder = useBuilder(
+	const baseClass = useBuilder(
 		truncate && "!truncate",
 		className,
 		height,
@@ -33,9 +37,7 @@ const Label = (props: LabelProps) => {
 		textDecoration(decoration),
 	);
 
-	const Component = styled(Text, classBuilder);
-
-	return <Component numberOfLines={truncate ? 1 : void 0} {...rest} />;
+	return <LabelComponent numberOfLines={truncate ? 1 : undefined} tw={baseClass} {...rest} />;
 };
 
-export { Label, type LabelProps };
+export { LabelComponent, Label, type LabelProps };

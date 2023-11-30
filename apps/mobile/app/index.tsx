@@ -1,5 +1,5 @@
-import { HomeScreen } from "app/features/home/screen";
+import { HomeScreen } from "interface/screens";
 
-const Home = () =>  <HomeScreen />;
+const Home = () => <HomeScreen />;
 
 export default Home;

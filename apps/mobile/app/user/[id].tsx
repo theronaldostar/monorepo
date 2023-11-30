@@ -1,5 +1,5 @@
-import { UserDetailScreen } from "app/features/user/detail-screen";
+import { UserDetail } from "interface/screens";
 
-const UserDetail = () => <UserDetailScreen />;
+const UserDetailScreen = () => <UserDetail />;
 
-export default UserDetail;
+export default UserDetailScreen;

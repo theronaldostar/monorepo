@@ -1,29 +1,25 @@
-import 'raf/polyfill'
-import 'setimmediate'
+import type { AppProps } from "next/app";
 
-import { Provider } from 'app/provider'
-import Head from 'next/head'
-import React from 'react'
+import "raf/polyfill";
+import "setimmediate";
 
-import '@library/tailwindcss/config.css'
-import { AppProps } from 'next/app'
+import { SafeProvider } from "interface/layout";
+import Head from "next/head";
+import React from "react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Head>
-        <title>Solito Example App</title>
-        <meta
-          name="description"
-          content="Expo + Next.js with Solito. By Fernando Rojo."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Provider>
-        <Component {...pageProps} />
-      </Provider>
-    </>
-  )
-}
+import "@library/tailwindcss/config.css";
 
-export default MyApp
+const App = ({ Component, pageProps }: AppProps) => (
+	<>
+		<Head>
+			<title>Solito Example App</title>
+			<meta name="description" content="Expo + Next.js with Solito. By Fernando Rojo." />
+			<link rel="icon" href="/favicon.ico" />
+		</Head>
+		<SafeProvider>
+			<Component {...pageProps} />
+		</SafeProvider>
+	</>
+);
+
+export default App;

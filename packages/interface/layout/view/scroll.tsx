@@ -1,18 +1,16 @@
-import { ScrollView, type ScrollViewProps } from "react-native";
-import { styled } from "nativewind";
+import { ScrollView } from "react-native";
+import { StyledComponent as Component } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 
-type ScrollProps = ScrollViewProps;
+import type { TagViewProps } from "./tag-view";
 
-const Scroll = (props: ScrollViewProps) => {
-	const { className, ...rest } = props;
+const Scroll = (props: TagViewProps) => {
+	const { className, height = "", width = "", ...rest } = props;
 
-	const baseClass = useBuilder("", className);
+	const baseClass = useBuilder("", className, height, width);
 
-	const Component = styled(ScrollView, baseClass);
-
-	return <Component {...rest} />;
+	return <Component component={ScrollView} tw={baseClass} {...rest} />;
 };
 
-export { Scroll, type ScrollProps };
+export { Scroll };

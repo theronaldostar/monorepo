@@ -3,14 +3,14 @@ import { StyledComponent as Component } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 
-type ButtonProps = PressableProps;
+interface PressViewProps extends PressableProps {}
 
-const Button = (props: ButtonProps) => {
+const PressView = (props: PressViewProps) => {
 	const { className, ...rest } = props;
 
-	const baseClass = useBuilder("", className);
+	const baseClass = useBuilder("flex-row", className);
 
 	return <Component component={Pressable} tw={baseClass} {...rest} />;
 };
 
-export { Button, type ButtonProps };
+export { PressView, type PressViewProps };
