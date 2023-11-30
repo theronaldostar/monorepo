@@ -1,0 +1,47 @@
+{
+	"name": "@app/monorepo",
+	"description": "",
+	"version": "0.0.0-dev.0",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev --concurrency=13 --no-daemon",
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"clean": "turbo run clean"
+	},
+	"bugs": {
+		"email": "ronaldo.rs44@gmail.com",
+		"url": "https://github.com/theronaldostar/monorepo/issues"
+	},
+	"author": {
+		"name": "Ronaldo S.",
+		"email": "ronaldo.rs44@gmail.com",
+		"url": "https://github.com/theronaldostar"
+	},
+	"dependencies": {
+		"@library/tailwindcss": "0.0.0"
+	},
+	"devDependencies": {
+		"@config/types": "0.0.0",
+		"@library/eslint-prettier": "0.0.0",
+		"@library/tsconfig": "0.0.0",
+		"turbo": "^1.4.2"
+	},
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"packages/assets/*",
+		"packages/config/*",
+		"packages/library/*"
+	],
+	"resolutions": {
+		"metro": "~0.76.8",
+		"metro-resolver": "~0.76.8"
+	},
+	"nohoist": [
+		"**/expo-router",
+		"**/expo-router/**"
+	],
+	"packageManager": "yarn@4.0.2"
+}

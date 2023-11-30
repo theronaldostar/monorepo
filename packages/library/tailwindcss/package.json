@@ -1,0 +1,21 @@
+{
+	"name": "@library/tailwindcss",
+	"description": "Custom library to manage `Tailwind CSS/Nativewind` in the application",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": "tailwind.config.js",
+	"files": [
+		"config.css",
+		"postcss.config.js",
+		"tailwind.config.js",
+		"theme.config.js"
+	],
+	"dependencies": {
+		"nativewind": "^2.0.11"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.7",
+		"tailwindcss": "3.3.2"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "interface",
+	"description": "Main library for the entire application, which manages all custom components",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"files": [
+		"components/",
+		"layout/",
+		"screens/",
+		".eslintrc.js",
+		"index.ts",
+		"tsconfig.json"
+	],
+	"dependencies": {
+		"@library/tailwindcss": "0.0.0"
+	},
+	"devDependencies": {
+		"@config/types": "0.0.0",
+		"@library/eslint-prettier": "0.0.0",
+		"@library/tsconfig": "0.0.0"
+	}
+}
