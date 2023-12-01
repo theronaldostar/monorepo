@@ -21,7 +21,7 @@ const Layout = () => {
 
 	return (
 		<SafeProvider>
-			<StatusBar style="dark" backgroundColor="#fff" />
+			<StatusBar style="auto" />
 			<Slot />
 		</SafeProvider>
 	);
