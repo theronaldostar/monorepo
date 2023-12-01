@@ -1,34 +1,21 @@
-import React from "react";
+import { useEffect } from "react";
 import { AppRegistry } from "react-native";
+import { Html, Head, Main, NextScript } from "next/document";
 
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import type { DocumentContext } from "next/document";
-
-class Document extends NextDocument {
-	static async getInitialProps(ctx: DocumentContext) {
+const Document = () => {
+	useEffect(() => {
 		AppRegistry.registerComponent("Main", () => Main);
-		// @ts-ignore
-		const { getStyleElement } = AppRegistry.getApplication("Main");
-		const styles = [getStyleElement()];
+	}, []);
 
-		const initialProps = await NextDocument.getInitialProps(ctx);
-		return { ...initialProps, styles: React.Children.toArray(styles) };
-	}
-
-	render() {
-		return (
-			<Html lang="en">
-				<Head>
-					<meta charSet="UTF-8" />
-					<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</Html>
-		);
-	}
-}
+	return (
+		<Html lang="en">
+			<Head />
+			<body>
+				<Main />
+				<NextScript />
+			</body>
+		</Html>
+	);
+};
 
 export default Document;

@@ -12,7 +12,7 @@ const UserDetail = () => {
 	return (
 		<SafeView direction="flex-col" className="items-center justify-center">
 			<Label align="center" className="mb-4" weight="bold">{`User @: ${id?.toLocaleLowerCase()}`}</Label>
-			<TextLink href="/">👈 Go Home?</TextLink>
+			<TextLink href="/">👈 Go Home??</TextLink>
 		</SafeView>
 	);
 };
