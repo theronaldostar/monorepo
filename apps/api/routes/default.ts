@@ -1,8 +1,8 @@
 import { Router, type Response } from "express";
 
-const root = Router();
+const routes = Router();
 
-root.all("/", (_, res: Response) => {
+routes.all("/", (_, res: Response) => {
 	const message = "This is the main route; if you want to make a request or modification, you must call the route correctly.";
 
 	res.status(200).json({
@@ -13,9 +13,10 @@ root.all("/", (_, res: Response) => {
 			GET: {},
 			PATCH: {},
 			POST: {},
-			PUT: {}
-		}
+			PUT: {},
+		},
 	});
 });
 
-export default root;
+export default routes;
+export { routes };

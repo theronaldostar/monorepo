@@ -6,8 +6,8 @@
 	"private": true,
 	"main": "index.ts",
 	"scripts": {
-		"dev": "nodemon server",
-		"start": "node --loader ts-node/esm src/index.ts"
+		"dev": "",
+		"start": ""
 	},
 	"files": [
 		"controllers/",
