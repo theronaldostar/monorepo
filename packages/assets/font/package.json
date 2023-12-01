@@ -1,17 +1,12 @@
 {
-	"name": "@config/hooks",
+	"name": "@asset/font",
 	"description": "",
 	"version": "0.0.0",
 	"license": "MIT",
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"class/",
-		"date/",
-		"location/",
+		"inter/",
 		"index.ts"
-	],
-	"dependencies": {
-		"react": "*"
-	}
+	]
 }

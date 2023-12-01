@@ -1,9 +1,5 @@
-// @ts-check
-const tailwindConfig = require("@library/tailwindcss");
-
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-	content: ["./App.tsx", "../../packages/**/*.{js,jsx,ts,tsx}"],
-	plugins: [],
-	presets: [tailwindConfig],
+	content: ["**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}", "../../packages/**/*.{js,jsx,ts,tsx}"],
+	presets: [require("@library/tailwindcss")],
 };

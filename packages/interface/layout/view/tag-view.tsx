@@ -1,5 +1,5 @@
 import { View, type ViewProps } from "react-native";
-import { StyledComponent as Component } from "nativewind";
+import { styled } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 import { overflowProp } from "./prototype";
@@ -25,7 +25,9 @@ const TagView = (props: TagViewProps) => {
 		WidthClassWrap[width as Size],
 	);
 
-	return <Component component={View} tw={baseClass} {...rest} />;
+	const Component = styled(View, baseClass);
+
+	return <Component {...rest} />;
 };
 
 export { TagView, type TagViewProps };

@@ -60,12 +60,12 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.20.0"
     "@config/types": "npm:0.0.0"
+    "@expo-google-fonts/inter": "npm:^0.2.3"
     "@library/eslint-prettier": "npm:0.0.0"
     "@library/tailwindcss": "npm:0.0.0"
     "@library/tsconfig": "npm:0.0.0"
     "@types/react": "npm:^18.2.21"
     "@types/react-native": "npm:^0.72.2"
-    app: "npm:*"
     expo: "npm:^49.0.0"
     expo-linking: "npm:~5.0.2"
     expo-router: "npm:^2.0.5"
@@ -82,19 +82,6 @@ __metadata:
     react-native-svg: "npm:^14.0.0"
     react-native-web: "npm:~0.19.6"
     tailwindcss: "npm:^3.0.24"
-    typescript: "npm:*"
-  languageName: unknown
-  linkType: soft
-
-"@app/monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@app/monorepo@workspace:."
-  dependencies:
-    "@config/types": "npm:0.0.0"
-    "@library/eslint-prettier": "npm:0.0.0"
-    "@library/tailwindcss": "npm:0.0.0"
-    "@library/tsconfig": "npm:0.0.0"
-    turbo: "npm:^1.4.2"
   languageName: unknown
   linkType: soft
 
@@ -108,7 +95,6 @@ __metadata:
     "@library/tailwindcss": "npm:0.0.0"
     "@library/tsconfig": "npm:0.0.0"
     "@types/node": "npm:17.0.21"
-    app: "npm:*"
     autoprefixer: "npm:^10.4.7"
     eslint-config-next: "npm:13.2.0"
     interface: "npm:0.0.0"
@@ -116,6 +102,12 @@ __metadata:
     raf: "npm:^3.4.1"
     setimmediate: "npm:^1.0.5"
     tailwindcss: "npm:^3.3.2"
+  languageName: unknown
+  linkType: soft
+
+"@asset/font@workspace:packages/assets/font":
+  version: 0.0.0-use.local
+  resolution: "@asset/font@workspace:packages/assets/font"
   languageName: unknown
   linkType: soft
 
@@ -1883,6 +1875,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo-google-fonts/inter@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "@expo-google-fonts/inter@npm:0.2.3"
+  checksum: 434dd414e4d4dd9b61283cc09dfc499d5a4162bcaa39d0ac88cc3664bac0f21d8c54c0be9868b36bcf6d562be077eec6fbe8874274bd447d29d4ee1e988d8682
+  languageName: node
+  linkType: hard
+
 "@expo/bunyan@npm:4.0.0, @expo/bunyan@npm:^4.0.0":
   version: 4.0.0
   resolution: "@expo/bunyan@npm:4.0.0"
@@ -2520,14 +2519,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@library/heroicons@workspace:packages/library/heroicons":
+"@library/heroicons@npm:0.0.0, @library/heroicons@workspace:packages/library/heroicons":
   version: 0.0.0-use.local
   resolution: "@library/heroicons@workspace:packages/library/heroicons"
   dependencies:
+    "@config/types": "npm:0.0.0"
     react: "npm:*"
     react-native: "npm:*"
     react-native-svg: "npm:*"
-    react-native-svg-web: "npm:*"
   languageName: unknown
   linkType: soft
 
@@ -4248,16 +4247,6 @@ __metadata:
   checksum: 3e044fd6d1d26545f235a9fe4d7a534e2029d8e59fa7fd9f2a6eb21230f6b5380ea1eaf55136e60cbf8e613544b3b766e7a6fa2102e2a3a117505466e3025dc2
   languageName: node
   linkType: hard
-
-"app@npm:*, app@workspace:packages/app":
-  version: 0.0.0-use.local
-  resolution: "app@workspace:packages/app"
-  dependencies:
-    moti: "npm:latest"
-    nativewind: "npm:2.0.11"
-    solito: "npm:4.0.1"
-  languageName: unknown
-  linkType: soft
 
 "appdirsjs@npm:^1.2.4":
   version: 1.2.7
@@ -8000,8 +7989,10 @@ __metadata:
   dependencies:
     "@config/types": "npm:0.0.0"
     "@library/eslint-prettier": "npm:0.0.0"
+    "@library/heroicons": "npm:0.0.0"
     "@library/tailwindcss": "npm:0.0.0"
     "@library/tsconfig": "npm:0.0.0"
+    moti: "npm:^0.27.2"
   languageName: unknown
   linkType: soft
 
@@ -9955,7 +9946,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moti@npm:latest":
+"monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "monorepo@workspace:."
+  dependencies:
+    "@config/types": "npm:0.0.0"
+    "@library/eslint-prettier": "npm:0.0.0"
+    "@library/tailwindcss": "npm:0.0.0"
+    "@library/tsconfig": "npm:0.0.0"
+    solito: "npm:^4.1.3"
+    turbo: "npm:^1.4.2"
+  languageName: unknown
+  linkType: soft
+
+"moti@npm:^0.27.2":
   version: 0.27.2
   resolution: "moti@npm:0.27.2"
   dependencies:
@@ -10030,7 +10034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nativewind@npm:2.0.11, nativewind@npm:^2.0.11":
+"nativewind@npm:^2.0.11":
   version: 2.0.11
   resolution: "nativewind@npm:2.0.11"
   dependencies:
@@ -11512,17 +11516,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg-web@npm:*":
-  version: 1.0.9
-  resolution: "react-native-svg-web@npm:1.0.9"
-  peerDependencies:
-    prop-types: "*"
-    react: "*"
-    react-native-web: ">= 0.10.1"
-  checksum: fb217afb275a3e06f8c4e5e79d6099cdabb16fa294cd7611bc4cdbbc3ffcaa6c848cdb23dbe7673d11ab57a635c82a0f752a627fbc183f4884c255346f1c53e5
-  languageName: node
-  linkType: hard
-
 "react-native-svg@npm:*, react-native-svg@npm:^14.0.0":
   version: 14.0.0
   resolution: "react-native-svg@npm:14.0.0"
@@ -12499,12 +12492,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solito@npm:4.0.1":
-  version: 4.0.1
-  resolution: "solito@npm:4.0.1"
+"solito@npm:^4.1.3":
+  version: 4.1.3
+  resolution: "solito@npm:4.1.3"
   dependencies:
     typescript: "npm:^5.0.4"
-  checksum: 1b1e7ed7111edd9072b4a5e13ae98fffca8b3a3f6aec760848b886cb20a0b765ec528511ebf5f2da2df8b8572f26f3315dcecb1849521c0ecf14f4a577210753
+  checksum: eec7632b072e58471cd0d19bac9f1d93dbab5fc2bc072adef153d2ae8697baf97e13c12763629cd95708f125ef753e2bf081d775294dd365d0b9c673ec776311
   languageName: node
   linkType: hard
 
@@ -13509,7 +13502,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*, typescript@npm:^5.0.4, typescript@npm:^5.3.2":
+"typescript@npm:^5.0.4, typescript@npm:^5.3.2":
   version: 5.3.2
   resolution: "typescript@npm:5.3.2"
   bin:
@@ -13519,7 +13512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A*#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.0.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.0.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.2#optional!builtin<compat/typescript>":
   version: 5.3.2
   resolution: "typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"
   bin:

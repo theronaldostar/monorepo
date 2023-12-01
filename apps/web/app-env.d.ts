@@ -1,2 +1,2 @@
-/// <reference types="app/rnw-overrides" />
+/// <reference types="@config/types" />
 /// <reference types="nativewind/types" />

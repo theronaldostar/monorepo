@@ -8,16 +8,19 @@
 		"components/",
 		"layout/",
 		"screens/",
-		".eslintrc.js",
 		"index.ts",
+		"postcss.config.js",
+		"tailwind.config.js",
 		"tsconfig.json"
 	],
 	"dependencies": {
-		"@library/tailwindcss": "0.0.0"
+		"@library/tailwindcss": "0.0.0",
+		"moti": "^0.27.2"
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",
 		"@library/eslint-prettier": "0.0.0",
+		"@library/heroicons": "0.0.0",
 		"@library/tsconfig": "0.0.0"
 	}
 }

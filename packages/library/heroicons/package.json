@@ -13,7 +13,9 @@
 	"dependencies": {
 		"react": "*",
 		"react-native": "*",
-		"react-native-svg": "*",
-		"react-native-svg-web": "*"
+		"react-native-svg": "*"
+	},
+	"devDependencies": {
+		"@config/types": "0.0.0"
 	}
 }

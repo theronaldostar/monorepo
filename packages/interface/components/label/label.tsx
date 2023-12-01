@@ -21,8 +21,6 @@ interface LabelProps extends TextProps {
 	target?: "_blank";
 }
 
-const LabelComponent = styled(Text);
-
 const Label = (props: LabelProps) => {
 	const { align, className, color, decoration, height, size, truncate = true, weight, ...rest } = props;
 
@@ -37,7 +35,9 @@ const Label = (props: LabelProps) => {
 		textDecoration(decoration),
 	);
 
-	return <LabelComponent numberOfLines={truncate ? 1 : undefined} tw={baseClass} {...rest} />;
+	const Component = styled(Text);
+
+	return <Component numberOfLines={truncate ? 1 : undefined} tw={baseClass} {...rest} />;
 };
 
-export { LabelComponent, Label, type LabelProps };
+export { Label, type LabelProps };
