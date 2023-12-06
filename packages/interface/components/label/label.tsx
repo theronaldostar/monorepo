@@ -35,9 +35,9 @@ const Label = (props: LabelProps) => {
 		textDecoration(decoration),
 	);
 
-	const Component = styled(Text);
+	const Component = styled(Text, baseClass);
 
-	return <Component numberOfLines={truncate ? 1 : undefined} tw={baseClass} {...rest} />;
+	return <Component numberOfLines={truncate ? 1 : undefined} {...rest} />;
 };
 
 export { Label, type LabelProps };

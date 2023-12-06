@@ -4,8 +4,9 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"private": true,
-	"main": "index.d.ts",
+	"types": "index.d.ts",
 	"files": [
+		"tsconfig.json",
 		"index.d.ts"
 	],
 	"dependencies": {

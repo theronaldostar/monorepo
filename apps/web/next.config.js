@@ -4,7 +4,16 @@ const { withExpo } = require("@expo/next-adapter");
 const nextConfig = {
 	experimental: {},
 	reactStrictMode: false,
-	transpilePackages: ["react-native", "react-native-web", "moti", "solito", "nativewind", "react-native-gesture-handler", "react-native-reanimated"],
+	transpilePackages: [
+		"interface",
+		"react-native",
+		"react-native-web",
+		"moti",
+		"solito",
+		"nativewind",
+		"react-native-gesture-handler",
+		"react-native-reanimated",
+	],
 };
 
 module.exports = withExpo(nextConfig);

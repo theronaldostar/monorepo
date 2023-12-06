@@ -6,8 +6,8 @@ import Methods from "./default";
 
 const app = express();
 
-const port = 8001;
-const message = `[server] Started on: http://localhost:${port} ou http://${address()}:${port}`;
+const port = process.env.SERVER_PORT || 8001;
+const message = `[server] Started on: http://localhost:${port}/ ou http://${address()}:${port}/`;
 
 app.use((_, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");

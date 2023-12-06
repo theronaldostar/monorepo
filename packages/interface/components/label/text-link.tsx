@@ -1,13 +1,13 @@
 import type { TextStyle } from "react-native";
 import { styled } from "nativewind";
-import { TextLink as SolitoLink, type TextLinkProps } from "solito/link";
+import { TextLink as SolitoLink, type TextLinkProps as TLProps } from "solito/link";
 
-type Props = TextLinkProps & { style?: TextStyle };
+type TextLinkProps = TLProps & { style?: TextStyle };
 
-const TextLink = (props: Props) => {
+const TextLink = (props: TextLinkProps) => {
 	const { ...rest } = props;
 
-	const Component = styled<Props>(
+	const Component = styled<TextLinkProps>(
 		({ style, textProps, ...props }) => <SolitoLink textProps={{ ...textProps, style: [style, textProps?.style] }} {...props} />,
 		"text-base font-bold hover:underline text-blue-500",
 	);
@@ -15,4 +15,4 @@ const TextLink = (props: Props) => {
 	return <Component {...rest} />;
 };
 
-export { TextLink, type Props as TextLinkProps };
+export { TextLink, type TextLinkProps };

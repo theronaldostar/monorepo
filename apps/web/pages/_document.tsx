@@ -5,6 +5,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 const Document = () => {
 	useEffect(() => {
 		AppRegistry.registerComponent("Main", () => Main);
+		return () => {};
 	}, []);
 
 	return (

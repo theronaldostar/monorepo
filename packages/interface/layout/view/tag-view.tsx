@@ -2,27 +2,26 @@ import { View, type ViewProps } from "react-native";
 import { styled } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
-import { overflowProp } from "./prototype";
-import { HeightClassWrap, WidthClassWrap, Size } from "@config/types";
+import { overflowProp, classWrap, type classWrapProps } from "interface/layout/view/prototype";
 
 interface TagViewProps extends ViewProps {
 	direction?: "flex-row" | "flex-row-reverse" | "flex-col" | "flex-col-reverse";
-	height?: keyof typeof HeightClassWrap;
+	height?: classWrapProps;
 	horizontal?: boolean;
 	overflow?: "auto" | "hidden" | "scroll";
-	width?: keyof typeof WidthClassWrap;
+	width?: classWrapProps;
 }
 
 const TagView = (props: TagViewProps) => {
-	const { className, direction = "flex-row", overflow = undefined, height = "", width = "", ...rest } = props;
+	const { className, direction = "flex-row", overflow = undefined, height, width, ...rest } = props;
 
 	const baseClass = useBuilder(
 		"",
 		className,
 		direction,
-		HeightClassWrap[height as Size],
+		classWrap("height")[height as classWrapProps],
 		overflow ? overflowProp(overflow) : "",
-		WidthClassWrap[width as Size],
+		classWrap("width")[width as classWrapProps],
 	);
 
 	const Component = styled(View, baseClass);
