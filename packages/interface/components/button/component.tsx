@@ -45,7 +45,7 @@ const Button = (props: ButtonProps) => {
 
 	return (
 		<Component {...rest}>
-			<Svg className={svg} />
+			{icon && <Svg className={svg} />}
 			<Label className={titleClass}>{title}</Label>
 		</Component>
 	);

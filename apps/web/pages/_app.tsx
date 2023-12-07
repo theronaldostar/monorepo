@@ -1,13 +1,12 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 
 import "raf/polyfill";
 import "setimmediate";
 
-import { SafeProvider } from "interface/layout";
-import Head from "next/head";
-import React from "react";
-
 import "@library/tailwindcss/config.css";
+
+import { SafeProvider } from "interface/layout";
 
 const App = ({ Component, pageProps }: AppProps) => (
 	<div className="flex h-full w-full font-sans">

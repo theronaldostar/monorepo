@@ -1,7 +1,7 @@
 import Svg, { Path, type SvgProps } from "react-native-svg";
 
 const EyeSlash = (props: SvgProps) => (
-	<Svg width={24} height={24} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+	<Svg fill="none" viewBox="0 0 24 24" width={24} height={24} strokeWidth={1.5} stroke="currentColor" {...props}>
 		<Path
 			strokeLinecap="round"
 			strokeLinejoin="round"

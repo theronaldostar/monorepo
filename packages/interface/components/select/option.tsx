@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { useBuilder } from "@config/hooks";
 
@@ -16,18 +16,15 @@ interface OptionProps {
 const Option = (props: OptionProps) => {
 	const { children, onPress = () => null, selected, value, ...rest } = props;
 
-	const [hover, setHover] = useState<boolean>(false);
-
-	const baseClass = useBuilder("px-4 py-1", hover && "bg-success-500", selected && "bg-success-600");
-	const baseText = useBuilder("items-center", hover && "text-neutral-600", selected && "text-neutral-200", hover || (selected && "text-neutral-100"));
+	const baseClass = useBuilder("px-4 py-1", selected && "bg-success-600");
+	const baseText = useBuilder("items-center", selected && "text-neutral-200", selected && "text-neutral-100");
 
 	const handlePress = () => onPress(value);
-	const handleHover = () => setHover(prev => !prev);
 
 	return (
-		<PressView className={baseClass} onHoverIn={handleHover} onHoverOut={handleHover} onPress={handlePress} {...rest}>
+		<PressView className={baseClass} onPress={handlePress} {...rest}>
 			<Label className={baseText} size="lg" weight="semibold">
-				<>{children}</>
+				{children}
 			</Label>
 		</PressView>
 	);
