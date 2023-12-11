@@ -1,2 +1,2 @@
-export * from "./controllers";
-export * from "./routes";
+export * from "@app/api/controllers";
+export * from "@app/api/routes";

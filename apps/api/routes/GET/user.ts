@@ -1,6 +1,6 @@
 import type { Response } from "express";
-import { useDB } from "@app/api/controllers";
 
+import { useDB } from "@app/api/controllers";
 import { routes } from "@app/api/routes/default";
 
 type QueryProps = {

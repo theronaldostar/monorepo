@@ -2,7 +2,7 @@ import express from "express";
 import { address } from "ip";
 import "dotenv/config";
 
-import Methods from "./default";
+import Methods from "@app/api/routes/default";
 
 const app = express();
 

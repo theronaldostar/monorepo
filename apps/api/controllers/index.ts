@@ -1,1 +1,1 @@
-export * from "./database";
+export * from "@app/api/controllers/database";
