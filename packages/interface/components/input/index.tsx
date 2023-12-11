@@ -80,7 +80,7 @@ const Input = (props: InputProps) => {
 	const handlePress = (): void => inputRef.current?.focus();
 
 	return (
-		<TagView className={undefined} direction="flex-col">
+		<TagView className="select-none space-y-1" direction="flex-col">
 			{label && (
 				<Label className={classLabel} onPress={handlePress}>
 					{label}

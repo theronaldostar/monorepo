@@ -77,12 +77,7 @@ const Components = () => {
 
 			<Label>Checkbox:</Label>
 
-			<Checkbox
-				classTitle={`font-semibold ${state ? "text-success-600" : "text-error-600"}`}
-				checked={state}
-				onChange={() => setState(prev => !prev)}
-				title="This is a checkbox"
-			/>
+			<Checkbox classTitle="font-semibold" checked={state} onChange={() => setState(prev => !prev)} title="This is a checkbox" />
 
 			<TagView className="justify-center" width="full">
 				<Button icon={{ svg: Check, position: "left" }} onPress={back} rounded title="Back to Home" uppercase />

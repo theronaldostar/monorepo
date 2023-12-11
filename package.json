@@ -27,7 +27,7 @@
 		"@config/types": "0.0.0",
 		"@library/eslint-prettier": "0.0.0",
 		"@library/tsconfig": "0.0.0",
-		"turbo": "^1.11.0"
+		"turbo": "^1.11.1"
 	},
 	"workspaces": [
 		"apps/*",

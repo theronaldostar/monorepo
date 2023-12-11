@@ -5,7 +5,7 @@ import { styled } from "nativewind";
 import { useBuilder } from "@config/hooks";
 import { fontColor, fontSize, fontWeight, textAlign, textDecoration } from "interface/components/label/prototype";
 
-type leading = "leading-none" | "leading-snug" | "leading-normal" | "leading-relaxed" | "leading-loose";
+type leading = "leading-none" | "leading-snug" | "leading-normal" | "leading-relaxed" | "leading-tight" | "leading-loose";
 
 interface LabelProps extends TextProps {
 	align?: "left" | "center" | "right" | "justify";

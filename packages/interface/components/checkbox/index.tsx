@@ -35,7 +35,7 @@ const Checkbox = (props: CheckboxProps) => {
 				{state && <Check color={colors.primary[900]} height={18} width={18} />}
 			</PressView>
 			{title && (
-				<Label color={colorTitle} className={baseClassTitle} onPress={handlePress}>
+				<Label color={colorTitle} className={baseClassTitle} height="leading-tight" onPress={handlePress}>
 					{title}
 				</Label>
 			)}

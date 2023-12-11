@@ -9,7 +9,5 @@
 		"png/",
 		"svg/",
 		"index.ts"
-	],
-	"dependencies": {},
-	"devDependencies": {}
+	]
 }
