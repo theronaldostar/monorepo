@@ -1,4 +1,4 @@
-const extend = require("./theme.config");
+const extend = require("@library/tailwindcss/theme.config");
 
 /** @type {import("tailwindcss").Config} */
 module.exports = {

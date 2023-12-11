@@ -1,6 +1,6 @@
 import { Linking, Platform } from "react-native";
 
-import { Label, type LabelProps } from "./label";
+import { Label, type LabelProps } from "interface/components/label/component";
 
 interface LinkProps extends LabelProps {
 	href?: string;
@@ -29,7 +29,7 @@ const Link = (props: LinkProps) => {
 		},
 	});
 
-	return <Label accessibilityRole="link" className={`!text-blue-500 hover:underline ${className}`} {...rest} {...nativeAProps} />;
+	return <Label role="link" className={`!text-blue-500 hover:underline ${className}`} {...nativeAProps} {...rest} />;
 };
 
 export { Link, type LinkProps };

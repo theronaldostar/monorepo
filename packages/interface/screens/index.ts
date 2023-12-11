@@ -1,3 +1,3 @@
-export * from "./components";
-export * from "./home";
-export * from "./user";
+export * from "interface/screens/components";
+export * from "interface/screens/home";
+export * from "interface/screens/user";

@@ -1,6 +1,6 @@
 import { MotiLink } from "solito/moti";
 
-import { Label, Button, Link, TextLink } from "interface/components";
+import { Button, Label, Link, TextLink } from "interface/components";
 
 import { SafeView, Scroll, TagView } from "interface/layout";
 

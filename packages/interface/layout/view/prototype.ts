@@ -1,5 +1,4 @@
 import getClass from "@config/hooks/class";
-
 import type { TagViewProps } from "interface/layout/view/tag-view";
 
 type classWrapProps = "half" | "full" | "none";

@@ -1,15 +1,14 @@
-import { useRef, useState } from "react";
-import { TextInput, type InputModeOptions } from "react-native";
+import { useId, useRef, useState } from "react";
+import { TextInput, type TextInputProps, type InputModeOptions } from "react-native";
 import { StyledComponent } from "nativewind";
 
-import useClass, { useBuilder } from "@config/hooks/class";
-import { Eye, EyeSlash, type IconProps } from "@library/heroicons";
 import { colors } from "@library/tailwindcss/theme.config";
+
+import { useBuilder } from "@config/hooks";
+import { Eye, EyeSlash, type IconProps } from "@library/heroicons";
 
 import { Label } from "interface/components/label";
 import { PressView, TagView } from "interface/layout";
-
-type ChangeProps = "focus" | "show";
 
 type InputChange = (text: string) => void;
 
@@ -20,16 +19,14 @@ type InputIcon = {
 
 type InputTypeProps = "search" | "text" | "email" | "numeric" | "password" | "tel";
 
-interface InputProps {
+type InputProps = {
 	disabled?: boolean;
 	icon?: InputIcon;
 	label?: string;
 	onChange?: InputChange;
-	placeholder?: string;
 	rounded?: boolean;
 	type?: InputTypeProps;
-	value?: string;
-}
+} & TextInputProps;
 
 const Input = (props: InputProps) => {
 	const {
@@ -45,13 +42,23 @@ const Input = (props: InputProps) => {
 
 	const { left: LeftIcon, right: RightIcon } = icon;
 
-	const inputRef = useRef<TextInput>(null);
-
 	const [state, setState] = useState({
 		focus: false,
-		show: false,
+		visible: type === "password",
 		value,
 	});
+
+	const inputId = useId();
+	const inputRef = useRef<TextInput>(null);
+
+	const inputType = {
+		text: "text",
+		numeric: "numeric",
+		tel: "tel",
+		search: "search",
+		email: "email",
+		password: "none",
+	}[type];
 
 	const classContainer = useBuilder(
 		"border items-center px-4 py-2.5 space-x-2",
@@ -60,54 +67,48 @@ const Input = (props: InputProps) => {
 		rounded ? "rounded-full" : "rounded-lg",
 	);
 	const classIcon = useBuilder("cursor-default");
+	const classLabel = useBuilder(disabled && "pointer-events-none cursor-default");
 	const classInput = useBuilder("flex-1 outline-none text-neutral-600", disabled && "cursor-default");
 
-	const SvgIcon = state.show ? Eye : EyeSlash;
+	const SvgIcon = state.visible ? EyeSlash : Eye;
 
-	const handleChange = (index: ChangeProps) => setState(prev => ({ ...prev, [index]: !prev[index] }));
+	const handleChange = (value: string): void => {
+		onChange(value);
+		setState(prev => ({ ...prev, value }));
+	};
 
-	const handleFocus = () => inputRef.current?.focus();
-
-	const inputMode = useClass(
-		{
-			text: "text",
-			numeric: "numeric",
-			tel: "tel",
-			search: "search",
-			email: "email",
-			password: "none",
-		},
-		type,
-	);
+	const handlePress = (): void => inputRef.current?.focus();
 
 	return (
-		<TagView className="select-none space-y-1" direction="flex-col">
+		<TagView className={undefined} direction="flex-col">
 			{label && (
-				<Label className={(disabled && "pointer-events-none cursor-default") as string} onPress={handleFocus}>
+				<Label className={classLabel} onPress={handlePress}>
 					{label}
 				</Label>
 			)}
-			<PressView className={classContainer} onPress={handleFocus}>
+			<PressView className={classContainer} onPress={handlePress}>
 				{LeftIcon && <LeftIcon tw={classIcon} color={!disabled && state.focus ? colors.primary[900] : colors.neutral[400]} />}
 				<StyledComponent
 					component={TextInput}
-					editable={!disabled}
-					inputMode={inputMode as InputModeOptions}
-					onChangeText={onChange}
-					onFocus={() => handleChange("focus")}
-					onBlur={() => handleChange("focus")}
+					id={inputId}
+					inputMode="text"
+					onBlur={() => setState(prev => ({ ...prev, focus: false }))}
+					onChangeText={handleChange}
+					onFocus={() => setState(prev => ({ ...prev, focus: true }))}
 					placeholderTextColor={colors.neutral[500]}
+					readOnly={disabled}
 					ref={inputRef}
-					secureTextEntry={!state.show && type === "password"}
+					secureTextEntry={state.visible && type === "password"}
 					tw={classInput}
+					value={state.value}
 					{...rest}
 				/>
-				{RightIcon && <RightIcon tw={classIcon} color={colors.neutral[400]} />}
 				{type === "password" && (
-					<PressView disabled={disabled} onPress={() => handleChange("show")}>
+					<PressView disabled={disabled} onPress={() => setState(prev => ({ ...prev, visible: !prev.visible }))}>
 						<SvgIcon color={colors.neutral[400]} strokeWidth={2} />
 					</PressView>
 				)}
+				{RightIcon && <RightIcon tw={classIcon} color={colors.neutral[400]} />}
 			</PressView>
 		</TagView>
 	);

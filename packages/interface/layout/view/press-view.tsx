@@ -1,5 +1,5 @@
 import { Pressable, type PressableProps } from "react-native";
-import { styled } from "nativewind";
+import { StyledComponent } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 
@@ -10,9 +10,7 @@ const PressView = (props: PressViewProps) => {
 
 	const baseClass = useBuilder("flex-row", className);
 
-	const Component = styled(Pressable, baseClass);
-
-	return <Component {...rest} />;
+	return <StyledComponent component={Pressable} tw={baseClass} {...rest} />;
 };
 
 export { PressView, type PressViewProps };

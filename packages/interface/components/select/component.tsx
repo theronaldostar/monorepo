@@ -25,7 +25,6 @@ const Select = (props: SelectProps) => {
 
 	useEffect(() => {
 		let initialValue = "";
-
 		Children.map(children as ReactElement, (child: ReactElement) => {
 			if (child?.type === Option) {
 				const { value, selected } = child.props;
@@ -35,7 +34,6 @@ const Select = (props: SelectProps) => {
 				Children.map(child.props.children, (groupChild: ReactElement) => {
 					if (groupChild && groupChild.type === Option) {
 						const { value, selected } = groupChild.props;
-
 						if (selected) initialValue = value;
 					}
 				});
@@ -50,7 +48,6 @@ const Select = (props: SelectProps) => {
 
 	const handleText = (value: string, children: ReactNode) => {
 		let optionText = null;
-
 		Children.map(children as ReactElement, ({ props, type }: ReactElement) => {
 			if (type === Option && props.value === value) {
 				optionText = props.children as ReactNode;
@@ -60,7 +57,6 @@ const Select = (props: SelectProps) => {
 				});
 			}
 		});
-
 		return optionText;
 	};
 
@@ -68,7 +64,7 @@ const Select = (props: SelectProps) => {
 		const selected = value === state.value;
 
 		const handleSelect = (value: string) => {
-			setState({ open: false, value });
+			setState(prev => ({ ...prev, open: !prev.open, value }));
 			onChange(value);
 		};
 
@@ -95,6 +91,7 @@ const Select = (props: SelectProps) => {
 								return <ScrollOption value={value}>{children}</ScrollOption>;
 							} else if (child?.type === Group) {
 								const { children: groupChildren, title } = child.props;
+
 								return (
 									<Group title={title}>
 										{Children.map(groupChildren, (groupChild: ReactElement) => {

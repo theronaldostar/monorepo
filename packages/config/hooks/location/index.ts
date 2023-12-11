@@ -1,2 +1,2 @@
-export * from "./useParam";
-export * from "./usePathname";
+export * from "@config/hooks/location/useParam";
+export * from "@config/hooks/location/usePathname";

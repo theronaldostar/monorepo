@@ -3,9 +3,10 @@ import { styled } from "nativewind";
 
 import { useBuilder, useMergeTwins } from "@config/hooks";
 import type { IconProps } from "@library/heroicons";
+import { colors } from "@library/tailwindcss/theme.config";
 import { Label } from "interface/components/label";
 
-import { GeneralStyle, StyleBySize } from "./prototype";
+import { GeneralStyle, StyleBySize } from "interface/components/button/prototype";
 
 interface ButtonProps extends PressableProps {
 	color?: "secondary" | "error" | "warning";
@@ -13,7 +14,7 @@ interface ButtonProps extends PressableProps {
 		svg: IconProps;
 		position?: "left" | "right";
 	};
-	lowercase?: boolean;
+	uppercase?: boolean;
 	rounded?: boolean;
 	size?: "sm" | "md" | "lg";
 	title: string;
@@ -21,7 +22,7 @@ interface ButtonProps extends PressableProps {
 }
 
 const Button = (props: ButtonProps) => {
-	const { color, icon, lowercase = false, rounded = false, size, title, variant, ...rest } = props;
+	const { className, color, disabled, icon, uppercase = false, rounded = false, size, title, variant, ...rest } = props;
 
 	const general = GeneralStyle({ color, variant });
 	const bySize = StyleBySize({ rounded, size });
@@ -32,20 +33,20 @@ const Button = (props: ButtonProps) => {
 
 	const baseClass = useBuilder(
 		"!items-center !justify-center flex-row",
+		className,
 		component,
 		position === "right" && "flex-row-reverse",
-		rest.className,
-		rest?.disabled ? "opacity-25" : "!transition active:!scale-90",
+		disabled ? "opacity-25" : "!transition active:!scale-90",
 		rounded ? "!rounded-full" : "rounded",
 	);
 
-	const titleClass = useBuilder("select-none leading-none", lowercase ? "normal-case" : "uppercase", text);
+	const titleClass = useBuilder("select-none leading-none", uppercase ? "uppercase" : "normal-case", text);
 
 	const Component = styled(Pressable, baseClass);
 
 	return (
 		<Component {...rest}>
-			{icon && <Svg className={svg} />}
+			{icon && <Svg color={colors.neutral[50]} className={svg} />}
 			<Label className={titleClass}>{title}</Label>
 		</Component>
 	);

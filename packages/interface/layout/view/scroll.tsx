@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native";
-import { styled } from "nativewind";
+import { StyledComponent } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
 
@@ -10,9 +10,7 @@ const Scroll = (props: TagViewProps) => {
 
 	const baseClass = useBuilder("", className, height, width);
 
-	const Component = styled(ScrollView, baseClass);
-
-	return <Component {...rest} />;
+	return <StyledComponent component={ScrollView} tw={baseClass} {...rest} />;
 };
 
 export { Scroll };

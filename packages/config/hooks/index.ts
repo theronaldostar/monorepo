@@ -1,3 +1,3 @@
-export * from "./class";
-export * from "./date";
-export * from "./location";
+export * from "@config/hooks/class";
+export * from "@config/hooks/date";
+export * from "@config/hooks/location";

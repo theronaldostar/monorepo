@@ -1,8 +1,8 @@
 import type { TextStyle } from "react-native";
 import { styled } from "nativewind";
-import { TextLink as SolitoLink, type TextLinkProps as TLProps } from "solito/link";
+import { TextLink as SolitoLink, type TextLinkProps as LinkProps } from "solito/link";
 
-type TextLinkProps = TLProps & { style?: TextStyle };
+type TextLinkProps = LinkProps & { style?: TextStyle };
 
 const TextLink = (props: TextLinkProps) => {
 	const { ...rest } = props;

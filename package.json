@@ -27,7 +27,7 @@
 		"@config/types": "0.0.0",
 		"@library/eslint-prettier": "0.0.0",
 		"@library/tsconfig": "0.0.0",
-		"turbo": "^1.4.2"
+		"turbo": "^1.11.0"
 	},
 	"workspaces": [
 		"apps/*",
@@ -37,8 +37,8 @@
 		"packages/library/*"
 	],
 	"resolutions": {
-		"metro": "~0.76.8",
-		"metro-resolver": "~0.76.8"
+		"metro": "~0.80.1",
+		"metro-resolver": "~0.80.1"
 	},
 	"nohoist": [
 		"**/expo-router",

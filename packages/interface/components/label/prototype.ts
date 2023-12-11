@@ -1,4 +1,4 @@
-import type { LabelProps } from ".";
+import type { LabelProps } from "interface/components/label";
 
 import getClass from "@config/hooks/class";
 

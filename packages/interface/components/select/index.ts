@@ -1,7 +1,7 @@
-import { Select } from "./select";
+import { Select } from "interface/components/select/component";
 
 export default Select;
 
-export * from "./group";
-export * from "./option";
-export * from "./select";
+export * from "interface/components/select/component";
+export * from "interface/components/select/group";
+export * from "interface/components/select/option";

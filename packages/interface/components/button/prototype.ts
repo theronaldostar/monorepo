@@ -1,6 +1,5 @@
 import getClass from "@config/hooks/class";
-
-import type { ButtonProps } from "./component";
+import type { ButtonProps } from "interface/components/button/component";
 
 type GeneralStyleProps = {
 	color: "primary" | ButtonProps["color"];
