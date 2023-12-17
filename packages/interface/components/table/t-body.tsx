@@ -3,7 +3,7 @@ import { Children, cloneElement, type ReactElement } from "react";
 import { useBuilder } from "@config/hooks";
 import { TagView } from "interface/layout";
 
-import type { TableProps } from "./table";
+import type { TableProps } from "./component";
 
 const TBody = ({ children }: TableProps) => {
 	const childrenWithColor = Children.map(children, (child, i) => {

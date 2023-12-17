@@ -1,9 +1,9 @@
-import { Table } from "./table";
+import { Table } from "interface/components/table/component";
 
 export default Table;
 
-export * from "./t-body";
-export * from "./t-data";
-export * from "./t-group";
-export * from "./t-header";
-export * from "./table";
+export * from "interface/components/table/component";
+export * from "interface/components/table/t-body";
+export * from "interface/components/table/t-data";
+export * from "interface/components/table/t-group";
+export * from "interface/components/table/t-header";

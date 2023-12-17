@@ -4,9 +4,8 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"private": true,
-	"main": "@app/api/routes",
 	"scripts": {
-		"dev": "nodemon --exec index.ts",
+		"dev": "nodemon",
 		"start": "node --loader ts-node/esm --inspect index.ts"
 	},
 	"files": [

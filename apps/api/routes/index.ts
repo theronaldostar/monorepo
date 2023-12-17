@@ -1,24 +1,21 @@
-import express from "express";
-import { address } from "ip";
-import "dotenv/config";
+import { Router, type Response } from "express";
 
-import Methods from "@app/api/routes/default";
+const route = Router();
 
-const app = express();
+route.all("/", (_, res: Response) => {
+	const message = "This is the main route; if you want to make a request or modification, you must call the route correctly.";
 
-const port = process.env.SERVER_PORT || 8001;
-const message = `[server] Started on: http://localhost:${port}/ ou http://${address()}:${port}/`;
-
-app.use((_, res, next) => {
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Methods", "OPTIONS, DELETE, GET, PATCH, POST, PUT");
-	res.setHeader("Access-Control-Allow-Credentials", "true");
-	next();
+	res.status(200).json({
+		status: true,
+		message,
+		methods: {
+			DELETE: {},
+			GET: {},
+			PATCH: {},
+			POST: {},
+			PUT: {},
+		},
+	});
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(Methods);
-
-app.listen(port, () => console.info(message));
+export default route;

@@ -15,7 +15,7 @@ const AppConfig = ({ config }: ConfigContext): ExpoConfig => ({
 	orientation: "portrait",
 	icon: "./archive/icon.png",
 	assetBundlePatterns: ["**/*"],
-	scheme: "mobile",
+	scheme: "monorepo-app",
 	splash: {
 		backgroundColor: colors.secondary,
 		image: "./archive/splash.png",

@@ -1,9 +1,9 @@
 import * as mysql from "mysql";
 
-const host = process.env.DB_HOST;
-const database = process.env.DB_NAME;
-const user = process.env.DB_USER;
-const password = process.env.DB_PASSWORD;
+const host = process.env.HOST;
+const database = process.env.DATABASE;
+const user = process.env.USER;
+const password = process.env.PASSWORD;
 
 const useDB = mysql.createConnection({ host, database, user, password });
 

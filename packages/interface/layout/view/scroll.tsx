@@ -2,7 +2,6 @@ import { ScrollView } from "react-native";
 import { StyledComponent } from "nativewind";
 
 import { useBuilder } from "@config/hooks";
-
 import type { TagViewProps } from "interface/layout/view/tag-view";
 
 const Scroll = (props: TagViewProps) => {

@@ -11,6 +11,8 @@ type CheckboxChange = (status: boolean) => void;
 
 interface CheckboxProps {
 	checked?: boolean;
+	checkColor?: string;
+	classBox?: string;
 	classTitle?: string;
 	colorTitle?: LabelProps["color"];
 	onChange?: CheckboxChange;
@@ -18,7 +20,7 @@ interface CheckboxProps {
 }
 
 const Checkbox = (props: CheckboxProps) => {
-	const { checked = false, classTitle, colorTitle, onChange = () => null, title } = props;
+	const { checked = false, checkColor = null, classBox, classTitle, colorTitle, onChange = () => null, title } = props;
 
 	const [state, setState] = useState(checked);
 
@@ -27,12 +29,13 @@ const Checkbox = (props: CheckboxProps) => {
 		setState(prev => !prev);
 	};
 
+	const baseClassBox = useBuilder("h-5 w-5 items-center justify-center rounded border-2 border-neutral-400", classBox);
 	const baseClassTitle = useBuilder("cursor-pointer select-none", classTitle);
 
 	return (
 		<TagView className="items-center space-x-2">
-			<PressView className="h-5 w-5 items-center justify-center rounded border-2 border-neutral-400" onPress={handlePress}>
-				{state && <Check color={colors.primary[900]} height={18} width={18} />}
+			<PressView className={baseClassBox} onPress={handlePress}>
+				{state && <Check color={checkColor || colors.neutral[400]} strokeWidth={4} height={18} width={18} />}
 			</PressView>
 			{title && (
 				<Label color={colorTitle} className={baseClassTitle} height="leading-tight" onPress={handlePress}>

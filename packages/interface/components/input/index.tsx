@@ -17,7 +17,7 @@ type InputIcon = {
 	right?: IconProps;
 };
 
-type InputTypeProps = "search" | "text" | "email" | "numeric" | "password" | "tel";
+type InputTypeProps = InputModeOptions | "password";
 
 type InputProps = {
 	disabled?: boolean;
@@ -51,15 +51,6 @@ const Input = (props: InputProps) => {
 	const inputId = useId();
 	const inputRef = useRef<TextInput>(null);
 
-	const inputType = {
-		text: "text",
-		numeric: "numeric",
-		tel: "tel",
-		search: "search",
-		email: "email",
-		password: "none",
-	}[type];
-
 	const classContainer = useBuilder(
 		"border items-center px-4 py-2.5 space-x-2",
 		!disabled && state.focus ? "border-primary-900" : "border-neutral-400",
@@ -90,13 +81,13 @@ const Input = (props: InputProps) => {
 				{LeftIcon && <LeftIcon tw={classIcon} color={!disabled && state.focus ? colors.primary[900] : colors.neutral[400]} />}
 				<StyledComponent
 					component={TextInput}
+					editable={!disabled}
 					id={inputId}
-					inputMode="text"
+					inputMode={type === "password" ? "text" : type}
 					onBlur={() => setState(prev => ({ ...prev, focus: false }))}
 					onChangeText={handleChange}
 					onFocus={() => setState(prev => ({ ...prev, focus: true }))}
 					placeholderTextColor={colors.neutral[500]}
-					readOnly={disabled}
 					ref={inputRef}
 					secureTextEntry={state.visible && type === "password"}
 					tw={classInput}

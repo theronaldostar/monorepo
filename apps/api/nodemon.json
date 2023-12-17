@@ -1,5 +1,6 @@
 {
+	"delay": 100,
+	"ignore": ["*.spec.ts", "*.test.ts", ".git", "node_modules/**/node_modules"],
 	"verbose": true,
-	"ignore": [".git", "node_modules/**/node_modules"],
-	"delay": 10000
+	"watch": ["**/*.{ts,js,json}", "routes/**/*.{ts,js,json}"]
 }

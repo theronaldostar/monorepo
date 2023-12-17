@@ -65,7 +65,8 @@ const Components = () => {
 			</TagView>
 
 			<TagView direction="flex-col">
-				<Label>Input:</Label>
+				<Label>Form:</Label>
+				<Input icon={{ left: LockClosed }} onChange={value => console.info(value)} type="email" label="Email" placeholder="Enter your email" />
 				<Input
 					icon={{ left: LockClosed, right: LockOpen }}
 					onChange={value => console.info(value)}
