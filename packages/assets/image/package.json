@@ -6,8 +6,8 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"png/",
-		"svg/",
+		"png/*.png",
+		"svg/*.svg",
 		"index.ts"
 	]
 }

@@ -1,3 +1,5 @@
 {
+	"compilerOptions": {},
 	"extends": "@library/tsconfig/react-library.json",
+	"include": ["**/*.js", "**/*.ts", "**/*.tsx"]
 }

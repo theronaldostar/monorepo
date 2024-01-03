@@ -21,7 +21,7 @@ interface LabelProps extends TextProps {
 const Label = (props: LabelProps) => {
 	const { align, className, color, decoration, height, size, truncate = true, weight, ...rest } = props;
 
-	const baseClass = useBuilder(
+	const presetClass = useBuilder(
 		className,
 		height,
 		truncate && "!truncate",
@@ -32,7 +32,7 @@ const Label = (props: LabelProps) => {
 		textDecoration(decoration),
 	);
 
-	const Component = styled(Text, baseClass);
+	const Component = styled(Text, presetClass);
 
 	return <Component numberOfLines={truncate ? 1 : undefined} {...rest} />;
 };

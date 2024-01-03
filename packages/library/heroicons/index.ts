@@ -7,5 +7,5 @@ type NativewindRestProps = {
 
 type IconProps = (props: SvgProps & NativewindRestProps) => JSX.Element;
 
-export * from "@library/heroicons/icons";
+export * from "./icons";
 export { type IconProps };

@@ -6,8 +6,8 @@ import { colors } from "@library/tailwindcss/theme.config";
 import { Label } from "interface/components/label";
 import { PressView, Scroll, TagView } from "interface/layout";
 
-import { Group } from "./group";
-import { Option } from "./option";
+import { Group } from "interface/components/select/group";
+import { Option } from "interface/components/select/option";
 
 interface SelectProps {
 	onChange: (value: string) => void;

@@ -24,6 +24,7 @@ type InputProps = {
 	icon?: InputIcon;
 	label?: string;
 	onChange?: InputChange;
+	readOnly?: boolean;
 	rounded?: boolean;
 	type?: InputTypeProps;
 } & TextInputProps;
@@ -81,15 +82,16 @@ const Input = (props: InputProps) => {
 				{LeftIcon && <LeftIcon tw={classIcon} color={!disabled && state.focus ? colors.primary[900] : colors.neutral[400]} />}
 				<StyledComponent
 					component={TextInput}
-					editable={!disabled}
 					id={inputId}
 					inputMode={type === "password" ? "text" : type}
 					onBlur={() => setState(prev => ({ ...prev, focus: false }))}
 					onChangeText={handleChange}
 					onFocus={() => setState(prev => ({ ...prev, focus: true }))}
 					placeholderTextColor={colors.neutral[500]}
+					readOnly={disabled}
 					ref={inputRef}
 					secureTextEntry={state.visible && type === "password"}
+					style={{}}
 					tw={classInput}
 					value={state.value}
 					{...rest}

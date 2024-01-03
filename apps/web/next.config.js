@@ -5,14 +5,15 @@ const nextConfig = {
 	experimental: {},
 	reactStrictMode: false,
 	transpilePackages: [
+		"expo-router",
 		"interface",
-		"react-native",
-		"react-native-web",
 		"moti",
-		"solito",
 		"nativewind",
+		"react-native",
 		"react-native-gesture-handler",
 		"react-native-reanimated",
+		"react-native-web",
+		"solito",
 	],
 };
 

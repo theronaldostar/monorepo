@@ -95,3 +95,4 @@ const themeConfig = {
 };
 
 module.exports = themeConfig;
+exports.colors = colors;

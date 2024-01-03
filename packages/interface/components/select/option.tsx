@@ -16,14 +16,14 @@ interface OptionProps {
 const Option = (props: OptionProps) => {
 	const { children, onPress = () => null, selected, value, ...rest } = props;
 
-	const baseClass = useBuilder("px-4 py-1", selected && "bg-success-600");
-	const baseText = useBuilder("items-center", selected && "text-neutral-200", selected && "text-neutral-100");
+	const presetClass = useBuilder("px-4 py-1", selected && "bg-success-600");
+	const presetClassText = useBuilder("items-center", selected && "text-neutral-200", selected && "text-neutral-100");
 
 	const handlePress = () => onPress(value);
 
 	return (
-		<PressView className={baseClass} onPress={handlePress} {...rest}>
-			<Label className={baseText} size="lg" weight="semibold">
+		<PressView className={presetClass} onPress={handlePress} {...rest}>
+			<Label className={presetClassText} size="lg" weight="semibold">
 				{children}
 			</Label>
 		</PressView>

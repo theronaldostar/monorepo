@@ -8,9 +8,9 @@ import type { TagViewProps } from "interface/layout/view/tag-view";
 const SafeView = (props: TagViewProps) => {
 	const { className, overflow = "hidden", height = "", width = "", ...rest } = props;
 
-	const baseClass = useBuilder("flex-1", className, height, overflowProp(overflow), width);
+	const presetClass = useBuilder("flex-1", className, height, width, overflowProp(overflow));
 
-	return <StyledComponent component={SafeAreaView} tw={baseClass} {...rest} />;
+	return <StyledComponent component={SafeAreaView} tw={presetClass} {...rest} />;
 };
 
 export { SafeView };

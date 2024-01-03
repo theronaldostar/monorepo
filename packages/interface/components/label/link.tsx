@@ -10,7 +10,7 @@ interface LinkProps extends LabelProps {
 const Link = (props: LinkProps) => {
 	const { className, href, target, ...rest } = props;
 
-	const nativeAProps = Platform.select<Partial<LinkProps>>({
+	const linkProps = Platform.select<Partial<LinkProps>>({
 		web: {
 			href,
 			target,
@@ -29,7 +29,7 @@ const Link = (props: LinkProps) => {
 		},
 	});
 
-	return <Label role="link" className={`!text-blue-500 hover:underline ${className}`} {...nativeAProps} {...rest} />;
+	return <Label role="link" className={`!text-blue-500 hover:underline ${className}`} {...linkProps} {...rest} />;
 };
 
 export { Link, type LinkProps };

@@ -15,7 +15,7 @@ interface TagViewProps extends ViewProps {
 const TagView = (props: TagViewProps) => {
 	const { className, direction = "flex-row", overflow = undefined, height, width, ...rest } = props;
 
-	const baseClass = useBuilder(
+	const presetClass = useBuilder(
 		"",
 		className,
 		classWrap("height")[height as classWrapProps],
@@ -24,7 +24,7 @@ const TagView = (props: TagViewProps) => {
 		overflow ? overflowProp(overflow) : "",
 	);
 
-	return <StyledComponent component={View} tw={baseClass} {...rest} />;
+	return <StyledComponent component={View} tw={presetClass} {...rest} />;
 };
 
 export { TagView, type TagViewProps };

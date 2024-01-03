@@ -9,9 +9,9 @@ type TableProps = {
 };
 
 const Table = ({ className, ...props }: TableProps) => {
-	const baseClass = useBuilder("flex-col w-full h-full", className);
+	const presetClass = useBuilder("flex-col w-full h-full", className);
 
-	return <TagView className={baseClass} {...props} />;
+	return <TagView className={presetClass} {...props} />;
 };
 
 export { Table, type TableProps };

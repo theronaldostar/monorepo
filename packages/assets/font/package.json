@@ -6,7 +6,7 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"inter/",
+		"inter/*.ttf",
 		"index.ts"
 	]
 }

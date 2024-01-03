@@ -29,16 +29,16 @@ const Checkbox = (props: CheckboxProps) => {
 		setState(prev => !prev);
 	};
 
-	const baseClassBox = useBuilder("h-5 w-5 items-center justify-center rounded border-2 border-neutral-400", classBox);
-	const baseClassTitle = useBuilder("cursor-pointer select-none", classTitle);
+	const presetClassBox = useBuilder("h-5 w-5 items-center justify-center rounded border-2 border-neutral-400", classBox);
+	const presetClassTitle = useBuilder("cursor-pointer select-none", classTitle);
 
 	return (
 		<TagView className="items-center space-x-2">
-			<PressView className={baseClassBox} onPress={handlePress}>
+			<PressView className={presetClassBox} onPress={handlePress}>
 				{state && <Check color={checkColor || colors.neutral[400]} strokeWidth={4} height={18} width={18} />}
 			</PressView>
 			{title && (
-				<Label color={colorTitle} className={baseClassTitle} height="leading-tight" onPress={handlePress}>
+				<Label color={colorTitle} className={presetClassTitle} height="leading-tight" onPress={handlePress}>
 					{title}
 				</Label>
 			)}

@@ -14,10 +14,10 @@ const Layout = () => {
 	});
 
 	useEffect(() => {
-		if (loaded || error) SplashScreen.hideAsync();
-	}, [loaded, error]);
+		if (loaded) SplashScreen.hideAsync();
+	}, [loaded]);
 
-	if (!loaded && !error) return <Label>Font 404</Label>;
+	if (error) return <Label>Font 404</Label>;
 
 	return (
 		<SafeProvider>

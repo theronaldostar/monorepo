@@ -3,6 +3,7 @@ import { address } from "ip";
 import "dotenv/config";
 
 import methods from "@app/api/routes";
+
 import DELETE from "@app/api/routes/DELETE";
 import GET from "@app/api/routes/GET";
 import PATCH from "@app/api/routes/PATCH";

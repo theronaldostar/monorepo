@@ -5,9 +5,9 @@
 	"license": "MIT",
 	"private": true,
 	"files": [
-		"components/",
-		"layout/",
-		"screens/",
+		"components/**/*.{ts,tsx}",
+		"layout/**/*.{ts,tsx}",
+		"screens/**/*.{ts,tsx}",
 		"index.ts",
 		"postcss.config.js",
 		"tailwind.config.js",
@@ -16,7 +16,8 @@
 	],
 	"dependencies": {
 		"@library/tailwindcss": "0.0.0",
-		"moti": "^0.27.2"
+		"moti": "^0.27.2",
+		"react": "18.2.0"
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",

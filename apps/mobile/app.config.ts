@@ -4,7 +4,7 @@ const colors = { primary: "#fff", secondary: "#252525" };
 
 const AppConfig = ({ config }: ConfigContext): ExpoConfig => ({
 	...config,
-	name: "Monorepo App",
+	name: "Monorepo",
 	description: "",
 	version: "1.0.0",
 	jsEngine: "hermes",
@@ -15,7 +15,7 @@ const AppConfig = ({ config }: ConfigContext): ExpoConfig => ({
 	orientation: "portrait",
 	icon: "./archive/icon.png",
 	assetBundlePatterns: ["**/*"],
-	scheme: "monorepo-app",
+	scheme: "monorepo",
 	splash: {
 		backgroundColor: colors.secondary,
 		image: "./archive/splash.png",

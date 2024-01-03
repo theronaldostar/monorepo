@@ -6,9 +6,9 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"class/",
-		"date/",
-		"location/",
+		"class/*.ts",
+		"date/*.ts",
+		"location/*.ts",
 		"index.ts"
 	],
 	"dependencies": {

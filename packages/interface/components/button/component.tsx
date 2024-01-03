@@ -31,7 +31,7 @@ const Button = (props: ButtonProps) => {
 
 	const { svg: Svg, position = "left" } = icon || { svg: () => null };
 
-	const baseClass = useBuilder(
+	const presetClass = useBuilder(
 		"!items-center !justify-center flex-row",
 		className,
 		component,
@@ -42,7 +42,7 @@ const Button = (props: ButtonProps) => {
 
 	const titleClass = useBuilder("select-none leading-none", uppercase ? "uppercase" : "normal-case", text);
 
-	const Component = styled(Pressable, baseClass);
+	const Component = styled(Pressable, presetClass);
 
 	return (
 		<Component {...rest}>

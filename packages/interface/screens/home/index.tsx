@@ -1,16 +1,14 @@
 import { MotiLink } from "solito/moti";
+import { useRouter } from "solito/router";
 
 import { Button, Label, Link, TextLink } from "interface/components";
-
 import { SafeView, Scroll, TagView } from "interface/layout";
-
-import { useRouter } from "solito/router";
 
 const HomeScreen = () => {
 	const { push } = useRouter();
 
 	return (
-		<SafeView className="justify-center space-y-8" direction="flex-col">
+		<SafeView className="justify-center" direction="flex-col">
 			<TagView className="items-center justify-center space-y-4" direction="flex-col">
 				<Label size="2xl" weight="bold">
 					Welcome to a perfect Monorepo.
@@ -39,7 +37,7 @@ const HomeScreen = () => {
 					</Label>
 				</TagView>
 
-				<Scroll className="" horizontal>
+				<Scroll horizontal>
 					<TagView className="items-center space-x-8">
 						<Button title="Components!" size="md" rounded onPress={() => push("/components")} />
 						<TextLink href="/user/ronaldo">Regular Link?</TextLink>

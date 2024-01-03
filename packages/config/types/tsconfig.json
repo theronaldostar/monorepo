@@ -1,5 +1,5 @@
 {
 	"compilerOptions": {},
 	"extends": "@library/tsconfig/react-library.json",
-	"include": ["index.d.ts"]
+	"include": ["."]
 }

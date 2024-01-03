@@ -8,9 +8,9 @@ interface PressViewProps extends PressableProps {}
 const PressView = (props: PressViewProps) => {
 	const { className, ...rest } = props;
 
-	const baseClass = useBuilder("flex-row", className);
+	const presetClass = useBuilder("flex-row", className);
 
-	return <StyledComponent component={Pressable} tw={baseClass} {...rest} />;
+	return <StyledComponent component={Pressable} tw={presetClass} {...rest} />;
 };
 
 export { PressView, type PressViewProps };
