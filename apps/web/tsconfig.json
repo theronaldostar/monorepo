@@ -1,5 +1,5 @@
 {
 	"compilerOptions": {},
-	"extends": "@lib/tsconfig/vite.json",
-	"include": ["**/*.js", "**/*.ts", "**/*.tsx"],
+	"extends": "@lib/tsconfig/react-library.json",
+	"include": ["**/*.js", "**/*.ts", "**/*.tsx"]
 }
