@@ -2892,7 +2892,7 @@ __metadata:
   resolution: "@lib/tailwindcss@workspace:packages/lib/tailwindcss"
   dependencies:
     autoprefixer: "npm:^10.4.19"
-    nativewind: "npm:^4.0.36"
+    nativewind: "npm:4.0.23"
     postcss: "npm:^8.4.38"
     postcss-import: "npm:^16.1.0"
     postcss-nesting: "npm:^12.1.0"
@@ -10654,14 +10654,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nativewind@npm:^4.0.36":
-  version: 4.0.36
-  resolution: "nativewind@npm:4.0.36"
+"nativewind@npm:4.0.23":
+  version: 4.0.23
+  resolution: "nativewind@npm:4.0.23"
   dependencies:
-    react-native-css-interop: "npm:0.0.36"
+    react-native-css-interop: "npm:0.0.22"
   peerDependencies:
     tailwindcss: ">3.3.0"
-  checksum: 10/e765b07acb348e6ddfaf52650d92a4b0623c38fb012d1e1dc73d7c82d8d07ead4518d584370af8d44e4d6b47b953e8dfeb2712921dd99532596f3e1d680a2231
+  checksum: 10/02ca0e4f07a7878eb283979a2505f2d069d0918b4307d98ee668678bead8564563865aa91ceabe8c3dfe625fdfb54fb789cd9155d2aeff8a165becb98e639359
   languageName: node
   linkType: hard
 
@@ -11899,9 +11899,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-css-interop@npm:0.0.36":
-  version: 0.0.36
-  resolution: "react-native-css-interop@npm:0.0.36"
+"react-native-css-interop@npm:0.0.22":
+  version: 0.0.22
+  resolution: "react-native-css-interop@npm:0.0.22"
   dependencies:
     "@babel/helper-module-imports": "npm:^7.22.15"
     "@babel/traverse": "npm:^7.23.0"
@@ -11911,14 +11911,14 @@ __metadata:
   peerDependencies:
     react: ">=18"
     react-native: "*"
-    react-native-reanimated: ">=3.6.2"
+    react-native-reanimated: ">=3.3.0"
     tailwindcss: ~3
   peerDependenciesMeta:
     react-native-safe-area-context:
       optional: true
     react-native-svg:
       optional: true
-  checksum: 10/5d99c7bfe0ef7b75032b60b162c3991fa162d200d3c5f64935e6a31c888173532bf06e6a551286b18ad20f419926af8fb64aa6884feccd76f38aacae517acbf5
+  checksum: 10/ac4749412e290ffe296504357d4b8758d3972dace3ee1111ea8ea78de4d45709b3c49d8964b62061da4959c6862ad99b277a0bad5b2007e6b24379f6158bf397
   languageName: node
   linkType: hard
 
