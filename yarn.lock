@@ -71,13 +71,11 @@ __metadata:
     expo-router: "npm:~3.4.8"
     expo-splash-screen: "npm:~0.26.4"
     expo-status-bar: "npm:~1.11.1"
-    react: "npm:*"
     react-native: "npm:0.73.4"
     react-native-gesture-handler: "npm:~2.14.0"
     react-native-reanimated: "npm:~3.6.2"
     react-native-safe-area-context: "npm:4.8.2"
     react-native-screens: "npm:~3.29.0"
-    react-native-svg: "npm:^14.1.0"
     ui: "npm:0.0.0"
   languageName: unknown
   linkType: soft
@@ -94,9 +92,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     "@vitejs/plugin-basic-ssl": "npm:^1.1.0"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
-    react: "npm:*"
     react-dom: "npm:^18.2.0"
-    react-native-svg-web: "npm:^1.0.9"
     react-native-web: "npm:~0.19.10"
     react-router-dom: "npm:^6.22.3"
     ui: "npm:0.0.0"
@@ -3020,9 +3016,8 @@ __metadata:
   dependencies:
     "@config/types": "npm:0.0.0"
     "@lib/tsconfig": "npm:0.0.0"
-    react: "npm:*"
-    react-native: "npm:*"
     react-native-svg: "npm:^15.1.0"
+    react-native-svg-web: "npm:^1.0.9"
   languageName: unknown
   linkType: soft
 
@@ -10649,7 +10644,6 @@ __metadata:
     "@lib/tailwindcss": "npm:0.0.0"
     "@lib/tsconfig": "npm:0.0.0"
     tailwind-variants: "npm:^0.2.1"
-    tailwindcss: "npm:*"
     turbo: "npm:^1.13.0"
   languageName: unknown
   linkType: soft
@@ -12098,19 +12092,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^14.1.0":
-  version: 14.1.0
-  resolution: "react-native-svg@npm:14.1.0"
-  dependencies:
-    css-select: "npm:^5.1.0"
-    css-tree: "npm:^1.1.3"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 10/2322cba59542ae552c25d222b6311024ea17daf2431c5ed9029d3682e61d2f8bc5428f496b237e81a6d1c6bdf29abeab0ed005cfbb48420f34e1cdffdc40823b
-  languageName: node
-  linkType: hard
-
 "react-native-svg@npm:^15.1.0":
   version: 15.1.0
   resolution: "react-native-svg@npm:15.1.0"
@@ -12236,7 +12217,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:*, react@npm:^18.2.0":
+"react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -13587,7 +13568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:*, tailwindcss@npm:^3.4.1":
+"tailwindcss@npm:^3.4.1":
   version: 3.4.1
   resolution: "tailwindcss@npm:3.4.1"
   dependencies:

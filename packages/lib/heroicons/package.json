@@ -11,9 +11,8 @@
 		"tsconfig.json"
 	],
 	"dependencies": {
-		"react": "*",
-		"react-native": "*",
-		"react-native-svg": "^15.1.0"
+		"react-native-svg": "^15.1.0",
+		"react-native-svg-web": "^1.0.9"
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",

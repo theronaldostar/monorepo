@@ -27,7 +27,6 @@
 		"@config/types": "0.0.0",
 		"@lib/eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0",
-		"tailwindcss": "*",
 		"turbo": "^1.13.0"
 	},
 	"workspaces": [

@@ -10,9 +10,5 @@
 		"useParams/*.ts",
 		"**/*.ts",
 		"index.ts"
-	],
-	"dependencies": {
-		"expo-router": "*",
-		"react-router-dom": "*"
-	}
+	]
 }
