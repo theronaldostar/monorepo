@@ -1,0 +1,15 @@
+{
+	"name": "@config/hooks",
+	"description": "",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"class/*.ts",
+		"date/*.ts",
+		"routes/*.ts",
+		"location/*.ts",
+		"index.ts"
+	]
+}

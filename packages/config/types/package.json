@@ -1,0 +1,20 @@
+{
+	"name": "@config/types",
+	"description": "",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": "index.d.ts",
+	"types": "index.d.ts",
+	"files": [
+		"index.d.ts",
+		"tsconfig.json"
+	],
+	"dependencies": {
+		"@lib/tsconfig": "0.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.67",
+		"@types/react-native": "^0.73.0"
+	}
+}

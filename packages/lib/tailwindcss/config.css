@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* clamp(min, percent, max) */
+
+:not(input, textarea) {
+	user-select: none;
+}
+
+svg:not([fill]) {
+	fill: currentColor;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+	height: 15px;
+	/* display: none; */
+}
+
+::-webkit-scrollbar-corner {
+	border: none;
+	background: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-color: transparent;
+	cursor: grab;
+	&:active {
+		cursor: grabbing;
+	}
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+	border-width: 4px;
+	border-radius: 10px;
+	border-style: solid;
+	background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-width: initial;
+	border-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}

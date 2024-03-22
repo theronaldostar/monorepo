@@ -1,0 +1,22 @@
+{
+	"name": "@lib/heroicons",
+	"description": "",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"icons/*.{ts,tsx}",
+		"index.ts",
+		"tsconfig.json"
+	],
+	"dependencies": {
+		"react": "*",
+		"react-native": "*",
+		"react-native-svg": "^15.1.0"
+	},
+	"devDependencies": {
+		"@config/types": "0.0.0",
+		"@lib/tsconfig": "0.0.0"
+	}
+}

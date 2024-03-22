@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+	},
+	"extends": "@lib/tsconfig/react-library.json",
+	"include": ["**/*.js", "**/*.ts", "**/*.tsx"],
+}

@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"lib": ["DOM", "ES5", "ES6", "ES2022"],
+		"sourceMap": false,
+		"module": "NodeNext",
+		"target": "ES2022",
+		"moduleResolution": "NodeNext"
+	},
+	"include": ["controllers/**/*", "routes/**/*", "index.ts"]
+}

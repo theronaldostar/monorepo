@@ -1,0 +1,33 @@
+{
+	"name": "@lib/eslint",
+	"description": "Custom library to manage `ESLint` in the application",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": ".eslintrc.js",
+	"scripts": {
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"lint": "eslint ."
+	},
+	"files": [
+		".eslintignore",
+		".eslintrc.js"
+	],
+	"dependencies": {
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-turbo": "^1.13.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-react": "^7.34.1",
+		"prettier": "^3.2.5"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^7.3.1",
+		"@typescript-eslint/parser": "^7.3.1",
+		"eslint-config-next": "^14.1.4",
+		"eslint-plugin-eslint-config": "^2.0.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.6",
+		"prettier-plugin-tailwindcss": "^0.5.12"
+	}
+}

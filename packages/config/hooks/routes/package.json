@@ -1,0 +1,17 @@
+{
+	"name": "@config/routes",
+	"description": "Hook to perform route navigation across all available platforms.",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"useNavigate/*.ts",
+		"useParams/*.ts",
+		"index.ts"
+	],
+	"dependencies": {
+		"expo-router": "*",
+		"react-router-dom": "*"
+	}
+}

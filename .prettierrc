@@ -1,0 +1,15 @@
+{
+	"arrowParens": "avoid",
+	"bracketSameLine": true,
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-tailwindcss"],
+	"printWidth": 160,
+	"quoteProps": "consistent",
+	"semi": true,
+	"singleQuote": false,
+	"tabWidth": 4,
+	"tailwindFunctions": ["tv"],
+	"trailingComma": "all",
+	"useTabs": true
+}

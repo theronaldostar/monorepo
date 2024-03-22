@@ -1,0 +1,40 @@
+{
+	"name": "monorepo",
+	"description": "A monorepo project to enable the use of the platform across all available platforms!",
+	"version": "1.0.0",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"clean": "turbo run clean"
+	},
+	"author": {
+		"name": "Ronaldo S.",
+		"email": "ronaldo.rs44@gmail.com",
+		"url": "https://github.com/theronaldostar"
+	},
+	"bugs": {
+		"email": "ronaldo.rs44@gmail.com",
+		"url": "https://github.com/theronaldostar/monorepo/issues"
+	},
+	"dependencies": {
+		"@lib/tailwindcss": "0.0.0",
+		"tailwind-variants": "^0.2.1"
+	},
+	"devDependencies": {
+		"@config/types": "0.0.0",
+		"@lib/eslint": "0.0.0",
+		"@lib/tsconfig": "0.0.0",
+		"turbo": "^1.13.0"
+	},
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"packages/assets/*",
+		"packages/config/*",
+		"packages/lib/*"
+	],
+	"packageManager": "yarn@4.1.1"
+}
