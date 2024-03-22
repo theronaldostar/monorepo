@@ -4,10 +4,10 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"private": true,
-	"main": "tailwind.config.ts",
+	"main": "tailwind.config.js",
 	"files": [
 		"config.css",
-		"tailwind.config.ts",
+		"tailwind.config.js",
 		"theme.ts"
 	],
 	"dependencies": {

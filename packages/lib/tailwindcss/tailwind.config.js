@@ -1,11 +1,11 @@
-import type { Config } from "tailwindcss";
-
 import extend from "@lib/tailwindcss/theme";
+import preset from "nativewind/preset";
 
+/** @type {import("tailwindcss").Config} */
 export default {
 	content: ["**/*.{js,ts,tsx}"],
 	darkMode: "media",
 	plugins: [],
-	presets: [require("nativewind/preset")],
+	presets: [preset],
 	theme: { extend },
-} satisfies Config;
+};

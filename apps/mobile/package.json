@@ -6,7 +6,7 @@
 	"private": true,
 	"main": "expo-router/entry",
 	"scripts": {
-		"dev": "expo start --tunnel",
+		"dev": "expo start",
 		"android": "expo run:android",
 		"ios": "expo run:ios"
 	},
@@ -29,7 +29,6 @@
 	"devDependencies": {
 		"@babel/core": "^7.24.3",
 		"@config/types": "0.0.0",
-		"@expo/ngrok": "^4.1.3",
 		"@lib/eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0"
 	},
