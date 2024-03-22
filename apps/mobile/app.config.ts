@@ -37,7 +37,7 @@ const AppConfig = ({ config }: ConfigContext): ExpoConfig => ({
 	},
 	extra: {
 		// eas: {
-		// 	projectId: "e0eec4cf-d206-4196-a8a7-e405e2d91ee6",
+		// 	projectId: "",
 		// },
 	},
 	updates: {

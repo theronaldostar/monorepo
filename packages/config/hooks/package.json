@@ -8,8 +8,7 @@
 	"files": [
 		"class/*.ts",
 		"date/*.ts",
-		"routes/*.ts",
-		"location/*.ts",
+		"routes/**/*.ts",
 		"index.ts"
 	]
 }
