@@ -22,7 +22,7 @@ const text = tv({
 		},
 		leading: {
 			none: "!leading-none",
-			tight: "leading-tight",
+			tight: "!leading-tight",
 			snug: "!leading-snug",
 			normal: "!leading-normal",
 			relaxed: "!leading-relaxed",
