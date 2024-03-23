@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 
 import { useNavigate } from "@config/hooks";
 import { Envelope } from "@lib/heroicons";
-import { Button, CheckBox, Label, Input } from "ui/components";
+import { Button, CheckBox, IconButton, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
 import Table, { Body, Header, Group, Data } from "ui/components/table";
 import { SafeView, Scroll, TagView } from "ui/layout";
@@ -92,6 +92,13 @@ const Example = () => {
 							/>
 							<Button onPress={handleButton} outline title={`Count: ${state.button}`} />
 							<Button onPress={handleButton} outline size="small" title={`Count: ${state.button}`} />
+						</TagView>
+					</GroupExample>
+
+					<GroupExample title="Icon Button">
+						<TagView className="items-center justify-evenly gap-x-2" direction="row">
+							<IconButton icon={Envelope} onPress={() => handleChange("Icon!")} />
+							<IconButton icon={Envelope} onPress={() => handleChange("Icon Button!")} title="Icon Button!" />
 						</TagView>
 					</GroupExample>
 
