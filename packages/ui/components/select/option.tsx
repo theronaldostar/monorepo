@@ -17,9 +17,7 @@ const Option = forwardRef<Text, OptionProps>((props, ref) => {
 
 	return (
 		<PressView className={classNames} ref={ref} {...rest}>
-			<Label leading="tight" size="lg">
-				{children}
-			</Label>
+			<Label size="lg">{children}</Label>
 		</PressView>
 	);
 });

@@ -60,7 +60,7 @@ const Input = (props: InputProps) => {
 	return (
 		<TagView className="gap-y-1">
 			{title && (
-				<Label className={titleClass} leading="tight" onPress={handleFocus}>
+				<Label className={titleClass} onPress={handleFocus}>
 					{title}
 				</Label>
 			)}
