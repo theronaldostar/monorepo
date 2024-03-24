@@ -1,6 +1,6 @@
 {
 	"name": "@hooks/date",
-	"description": "Hook to perform route navigation across all available platforms.",
+	"description": "",
 	"version": "0.0.0",
 	"license": "MIT",
 	"private": true,

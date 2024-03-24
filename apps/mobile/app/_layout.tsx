@@ -27,7 +27,7 @@ const Layout = () => {
 	if (!loaded || error) return null;
 
 	return (
-		<TagView onLayout={handleLayout} style={{ width, height }}>
+		<TagView className="bg-slate-100 dark:bg-slate-900" onLayout={handleLayout} style={{ width, height }}>
 			<StatusBar style="auto" />
 			<Slot />
 		</TagView>

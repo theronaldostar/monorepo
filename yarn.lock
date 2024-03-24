@@ -2649,6 +2649,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hooks/class@workspace:packages/config/hooks/class":
+  version: 0.0.0-use.local
+  resolution: "@hooks/class@workspace:packages/config/hooks/class"
+  languageName: unknown
+  linkType: soft
+
+"@hooks/date@workspace:packages/config/hooks/date":
+  version: 0.0.0-use.local
+  resolution: "@hooks/date@workspace:packages/config/hooks/date"
+  languageName: unknown
+  linkType: soft
+
+"@hooks/routes@workspace:packages/config/hooks/routes":
+  version: 0.0.0-use.local
+  resolution: "@hooks/routes@workspace:packages/config/hooks/routes"
+  languageName: unknown
+  linkType: soft
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"

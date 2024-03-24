@@ -1,2 +1,2 @@
-export * from "@config/hooks/class/useClass";
-export * from "@config/hooks/class/useMergeClass";
+export * from "@hooks/class/useClass";
+export * from "@hooks/class/useMergeClass";

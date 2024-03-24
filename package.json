@@ -34,6 +34,7 @@
 		"packages/*",
 		"packages/assets/*",
 		"packages/config/*",
+		"packages/config/hooks/*",
 		"packages/lib/*"
 	],
 	"packageManager": "yarn@4.1.1"
