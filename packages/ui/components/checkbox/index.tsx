@@ -2,7 +2,7 @@ import { forwardRef, useState } from "react";
 import { View } from "react-native";
 
 import { Circle, Check } from "@lib/heroicons";
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
 
 import { Label } from "ui/components/label";
 import { PressView, TagView, type TagViewProps } from "ui/layout/view";
@@ -27,7 +27,7 @@ const CheckBox = forwardRef<View, CheckBoxProps>((props, ref): JSX.Element => {
 
 	const [state, setState] = useState(checked);
 
-	const classNames = useClass("items-center gap-x-1.5", className);
+	const classNames = useClass("items-center gap-1.5", className);
 	const checkClass = check({ className: checkClassName });
 	const selectionClass = selection({ className: boxClassName, checked: state, rounded, size });
 	const textClass = text({ size, className: titleClassName });

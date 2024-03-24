@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { ScrollView, ScrollViewProps } from "react-native";
 
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
 
 interface ScrollProps extends ScrollViewProps {}
 

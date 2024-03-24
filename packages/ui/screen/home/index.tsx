@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useNavigate } from "@config/hooks";
+import { useNavigate } from "@hooks/routes";
 
 import { Button } from "ui/components/button";
 import Label, { Link } from "ui/components/label";
@@ -16,12 +16,12 @@ const HomeScreen = () => {
 
 	return (
 		<SafeView className="items-center justify-center">
-			<TagView className="w-full max-w-2xl gap-y-6 px-4">
+			<TagView className="w-full max-w-2xl gap-6 px-4">
 				<Label className="select-none" align="center" onPress={handleShow} size="4xl" truncate={state} weight="bold">
 					Welcome to a perfect Monorepo.
 				</Label>
 
-				<TagView className="gap-y-2">
+				<TagView className="gap-2">
 					<Label align="center" onPress={handleShow} size="lg" truncate={state}>
 						Here is a basic starter to show you how you can navigate from one screen to another. This screen uses the same code on Vite and React
 						Native.
@@ -44,7 +44,7 @@ const HomeScreen = () => {
 					</Label>
 				</TagView>
 
-				<TagView className="items-center justify-center gap-x-4" direction="row">
+				<TagView className="items-center justify-center gap-4" direction="row">
 					<Button title="All Components" onPress={() => handlePress("example")} />
 					<Link href="/user/ronaldo" onPress={() => handlePress("/user/ronaldo")}>
 						Profile Link!

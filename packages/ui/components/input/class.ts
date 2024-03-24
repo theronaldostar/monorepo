@@ -1,10 +1,10 @@
 import { tv } from "tailwind-variants";
 
 const group = tv({
-	base: "web:overflow-hidden h-10 cursor-text items-center gap-x-2 rounded-md border bg-slate-200 px-3 py-2 dark:bg-slate-700",
+	base: "web:overflow-hidden web:cursor-text h-10 items-center gap-2 rounded-md border bg-slate-200 px-3 py-2 dark:bg-slate-700",
 	variants: {
 		disabled: {
-			true: "cursor-auto opacity-40",
+			true: "web:cursor-auto opacity-40",
 		},
 		focus: {
 			false: "border-slate-200 dark:border-slate-700",
@@ -40,10 +40,10 @@ const svg = tv({
 });
 
 const texTitle = tv({
-	base: "cursor-pointer select-none",
+	base: "web:cursor-pointer select-none",
 	variants: {
 		disabled: {
-			true: "cursor-default opacity-40",
+			true: "web:cursor-default opacity-40",
 		},
 	},
 	defaultVariants: {},

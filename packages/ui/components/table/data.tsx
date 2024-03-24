@@ -1,4 +1,5 @@
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
+
 import { Label, type LabelProps } from "ui/components/label";
 import type { TableColors } from "ui/components/table/component";
 import { defColor } from "ui/components/table/default";

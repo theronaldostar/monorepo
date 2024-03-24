@@ -4,6 +4,12 @@
 
 /* clamp(min, percent, max) */
 
+@layer components {
+	.scroll-none::-webkit-scrollbar {
+		display: none;
+	}
+}
+
 :not(input, textarea) {
 	user-select: none;
 }
@@ -15,7 +21,6 @@ svg:not([fill]) {
 ::-webkit-scrollbar {
 	width: 15px;
 	height: 15px;
-	/* display: none; */
 }
 
 ::-webkit-scrollbar-corner {
@@ -53,5 +58,11 @@ svg:not([fill]) {
 
 	::-webkit-scrollbar-track {
 		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+	::-webkit-scrollbar {
+		display: none;
 	}
 }

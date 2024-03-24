@@ -5,6 +5,7 @@ import { Slot, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
 import { InterMedium, InterRegular, InterSemibold } from "@asset/font/inter";
+
 import { TagView } from "ui/layout";
 
 import "@lib/tailwindcss/config.css";

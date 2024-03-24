@@ -1,6 +1,7 @@
-import { useClass } from "@config/hooks";
 import { forwardRef } from "react";
 import { Linking, Platform, Text, type GestureResponderEvent } from "react-native";
+
+import { useClass } from "@hooks/class";
 
 import { Label, type LabelProps } from "ui/components/label/component";
 

@@ -1,8 +1,8 @@
 import { forwardRef, type ReactNode } from "react";
 import { View, type PressableProps } from "react-native";
 
-import { useClass } from "@config/hooks";
 import { IconProps } from "@lib/heroicons";
+import { useClass } from "@hooks/class";
 
 import { container, svg, text } from "ui/components/button/class";
 import { Label } from "ui/components/label";

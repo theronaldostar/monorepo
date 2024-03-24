@@ -1,7 +1,7 @@
 import { Children, cloneElement, forwardRef, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { useClass as cls } from "@config/hooks";
+import { useClass as clsx } from "@hooks/class";
 
 import { Label } from "ui/components/label";
 import { TagView, type TagViewProps } from "ui/layout";
@@ -22,12 +22,12 @@ const OptGroup = forwardRef<View, OptGroupProps>((props, ref) => {
 			<Label size="lg" weight="semibold" className="select-none">
 				{title}
 			</Label>
-			<TagView className="gap-y-1">
+			<TagView className="gap-1">
 				{Children.map(children as ReactElement, child => {
 					const { className, ...rest } = child.props;
-					const clsName = cls("pl-6", className);
+					const clsxName = clsx("pl-6", className);
 
-					return cloneElement(child, { className: clsName, ...rest });
+					return cloneElement(child, { className: clsxName, ...rest });
 				})}
 			</TagView>
 		</TagView>

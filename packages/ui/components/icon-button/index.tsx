@@ -1,10 +1,11 @@
 import { forwardRef } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@config/hooks";
 import type { IconProps } from "@lib/heroicons";
+import { useClass } from "@hooks/class";
+
 import Label from "ui/components/label";
-import { PressView, type PressViewProps } from "ui/layout";
+import { PressView, type PressViewProps } from "ui/layout/view";
 
 interface IconButtonProps extends PressViewProps {
 	icon: IconProps;
@@ -26,4 +27,5 @@ const IconButton = forwardRef<View, IconButtonProps>((props, ref) => {
 	);
 });
 
+export default IconButton;
 export { IconButton, type IconButtonProps };

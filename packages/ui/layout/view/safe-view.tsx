@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
 
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
 
 import { element } from "ui/layout/view/class";
 import type { TagViewProps } from "ui/layout/view/tag-view";

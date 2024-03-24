@@ -58,7 +58,7 @@ const Input = (props: InputProps) => {
 	const handleVisible = () => setState(prev => ({ ...prev, visible: !prev.visible }));
 
 	return (
-		<TagView className="gap-y-1">
+		<TagView className="gap-1">
 			{title && (
 				<Label className={titleClass} onPress={handleFocus}>
 					{title}
@@ -83,7 +83,7 @@ const Input = (props: InputProps) => {
 					{...rest}
 				/>
 
-				<TagView className="gap-x-3" direction="row">
+				<TagView className="gap-3" direction="row">
 					<SeePassword disabled={disabled} onChange={handleVisible} show={visible} svgClassName={svgClass} visible={state.visible} />
 					{right?.({ className: svgClass })}
 				</TagView>

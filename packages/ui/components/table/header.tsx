@@ -1,7 +1,8 @@
 import { Children, cloneElement, forwardRef, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
+
 import type { TableColors } from "ui/components/table/component";
 import { defColor } from "ui/components/table/default";
 import { TagView, type TagViewProps } from "ui/layout/view";
@@ -15,7 +16,7 @@ const Header = forwardRef<View, HeaderProps>((props, ref) => {
 	const { bgClass, className, children: $, colors, dataClass, ...rest } = props;
 	const { primary, text } = colors! || {};
 
-	const classNames = useClass("px-1 py-2 sticky rounded-t-md", bgClass ?? primary ?? defColor.primary, className);
+	const classNames = useClass("px-1 py-2 web:sticky rounded-t-md", bgClass ?? primary ?? defColor.primary, className);
 
 	const children = Children.map($ as ReactElement, child => {
 		const { className, ...rest } = child.props;

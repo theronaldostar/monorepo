@@ -1,7 +1,8 @@
 import { Children, cloneElement, forwardRef, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
+
 import type { TableColors } from "ui/components/table/component";
 import { TagView, type TagViewProps } from "ui/layout/view";
 

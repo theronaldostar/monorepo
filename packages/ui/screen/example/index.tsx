@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from "react";
 
-import { useNavigate } from "@config/hooks";
 import { Envelope } from "@lib/heroicons";
+import { useNavigate } from "@hooks/routes";
+
 import { Button, CheckBox, IconButton, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
 import Table, { Body, Header, Group, Data } from "ui/components/table";
@@ -13,11 +14,11 @@ type GroupExampleProps = {
 };
 
 const GroupExample = ({ children, title }: GroupExampleProps) => (
-	<TagView className="gap-y-4">
+	<TagView className="gap-4">
 		<TagView className="bg-slate-200 px-2 py-1 dark:bg-slate-800">
 			<Label>{title}:</Label>
 		</TagView>
-		<TagView className="gap-y-2">{children}</TagView>
+		<TagView className="gap-2">{children}</TagView>
 	</TagView>
 );
 
@@ -75,13 +76,13 @@ const Example = () => {
 					</GroupExample>
 
 					<GroupExample title={`Buttons: Count ~ ${state.button}`}>
-						<TagView className="items-center justify-evenly gap-x-2" direction="row">
+						<TagView className="items-center justify-evenly gap-2" direction="row">
 							<Button icon={{ position: "left", svg: Envelope }} onPress={handleButton} rounded size="large" title={`Count: ${state.button}`} />
 							<Button disabled onPress={handleButton} rounded title={`Count: ${state.button}`} />
 							<Button onPress={handleButton} rounded size="small" title={`Count: ${state.button}`} />
 						</TagView>
 
-						<TagView className="items-center justify-evenly gap-x-2" direction="row">
+						<TagView className="items-center justify-evenly gap-2" direction="row">
 							<Button
 								disabled
 								icon={{ position: "left", svg: Envelope }}
@@ -96,21 +97,21 @@ const Example = () => {
 					</GroupExample>
 
 					<GroupExample title="Icon Button">
-						<TagView className="items-center justify-evenly gap-x-2" direction="row">
+						<TagView className="items-center justify-evenly gap-2" direction="row">
 							<IconButton icon={Envelope} onPress={() => handleChange("Icon!")} />
 							<IconButton icon={Envelope} onPress={() => handleChange("Icon Button!")} title="Icon Button!" />
 						</TagView>
 					</GroupExample>
 
 					<GroupExample title="CheckBox">
-						<TagView className="gap-y-2">
-							<TagView className="justify-evenly gap-x-2" direction="row">
+						<TagView className="gap-2">
+							<TagView className="justify-evenly gap-2" direction="row">
 								<CheckBox title="Checkbox" size="large" />
 								<CheckBox title="Checkbox" size="medium" />
 								<CheckBox checked title="Checkbox" />
 							</TagView>
 
-							<TagView className="justify-evenly gap-x-2" direction="row">
+							<TagView className="justify-evenly gap-2" direction="row">
 								<CheckBox rounded title="Checkbox" size="large" />
 								<CheckBox rounded title="Checkbox" size="medium" />
 								<CheckBox checked rounded title="Checkbox" />

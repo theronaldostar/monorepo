@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 import { Text, type TextProps } from "react-native";
 
-import { useClass } from "@config/hooks";
+import { useClass } from "@hooks/class";
+
 import { text } from "ui/components/label/class";
 
 type lineHeight = "none" | "tight" | "snug" | "normal" | "relaxed" | "loose";

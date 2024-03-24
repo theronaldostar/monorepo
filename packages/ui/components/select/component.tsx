@@ -1,8 +1,8 @@
 import { Children, cloneElement, forwardRef, useEffect, useId, useState, type Dispatch, type ReactElement, type SetStateAction } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@config/hooks";
 import { ChevronDown, ChevronUp, type IconProps } from "@lib/heroicons";
+import { useClass } from "@hooks/class";
 
 import Label from "ui/components/label";
 import { element, icon, menu, text } from "ui/components/select/class";
@@ -65,7 +65,7 @@ const Select = forwardRef<View, SelectProps>((props, ref) => {
 		// eslint-disable-next-line
 	}, [children]);
 
-	const classNames = useClass("gap-y-2", className);
+	const classNames = useClass("gap-2", className);
 	const menu_className = menu({ className: "" });
 
 	const getChild = (() => {
@@ -111,7 +111,7 @@ const Select = forwardRef<View, SelectProps>((props, ref) => {
 
 		return (
 			<PressView className={element_className} onPress={() => onPress(prev => ({ ...prev, open: !prev.open }))}>
-				<TagView className="items-center gap-x-2" direction="row">
+				<TagView className="items-center gap-2" direction="row">
 					{svgIcon?.({ className: icon_className, strokeWidth: 2 })}
 					<Label className={text_className} size="lg">
 						{state.selected.string ?? placeholder}
@@ -131,7 +131,7 @@ const Select = forwardRef<View, SelectProps>((props, ref) => {
 		<TagView className={classNames} id={id} ref={ref} {...rest}>
 			<Container onPress={setState} />
 			{state.open && (
-				<Scroll className={menu_className} contentContainerClassName="gap-y-2 p-2">
+				<Scroll className={menu_className} contentContainerClassName="gap-2 p-2">
 					{Children.map(children as ReactElement, child => getChild.element(child))}
 				</Scroll>
 			)}
