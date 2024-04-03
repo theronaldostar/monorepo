@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import {} from "@app/api/routes/DELETE";
+// import $ from "@app/api/routes/DELETE";
 
 const route = Router();
 

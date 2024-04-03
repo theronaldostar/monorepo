@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import user from "@app/api/routes/GET/user";
+// import $ from "@app/api/routes/GET";
 
 const route = Router();
 
-route.get("/user", user);
+route.get("/", () => {});
 
 export default route;

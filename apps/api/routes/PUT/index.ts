@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import {} from "@app/api/routes/PUT";
+// import $ from "@app/api/routes/PUT";
 
 const route = Router();
 

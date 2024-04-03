@@ -1,36 +1,36 @@
 import express from "express";
 import { address } from "ip";
-import "dotenv/config";
+import { env } from "process";
 
 import methods from "@app/api/routes";
-
 import DELETE from "@app/api/routes/DELETE";
 import GET from "@app/api/routes/GET";
 import PATCH from "@app/api/routes/PATCH";
 import POST from "@app/api/routes/POST";
 import PUT from "@app/api/routes/PUT";
 
-const app = express();
+const $ = express();
 
-const port = process.env.SERVER_PORT || 8001;
+const port = env.SERVER_PORT;
 const message = `[server] Started on: http://localhost:${port}/ ou http://${address()}:${port}/`;
 
-app.use((_, res, next) => {
+$.use((_, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Methods", "OPTIONS, DELETE, GET, PATCH, POST, PUT");
+	res.setHeader("Access-Control-Allow-Methods", "OPTIONS, HEAD, DELETE, GET, PATCH, POST, PUT");
+	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 	res.setHeader("Access-Control-Allow-Credentials", "true");
 	next();
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+$.use(express.json());
+$.use(express.urlencoded({ extended: true }));
 
-app.use(methods);
-app.use(DELETE);
-app.use(GET);
-app.use(PATCH);
-app.use(POST);
-app.use(PUT);
+$.use(methods);
+$.use(DELETE);
+$.use(GET);
+$.use(PATCH);
+$.use(POST);
+$.use(PUT);
 
 // eslint-disable-next-line
-app.listen(port, () => console.info(message));
+$.listen(port, () => console.info(message));

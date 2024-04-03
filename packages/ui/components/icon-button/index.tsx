@@ -22,7 +22,7 @@ const IconButton = forwardRef<View, IconButtonProps>((props, ref) => {
 	return (
 		<PressView className={classNames} ref={ref} {...rest}>
 			{icon?.({ className: iconClass, strokeWidth: 2 })}
-			<Label>{title}</Label>
+			{title && <Label>{title}</Label>}
 		</PressView>
 	);
 });

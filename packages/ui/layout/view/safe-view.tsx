@@ -13,7 +13,7 @@ interface SafeViewProps extends TagViewProps {
 const SafeView = forwardRef<SafeAreaView, SafeViewProps>((props, ref) => {
 	const { center, className, direction, height, overflow, webSafe, width, ...rest } = props;
 
-	const baseClass = useClass("flex-1", className, webSafe && "web:py-6");
+	const baseClass = useClass("flex-1 web:overflow-y-auto web:scroll-none", className, webSafe && "web:py-6");
 	const classNames = element({ className: baseClass, center, direction, height, overflow, width });
 
 	return <SafeAreaView className={classNames} ref={ref} style={styles.safe} {...rest} />;

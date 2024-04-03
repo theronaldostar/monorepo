@@ -46,7 +46,7 @@ const Example = () => {
 
 	return (
 		<SafeView className="items-center" webSafe>
-			<Scroll className="max-w-max">
+			<Scroll className="web:max-w-max">
 				<TagView className="h-full gap-4">
 					<Back />
 					<GroupExample title="Table">

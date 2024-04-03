@@ -1,11 +1,11 @@
-import * as mysql from "mysql2";
+import { env } from "process";
+import mysql from "mysql2";
 
-const host = process.env.HOST;
-const database = process.env.DATABASE;
-const user = process.env.USER;
-const password = process.env.PASSWORD;
+const host = env.HOST;
+const database = env.DATABASE;
+const user = env.USER;
+const password = env.PASSWORD;
 
-const useDB = mysql.createConnection({ host, database, user, password });
+const db = mysql.createConnection({ host, database, user, password, multipleStatements: true });
 
-export default useDB;
-export { mysql, host, database, user, password, useDB };
+export { mysql, host, database, user, password, db };
