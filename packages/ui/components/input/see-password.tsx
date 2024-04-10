@@ -10,16 +10,14 @@ type SeePasswordProps = {
 	visible: boolean;
 };
 
-const SeePassword = (props: SeePasswordProps) => {
-	const { disabled, onChange, show, svgClassName, visible, ...rest } = props;
-
+const SeePassword = ({ disabled, onChange, show, svgClassName, visible, ...props }: SeePasswordProps) => {
 	const Icon = visible ? EyeSlash : Eye;
 	const handlePress = () => onChange?.();
 
 	if (!show) return null;
 
 	return (
-		<PressView className="w-5.5 h-5.5" disabled={disabled} onPress={handlePress} {...rest}>
+		<PressView className="w-5.5 h-5.5" disabled={disabled} onPress={handlePress} {...props}>
 			<Icon strokeWidth={2} className={svgClassName} />
 		</PressView>
 	);

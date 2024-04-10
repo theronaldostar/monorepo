@@ -6,12 +6,10 @@ import { defColor } from "ui/components/table/default";
 
 interface DataProps extends LabelProps, TableColors {}
 
-const Data = (props: DataProps) => {
-	const { className, text, ...rest } = props;
-
+const Data = ({ className, text, ...props }: DataProps) => {
 	const classNames = useClass("flex-1", className, text ?? defColor.text);
 
-	return <Label align="center" className={classNames} truncate weight="semibold" {...rest} />;
+	return <Label align="center" className={classNames} truncate weight="semibold" {...props} />;
 };
 
 export { Data, type DataProps };

@@ -37,9 +37,7 @@ interface SelectProps extends TagViewProps {
 	placeholder?: string;
 }
 
-const Select = forwardRef<View, SelectProps>((props, ref) => {
-	const { children, className, icon: svgIcon, onChange, placeholder = "Select an option", ...rest } = props;
-
+const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIcon, onChange, placeholder = "Select an option", ...rest }, ref) => {
 	const id = useId();
 
 	const [state, setState] = useState<StateProps>({

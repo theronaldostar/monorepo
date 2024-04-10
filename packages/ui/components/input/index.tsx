@@ -25,9 +25,8 @@ interface InputProps extends TextInputProps {
 	type?: InputTypeProps;
 }
 
-const Input = (props: InputProps) => {
-	const { className, disabled, icon, onChangeText, type, title, value = "", ...$ } = props;
-	const { iconClassName, textClassName, titleClassName, ...rest } = $;
+const Input = ({ className, disabled, icon, onChangeText, type, title, value = "", ...props }: InputProps) => {
+	const { iconClassName, textClassName, titleClassName, ...rest } = props;
 	const { left, right } = icon! || {};
 
 	const visible = type === "password";
@@ -58,7 +57,7 @@ const Input = (props: InputProps) => {
 	const handleVisible = () => setState(prev => ({ ...prev, visible: !prev.visible }));
 
 	return (
-		<TagView className="gap-1">
+		<TagView className="min-w-64 max-w-full gap-2">
 			{title && (
 				<Label className={titleClass} onPress={handleFocus}>
 					{title}

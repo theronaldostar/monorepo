@@ -13,14 +13,12 @@ interface IconButtonProps extends PressViewProps {
 	title?: string;
 }
 
-const IconButton = forwardRef<View, IconButtonProps>((props, ref) => {
-	const { className, icon, iconClassName, title, ...rest } = props;
-
+const IconButton = forwardRef<View, IconButtonProps>(({ className, icon, iconClassName, title, ...props }, ref) => {
 	const classNames = useClass("active:scale-90 active:opacity-60 gap-2 items-center transition", className);
 	const iconClass = useClass("text-slate-600 dark:text-slate-200", iconClassName);
 
 	return (
-		<PressView className={classNames} ref={ref} {...rest}>
+		<PressView className={classNames} ref={ref} {...props}>
 			{icon?.({ className: iconClass, strokeWidth: 2 })}
 			{title && <Label>{title}</Label>}
 		</PressView>

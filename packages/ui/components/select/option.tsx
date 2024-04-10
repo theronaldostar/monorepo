@@ -10,13 +10,11 @@ interface OptionProps extends LabelProps {
 	value: string;
 }
 
-const Option = forwardRef<Text, OptionProps>((props, ref) => {
-	const { children, className, disabled, ...rest } = props;
-
+const Option = forwardRef<Text, OptionProps>(({ children, className, disabled, ...props }, ref) => {
 	const classNames = option({ className, disabled });
 
 	return (
-		<PressView className={classNames} ref={ref} {...rest}>
+		<PressView className={classNames} ref={ref} {...props}>
 			<Label size="lg">{children}</Label>
 		</PressView>
 	);

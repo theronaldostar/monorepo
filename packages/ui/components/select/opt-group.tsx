@@ -12,13 +12,11 @@ interface OptGroupProps extends TagViewProps {
 	title: string;
 }
 
-const OptGroup = forwardRef<View, OptGroupProps>((props, ref) => {
-	const { children, className, disabled, title, ...rest } = props;
-
+const OptGroup = forwardRef<View, OptGroupProps>(({ children, className, disabled, title, ...props }, ref) => {
 	const classNames = optGroup({ className, disabled });
 
 	return (
-		<TagView className={classNames} ref={ref} {...rest}>
+		<TagView className={classNames} ref={ref} {...props}>
 			<Label size="lg" weight="semibold" className="select-none">
 				{title}
 			</Label>
@@ -26,7 +24,6 @@ const OptGroup = forwardRef<View, OptGroupProps>((props, ref) => {
 				{Children.map(children as ReactElement, child => {
 					const { className, ...rest } = child.props;
 					const clsxName = clsx("pl-6", className);
-
 					return cloneElement(child, { className: clsxName, ...rest });
 				})}
 			</TagView>

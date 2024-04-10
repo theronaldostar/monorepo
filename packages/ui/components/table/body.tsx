@@ -9,12 +9,11 @@ import { defColor } from "ui/components/table/default";
 
 interface BodyProps extends TagViewProps, TableColors {}
 
-const Body = forwardRef<ScrollView, BodyProps>((props, ref) => {
-	const { children: $, colors, ...rest } = props;
+const Body = forwardRef<ScrollView, BodyProps>(({ children: $, colors, ...props }, ref) => {
 	const { primary, secondary, text } = colors! || {};
 
 	return (
-		<Scroll style={{ borderBottomLeftRadius: 6, borderBottomRightRadius: 6 }} contentContainerClassName="rounded-b-md" ref={ref} {...rest}>
+		<Scroll style={{ borderBottomLeftRadius: 6, borderBottomRightRadius: 6 }} contentContainerClassName="rounded-b-md" ref={ref} {...props}>
 			{Children.map($ as ReactElement, (child, key) => {
 				const { className, ...rest } = child.props;
 				const classNames = clsx(key % 2 === 0 ? secondary ?? defColor.secondary : primary ?? defColor.primary, className);

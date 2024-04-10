@@ -16,9 +16,7 @@ interface LinkProps extends LabelProps {
 	target?: "_blank" | "_self" | "_parent" | "_top";
 }
 
-const Link = forwardRef<Text, LinkProps>((props, ref) => {
-	const { children, className, download, href, onPress, rel = "noreferrer", target, ...rest } = props;
-
+const Link = forwardRef<Text, LinkProps>(({ children, className, download, href, onPress, rel = "noreferrer", target, ...props }, ref) => {
 	const classNames = useClass("!text-blue-500 hover:underline active:underline", className);
 
 	const linkProps = Platform.select({
@@ -33,16 +31,12 @@ const Link = forwardRef<Text, LinkProps>((props, ref) => {
 		},
 		web: {
 			href,
-			hrefAttrs: {
-				download,
-				rel,
-				target,
-			},
+			hrefAttrs: { download, rel, target },
 		},
 	});
 
 	return (
-		<Label className={classNames} ref={ref} role="link" {...linkProps} {...rest}>
+		<Label className={classNames} ref={ref} role="link" {...linkProps} {...props}>
 			{children}
 		</Label>
 	);

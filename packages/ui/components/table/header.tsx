@@ -12,8 +12,7 @@ interface HeaderProps extends TagViewProps, TableColors {
 	dataClass?: string;
 }
 
-const Header = forwardRef<View, HeaderProps>((props, ref) => {
-	const { bgClass, className, children: $, colors, dataClass, ...rest } = props;
+const Header = forwardRef<View, HeaderProps>(({ bgClass, className, children: $, colors, dataClass, ...props }, ref) => {
 	const { primary, text } = colors! || {};
 
 	const classNames = useClass("px-1 py-2 web:sticky rounded-t-md", bgClass ?? primary ?? defColor.primary, className);
@@ -24,7 +23,7 @@ const Header = forwardRef<View, HeaderProps>((props, ref) => {
 	});
 
 	return (
-		<TagView className={classNames} direction="row" ref={ref} {...rest}>
+		<TagView className={classNames} direction="row" ref={ref} {...props}>
 			{children}
 		</TagView>
 	);

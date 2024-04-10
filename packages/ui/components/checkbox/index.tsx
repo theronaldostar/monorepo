@@ -6,7 +6,6 @@ import { useClass } from "@hooks/class";
 
 import { Label } from "ui/components/label";
 import { PressView, TagView, type TagViewProps } from "ui/layout/view";
-
 import { check, selection, text } from "ui/components/checkbox/class";
 
 interface CheckBoxProps extends TagViewProps {
@@ -21,9 +20,8 @@ interface CheckBoxProps extends TagViewProps {
 	title?: string;
 }
 
-const CheckBox = forwardRef<View, CheckBoxProps>((props, ref): JSX.Element => {
-	const { checked = false, className, onChange, rounded, size, title, ...$props } = props;
-	const { boxClassName, checkClassName, titleClassName, ...rest } = $props;
+const CheckBox = forwardRef<View, CheckBoxProps>(({ checked = false, className, onChange, rounded, size, title, ...props }, ref): JSX.Element => {
+	const { boxClassName, checkClassName, titleClassName, ...rest } = props;
 
 	const [state, setState] = useState(checked);
 

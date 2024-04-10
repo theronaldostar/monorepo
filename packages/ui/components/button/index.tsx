@@ -21,8 +21,7 @@ interface ButtonProps extends PressableProps {
 	outline?: boolean;
 }
 
-const Button = forwardRef<View, ButtonProps>((props, ref) => {
-	const { className, disabled, icon, outline, rounded, size, titleClassName, title, uppercase, ...rest } = props;
+const Button = forwardRef<View, ButtonProps>(({ className, disabled, icon, outline, rounded, size, titleClassName, title, uppercase, ...props }, ref) => {
 	const { position, svg: svgIcon } = icon! || {};
 
 	const classNames = useClass("", className);
@@ -32,7 +31,7 @@ const Button = forwardRef<View, ButtonProps>((props, ref) => {
 	const labelClass = text({ className: titleClassName, outline, size, uppercase });
 
 	return (
-		<PressView className={containerClass} ref={ref} {...rest}>
+		<PressView className={containerClass} ref={ref} {...props}>
 			{svgIcon?.({ className: iconClass })}
 			<Label className={labelClass}>{title}</Label>
 		</PressView>

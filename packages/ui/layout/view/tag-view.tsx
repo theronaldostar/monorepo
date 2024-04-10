@@ -14,12 +14,10 @@ interface TagViewProps extends ViewProps {
 	width?: WrapProps;
 }
 
-const TagView = forwardRef<View, TagViewProps>((props, ref) => {
-	const { center, className, direction, height, overflow, width, ...rest } = props;
-
+const TagView = forwardRef<View, TagViewProps>(({ center, className, direction, height, overflow, width, ...props }, ref) => {
 	const classNames = element({ className: className, center, direction, height, overflow, width });
 
-	return <View className={classNames} ref={ref} {...rest} />;
+	return <View className={classNames} ref={ref} {...props} />;
 });
 
 export { TagView, type TagViewProps };

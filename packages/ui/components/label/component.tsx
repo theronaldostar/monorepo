@@ -17,12 +17,10 @@ interface LabelProps extends TextProps {
 	weight?: "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold";
 }
 
-const Label = forwardRef<Text, LabelProps>((props, ref) => {
-	const { align, className, color, decoration, leading, size, truncate, weight, ...rest } = props;
-
+const Label = forwardRef<Text, LabelProps>(({ align, className, color, decoration, leading, size, truncate, weight, ...props }, ref) => {
 	const classNames = useClass(className, text({ align, color, decoration, leading, size, weight }));
 
-	return <Text className={classNames} numberOfLines={truncate ? 1 : void 0} {...rest} ref={ref} />;
+	return <Text className={classNames} numberOfLines={truncate ? 1 : void 0} {...props} ref={ref} />;
 });
 
 export default Label;

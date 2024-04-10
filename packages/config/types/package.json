@@ -14,7 +14,7 @@
 		"@lib/tsconfig": "0.0.0"
 	},
 	"devDependencies": {
-		"@types/react": "^18.2.67",
+		"@types/react": "^18.2.75",
 		"@types/react-native": "^0.73.0"
 	}
 }

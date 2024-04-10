@@ -5,12 +5,10 @@ import { element } from "ui/layout/view/class";
 
 interface PressViewProps extends PressableProps {}
 
-const PressView = forwardRef<View, PressViewProps>((props, ref) => {
-	const { className, ...rest } = props;
-
+const PressView = forwardRef<View, PressViewProps>(({ className, ...props }, ref) => {
 	const classNames = element({ className, direction: "row" });
 
-	return <Pressable className={classNames} ref={ref} {...rest} />;
+	return <Pressable className={classNames} ref={ref} {...props} />;
 });
 
 export { PressView, type PressViewProps };
