@@ -60,7 +60,6 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIc
 		});
 
 		return () => {};
-		// eslint-disable-next-line
 	}, [children]);
 
 	const classNames = useClass("gap-2", className);

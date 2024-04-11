@@ -32,5 +32,4 @@ $.use(PATCH);
 $.use(POST);
 $.use(PUT);
 
-// eslint-disable-next-line
 $.listen(port, () => console.info(message));

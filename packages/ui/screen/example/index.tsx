@@ -41,7 +41,6 @@ const Example = () => {
 
 	const handleButton = () => setState(prev => ({ ...prev, button: prev.button + 1 }));
 
-	// eslint-disable-next-line
 	const handleChange = (value: string) => console.log(value);
 
 	return (
