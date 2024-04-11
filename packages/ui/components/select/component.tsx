@@ -1,14 +1,15 @@
-import { Children, cloneElement, forwardRef, useEffect, useId, useState, type Dispatch, type ReactElement, type SetStateAction } from "react";
+import { Children, cloneElement, forwardRef, useEffect, useId, useState, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { ChevronDown, ChevronUp, type IconProps } from "@lib/heroicons";
 import { useClass } from "@hooks/class";
+import type { IconProps } from "@lib/heroicons";
 
-import Label from "ui/components/label";
-import { element, icon, menu, text } from "ui/components/select/class";
+import { menu } from "ui/components/select/class";
 import OptGroup from "ui/components/select/opt-group";
 import Option from "ui/components/select/option";
-import { PressView, Scroll, TagView, type TagViewProps } from "ui/layout";
+import { Scroll, TagView, type TagViewProps } from "ui/layout";
+
+import { Container } from "ui/components/select/container";
 
 type StateProps = {
 	open: boolean;
@@ -16,10 +17,6 @@ type StateProps = {
 		string: null | string;
 		value: null | string;
 	};
-};
-
-type ContainerProps = {
-	onPress: Dispatch<SetStateAction<StateProps>>;
 };
 
 type getChildProps = {
@@ -37,7 +34,7 @@ interface SelectProps extends TagViewProps {
 	placeholder?: string;
 }
 
-const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIcon, onChange, placeholder = "Select an option", ...rest }, ref) => {
+const Select = forwardRef<View, SelectProps>(({ children, className, icon, onChange, placeholder = "Select an option", ...rest }, ref) => {
 	const id = useId();
 
 	const [state, setState] = useState<StateProps>({
@@ -49,21 +46,30 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIc
 	});
 
 	useEffect(() => {
-		Children.map(children as ReactElement, ({ props, type }) => {
-			if (type === Option) getChild.$state(props);
+		const updateFromChildren = () => {
+			Children.map(children as ReactElement, ({ props, type }) => {
+				if (type === Option) getChild.$state(props);
 
-			if (type === OptGroup) {
-				Children.map(props.children as ReactElement, ({ props, type }) => {
-					if (type === Option) getChild.$state(props);
-				});
-			}
-		});
+				if (type === OptGroup) {
+					Children.map(props.children as ReactElement, ({ props, type }) => {
+						if (type === Option) getChild.$state(props);
+					});
+				}
+			});
+		};
 
+		updateFromChildren();
 		return () => {};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [children]);
 
+	const handlePress = (child: string, value: string) => {
+		onChange?.(value);
+		setState(prev => ({ ...prev, open: false, selected: { string: child, value } }));
+	};
+
 	const classNames = useClass("gap-2", className);
-	const menu_className = menu({ className: "" });
+	const menuClassName = menu({ className: "" });
 
 	const getChild = (() => {
 		const isActive = (value: string) => {
@@ -99,36 +105,11 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIc
 		return { element, $state };
 	})();
 
-	const Container = ({ onPress }: ContainerProps) => {
-		const Chevron = state.open ? ChevronUp : ChevronDown;
-
-		const element_className = element({ className: "" });
-		const icon_className = icon({ className: "" });
-		const text_className = text({ className: "select-none" });
-
-		return (
-			<PressView className={element_className} onPress={() => onPress(prev => ({ ...prev, open: !prev.open }))}>
-				<TagView className="items-center gap-2" direction="row">
-					{svgIcon?.({ className: icon_className, strokeWidth: 2 })}
-					<Label className={text_className} size="lg">
-						{state.selected.string ?? placeholder}
-					</Label>
-				</TagView>
-				<Chevron className={icon_className} strokeWidth={3} />
-			</PressView>
-		);
-	};
-
-	const handlePress = (child: string, value: string) => {
-		onChange?.(value);
-		setState(prev => ({ ...prev, open: false, selected: { string: child, value } }));
-	};
-
 	return (
 		<TagView className={classNames} id={id} ref={ref} {...rest}>
-			<Container onPress={setState} />
+			<Container onPress={setState} placeholder={placeholder} state={state} svgIcon={icon} />
 			{state.open && (
-				<Scroll className={menu_className} contentContainerClassName="gap-2 p-2">
+				<Scroll className={menuClassName} contentContainerClassName="gap-2 p-2">
 					{Children.map(children as ReactElement, child => getChild.element(child))}
 				</Scroll>
 			)}
@@ -136,4 +117,4 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon: svgIc
 	);
 });
 
-export { Select, type SelectProps };
+export { Select, type SelectProps, type StateProps };
