@@ -9,7 +9,7 @@ import OptGroup from "ui/components/select/opt-group";
 import Option from "ui/components/select/option";
 import { Scroll, TagView, type TagViewProps } from "ui/layout";
 
-import { Container } from "ui/components/select/container";
+import { SelectGroup } from "ui/components/select/group";
 
 type StateProps = {
 	open: boolean;
@@ -107,7 +107,7 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 
 	return (
 		<TagView className={classNames} id={id} ref={ref} {...rest}>
-			<Container onPress={setState} placeholder={placeholder} state={state} svgIcon={icon} />
+			<SelectGroup onPress={setState} placeholder={placeholder} state={state} svgIcon={icon} />
 			{state.open && (
 				<Scroll className={menuClassName} contentContainerClassName="gap-2 p-2">
 					{Children.map(children as ReactElement, child => getChild.element(child))}

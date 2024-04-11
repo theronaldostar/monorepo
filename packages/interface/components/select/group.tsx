@@ -7,14 +7,14 @@ import type { StateProps } from "ui/components/select/component";
 import Label from "ui/components/label";
 import { PressView, TagView } from "ui/layout";
 
-type ContainerProps = {
+type SelectGroupProps = {
 	onPress: Dispatch<SetStateAction<StateProps>>;
 	placeholder: string;
 	state: StateProps;
 	svgIcon?: IconProps;
 };
 
-const Container = ({ onPress, placeholder, state, svgIcon }: ContainerProps) => {
+const SelectGroup = ({ onPress, placeholder, state, svgIcon }: SelectGroupProps) => {
 	const Chevron = state.open ? ChevronUp : ChevronDown;
 
 	const element_className = element({ className: "" });
@@ -34,4 +34,4 @@ const Container = ({ onPress, placeholder, state, svgIcon }: ContainerProps) => 
 	);
 };
 
-export { Container, type ContainerProps };
+export { SelectGroup, type SelectGroupProps };
