@@ -2,7 +2,6 @@
 	"name": "@app/mobile",
 	"description": "Application version for operation on Android and iOS devices.",
 	"version": "0.0.0",
-	"license": "MIT",
 	"private": true,
 	"main": "expo-router/entry",
 	"scripts": {

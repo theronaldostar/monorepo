@@ -2,7 +2,6 @@
 	"name": "@lib/heroicons",
 	"description": "",
 	"version": "0.0.0",
-	"license": "MIT",
 	"private": true,
 	"main": "index.ts",
 	"files": [

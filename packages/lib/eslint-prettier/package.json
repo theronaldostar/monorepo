@@ -2,7 +2,6 @@
 	"name": "@lib/eslint",
 	"description": "Custom library to manage `ESLint` in the application",
 	"version": "0.0.0",
-	"license": "MIT",
 	"private": true,
 	"main": ".eslintrc.js",
 	"scripts": {

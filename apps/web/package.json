@@ -2,7 +2,6 @@
 	"name": "@app/web",
 	"description": "This version is exclusive to the web but works on all platforms.",
 	"version": "0.0.0",
-	"license": "MIT",
 	"private": true,
 	"type": "module",
 	"scripts": {

@@ -12,19 +12,19 @@ interface HeaderProps extends TagViewProps, TableColors {
 	dataClass?: string;
 }
 
-const Header = forwardRef<View, HeaderProps>(({ bgClass, className, children: $, colors, dataClass, ...props }, ref) => {
+const Header = forwardRef<View, HeaderProps>(({ bgClass, className, children, colors, dataClass, ...props }, ref) => {
 	const { primary, text } = colors! || {};
 
 	const classNames = useClass("px-1 py-2 web:sticky rounded-t-md", bgClass ?? primary ?? defColor.primary, className);
 
-	const children = Children.map($ as ReactElement, child => {
+	const reactNode = Children.map(children as ReactElement, child => {
 		const { className, ...rest } = child.props;
 		return cloneElement(child, { className, text: dataClass ?? text, ...rest });
 	});
 
 	return (
 		<TagView className={classNames} direction="row" ref={ref} {...props}>
-			{children}
+			{reactNode}
 		</TagView>
 	);
 });

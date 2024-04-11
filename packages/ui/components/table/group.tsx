@@ -8,8 +8,8 @@ import { TagView, type TagViewProps } from "ui/layout/view";
 
 interface GroupProps extends TagViewProps, TableColors {}
 
-const Group = forwardRef<View, GroupProps>(({ children: $, className, text, ...props }, ref) => {
-	const children = Children.map($ as ReactElement, child => {
+const Group = forwardRef<View, GroupProps>(({ children, className, text, ...props }, ref) => {
+	const reactNode = Children.map(children as ReactElement, child => {
 		const { className, ...rest } = child.props;
 		return cloneElement(child, { className, text, ...rest });
 	});
@@ -18,7 +18,7 @@ const Group = forwardRef<View, GroupProps>(({ children: $, className, text, ...p
 
 	return (
 		<TagView className={classNames} direction="row" ref={ref} {...props}>
-			{children}
+			{reactNode}
 		</TagView>
 	);
 });

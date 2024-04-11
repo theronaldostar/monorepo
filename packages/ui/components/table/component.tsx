@@ -12,17 +12,17 @@ type TableColors = {
 
 interface TableProps extends TagViewProps, TableColors {}
 
-const Table = forwardRef<View, TableProps>(({ children: $, className, colors, ...props }, ref) => {
+const Table = forwardRef<View, TableProps>(({ children, className, colors, ...props }, ref) => {
 	const classNames = useClass("", className);
 
-	const children = Children.map($ as ReactElement, child => {
+	const reactNode = Children.map(children as ReactElement, child => {
 		const { className, ...rest } = child.props;
 		return cloneElement(child, { className, colors, ...rest });
 	});
 
 	return (
 		<TagView className={classNames} ref={ref} {...props}>
-			{children}
+			{reactNode}
 		</TagView>
 	);
 });

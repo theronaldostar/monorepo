@@ -2,7 +2,6 @@
 	"name": "@lib/tsconfig",
 	"description": "Enable TypeScript support throughout the application",
 	"version": "0.0.0",
-	"license": "MIT",
 	"private": true,
 	"main": "tsconfig.base.json",
 	"files": [
