@@ -10,7 +10,7 @@
 		"theme.ts"
 	],
 	"dependencies": {
-		"nativewind": "4.0.23"
+		"nativewind": "^4.0.36"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.19",
