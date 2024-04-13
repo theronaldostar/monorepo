@@ -2,6 +2,7 @@ export * from "@lib/heroicons/icons/check";
 export * from "@lib/heroicons/icons/chevron-down";
 export * from "@lib/heroicons/icons/chevron-up";
 export * from "@lib/heroicons/icons/circle";
+export * from "@lib/heroicons/icons/document-duplicate";
 export * from "@lib/heroicons/icons/envelope";
 export * from "@lib/heroicons/icons/eye-slash";
 export * from "@lib/heroicons/icons/eye";

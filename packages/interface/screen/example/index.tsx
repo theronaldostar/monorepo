@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 
 import { Envelope } from "@lib/heroicons";
-import { useNavigate } from "@hooks/routes";
+import { useClipboard, useNavigate } from "@config/hooks";
 
 import { Button, CheckBox, IconButton, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
@@ -38,6 +38,8 @@ const Example = () => {
 	const [state, setState] = useState({
 		button: 0,
 	});
+
+	const { copy } = useClipboard();
 
 	const handleButton = () => setState(prev => ({ ...prev, button: prev.button + 1 }));
 
@@ -97,8 +99,8 @@ const Example = () => {
 
 					<GroupExample title="Icon Button">
 						<TagView className="items-center justify-evenly gap-2" direction="row">
-							<IconButton icon={Envelope} onPress={() => handleChange("Icon!")} />
-							<IconButton icon={Envelope} onPress={() => handleChange("Icon Button!")} title="Icon Button!" />
+							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} />
+							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} title="Icon Button!" />
 						</TagView>
 					</GroupExample>
 

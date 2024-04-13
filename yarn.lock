@@ -2679,6 +2679,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@hooks/clipboard@workspace:packages/config/hooks/clipboard":
+  version: 0.0.0-use.local
+  resolution: "@hooks/clipboard@workspace:packages/config/hooks/clipboard"
+  dependencies:
+    expo: "npm:*"
+    expo-clipboard: "npm:~5.0.1"
+  languageName: unknown
+  linkType: soft
+
 "@hooks/date@workspace:packages/config/hooks/date":
   version: 0.0.0-use.local
   resolution: "@hooks/date@workspace:packages/config/hooks/date"
@@ -7552,6 +7561,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-clipboard@npm:~5.0.1":
+  version: 5.0.1
+  resolution: "expo-clipboard@npm:5.0.1"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/d3ac75dddcc4c453ae6268ccc63814b333fb81ea4b565c0a02baae1b422dc9c1da581412aa166cf6e1fe82e1660cd0d698f7a11209b5daf013df61a4d60652cc
+  languageName: node
+  linkType: hard
+
 "expo-constants@npm:~15.4.0, expo-constants@npm:~15.4.3, expo-constants@npm:~15.4.5":
   version: 15.4.5
   resolution: "expo-constants@npm:15.4.5"
@@ -7687,7 +7705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:~50.0.15":
+"expo@npm:*, expo@npm:~50.0.15":
   version: 50.0.15
   resolution: "expo@npm:50.0.15"
   dependencies:

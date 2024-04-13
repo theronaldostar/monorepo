@@ -1,0 +1,15 @@
+{
+	"name": "@hooks/clipboard",
+	"description": "",
+	"version": "0.0.0",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"**/*.ts",
+		"index.ts"
+	],
+	"dependencies": {
+		"expo": "*",
+		"expo-clipboard": "~5.0.1"
+	}
+}
