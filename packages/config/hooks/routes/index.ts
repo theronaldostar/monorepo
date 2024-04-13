@@ -1,2 +1,1 @@
-export * from "@hooks/routes/useNavigate";
-export * from "@hooks/routes/useParams";
+export * from "@hooks/routes/functions";

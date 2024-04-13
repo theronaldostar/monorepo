@@ -1,12 +1,10 @@
 {
 	"name": "@hooks/routes",
-	"description": "",
+	"description": "Hook to perform route navigation across all available platforms.",
 	"version": "0.0.0",
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"useNavigate/*.ts",
-		"useParams/*.ts",
 		"**/*.ts",
 		"index.ts"
 	]

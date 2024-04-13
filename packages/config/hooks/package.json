@@ -5,9 +5,7 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"class/*.ts",
-		"date/*.ts",
-		"routes/**/*.ts",
+		"**/*.ts",
 		"index.ts"
 	]
 }
