@@ -8,7 +8,7 @@ const UserDetail = () => {
 	const { navigate } = useNavigate();
 
 	return (
-		<SafeView className="items-center justify-center">
+		<SafeView className="justify-middle">
 			<TagView className="w-full max-w-2xl gap-6 px-4">
 				<Label align="center" size="3xl" weight="semibold">
 					This page aims to display the user's @!

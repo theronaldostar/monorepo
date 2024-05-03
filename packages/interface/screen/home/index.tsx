@@ -15,7 +15,7 @@ const HomeScreen = () => {
 	const handlePress = (path: string) => navigate(path);
 
 	return (
-		<SafeView className="items-center justify-center">
+		<SafeView className="justify-middle">
 			<TagView className="w-full max-w-2xl gap-6 px-4">
 				<Label className="select-none" align="center" onPress={handleShow} size="4xl" truncate={state} weight="bold">
 					Welcome to a perfect Monorepo.
@@ -44,7 +44,7 @@ const HomeScreen = () => {
 					</Label>
 				</TagView>
 
-				<TagView className="items-center justify-center gap-4" direction="row">
+				<TagView className="justify-middle gap-4" direction="row">
 					<Button title="All Components" onPress={() => handlePress("example")} />
 					<Link href="/user/ronaldo" onPress={() => handlePress("/user/ronaldo")}>
 						Profile Link!

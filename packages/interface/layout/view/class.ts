@@ -1,6 +1,6 @@
 import { tv } from "tailwind-variants";
 
-const element = tv({
+export default tv({
 	base: "web:outline-none",
 	variants: {
 		center: { true: "!items-center !justify-center" },
@@ -15,5 +15,3 @@ const element = tv({
 	},
 	defaultVariants: {},
 });
-
-export { element };

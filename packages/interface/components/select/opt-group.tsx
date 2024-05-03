@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 import { useClass as clsx } from "@hooks/class";
 
-import { Label } from "ui/components/label";
+import Label from "ui/components/label";
 import { TagView, type TagViewProps } from "ui/layout";
 import { optGroup } from "ui/components/select/class";
 

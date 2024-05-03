@@ -28,7 +28,7 @@ const Back = () => {
 	const handlePress = () => navigate("/");
 
 	return (
-		<TagView className="items-center justify-center">
+		<TagView className="justify-middle">
 			<Button rounded title="👈 Go Home" onPress={handlePress} />
 		</TagView>
 	);

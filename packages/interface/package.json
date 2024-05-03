@@ -7,7 +7,7 @@
 	"dependencies": {
 		"@lib/heroicons": "0.0.0",
 		"@lib/tailwindcss": "0.0.0",
-		"react": "^18.2.0"
+		"react": "^18.3.1"
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",

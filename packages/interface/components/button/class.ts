@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 const container = tv({
-	base: "items-center justify-center bg-sky-600 transition active:scale-90 active:opacity-60",
+	base: "justify-middle bg-sky-600 transition active:scale-90 active:opacity-60",
 	variants: {
 		direction: {
 			left: "flex-row",

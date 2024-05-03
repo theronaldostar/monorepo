@@ -11,12 +11,12 @@
 	},
 	"dependencies": {
 		"@lib/tailwindcss": "0.0.0",
-		"expo": "~50.0.15",
-		"expo-constants": "~15.4.5",
+		"expo": "~50.0.17",
+		"expo-constants": "~15.4.6",
 		"expo-font": "~11.10.3",
 		"expo-linking": "~6.2.2",
-		"expo-router": "~3.4.8",
-		"expo-splash-screen": "~0.26.4",
+		"expo-router": "~3.4.10",
+		"expo-splash-screen": "~0.26.5",
 		"expo-status-bar": "~1.11.1",
 		"react-native": "0.73.6",
 		"react-native-gesture-handler": "~2.14.0",
@@ -26,7 +26,7 @@
 		"ui": "0.0.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.24.4",
+		"@babel/core": "^7.24.5",
 		"@config/types": "0.0.0",
 		"@lib/eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0"

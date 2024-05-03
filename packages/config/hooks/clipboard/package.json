@@ -9,7 +9,6 @@
 		"index.ts"
 	],
 	"dependencies": {
-		"expo": "*",
 		"expo-clipboard": "~5.0.1"
 	}
 }
