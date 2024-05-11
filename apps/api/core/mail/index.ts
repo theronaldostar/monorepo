@@ -1,12 +1,13 @@
 import { createTransport } from "nodemailer";
+import { env } from "process";
 
 const transporter = createTransport({
-	host: "",
-	port: 587,
-	secure: false,
+	host: env.EMAIL_HOST,
+	port: Number(env.EMAIL_PORT),
+	secure: Boolean(env.EMAIL_SECURE),
 	auth: {
-		user: "",
-		pass: "",
+		user: env.EMAIL_USER,
+		pass: env.EMAIL_PASSWORD,
 	},
 });
 
