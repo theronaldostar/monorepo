@@ -13,5 +13,6 @@ export * from "@lib/heroicons/icons/eye";
 export * from "@lib/heroicons/icons/key";
 export * from "@lib/heroicons/icons/lock-closed";
 export * from "@lib/heroicons/icons/lock-open";
+export * from "@lib/heroicons/icons/user-circle";
 export * from "@lib/heroicons/icons/users";
 export * from "@lib/heroicons/icons/wallet";

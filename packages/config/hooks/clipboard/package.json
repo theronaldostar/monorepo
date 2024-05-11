@@ -5,10 +5,11 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"**/*.ts",
+		"functions/**/*.ts",
 		"index.ts"
 	],
 	"dependencies": {
+		"await-to-js": "^3.0.0",
 		"expo-clipboard": "~5.0.1"
 	}
 }

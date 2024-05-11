@@ -39,7 +39,7 @@ const Example = () => {
 		button: 0,
 	});
 
-	const { copy } = useClipboard();
+	const { copy, fetchCopied } = useClipboard();
 
 	const handleButton = () => setState(prev => ({ ...prev, button: prev.button + 1 }));
 

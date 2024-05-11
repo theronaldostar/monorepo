@@ -1,9 +1,7 @@
 import { Router } from "express";
 
-// import $ from "@app/api/routes/PUT";
+// import _ from "@app/api/routes/put/";
 
 const route = Router();
 
-route.put("/", () => {});
-
-export default route;
+export default route.put("/", () => {});

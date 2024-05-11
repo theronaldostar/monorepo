@@ -25,7 +25,7 @@ const SelectGroup = ({ onPress, placeholder, state, svgIcon }: SelectGroupProps)
 		<PressView className={element_className} onPress={() => onPress(prev => ({ ...prev, open: !prev.open }))}>
 			<TagView className="items-center gap-2" direction="row">
 				{svgIcon?.({ className: icon_className, strokeWidth: 2 })}
-				<Label className={text_className} size="lg">
+				<Label className={text_className} leading="none" size="lg">
 					{state.selected.string ?? placeholder}
 				</Label>
 			</TagView>

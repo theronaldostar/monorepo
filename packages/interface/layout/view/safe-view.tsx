@@ -19,7 +19,7 @@ const SafeView = forwardRef<SafeAreaView, SafeViewProps>(({ center, className, d
 
 const styles = StyleSheet.create({
 	safe: {
-		marginTop: StatusBar.currentHeight,
+		marginTop: StatusBar.currentHeight ?? 0,
 		marginBottom: (StatusBar.currentHeight ?? 0) / 2,
 	},
 });

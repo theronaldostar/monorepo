@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",
-		"@lib/eslint": "0.0.0",
+		"@lib/prettier-eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0",
 		"@types/react-dom": "^18.3.0",
 		"@types/react-router-dom": "^5.3.3",

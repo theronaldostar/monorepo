@@ -7,7 +7,7 @@ const element = tv({
 });
 
 const icon = tv({
-	base: "stroke-slate-400",
+	base: "stroke-slate-400 dark:stroke-slate-200",
 	variants: {},
 	defaultVariants: {},
 });
@@ -19,7 +19,7 @@ const menu = tv({
 });
 
 const optGroup = tv({
-	base: "rounded px-2",
+	base: "gap-1 rounded px-2",
 	variants: {
 		disabled: {
 			true: "web:!cursor-not-allowed pointer-events-none select-none bg-slate-300 p-2 dark:bg-slate-600",

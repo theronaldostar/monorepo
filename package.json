@@ -25,7 +25,7 @@
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",
-		"@lib/eslint": "0.0.0",
+		"@lib/prettier-eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0",
 		"turbo": "^1.13.3"
 	},
@@ -37,5 +37,5 @@
 		"packages/config/hooks/*",
 		"packages/lib/*"
 	],
-	"packageManager": "yarn@4.1.1"
+	"packageManager": "yarn@4.2.2"
 }

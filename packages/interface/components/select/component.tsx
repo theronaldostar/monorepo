@@ -1,4 +1,4 @@
-import { Children, cloneElement, forwardRef, useEffect, useId, useState, type ReactElement } from "react";
+import { Children, cloneElement, forwardRef, useEffect, useState, type ReactElement } from "react";
 import { View } from "react-native";
 
 import { useClass } from "@hooks/class";
@@ -35,8 +35,6 @@ interface SelectProps extends TagViewProps {
 }
 
 const Select = forwardRef<View, SelectProps>(({ children, className, icon, onChange, placeholder = "Select an option", ...rest }, ref) => {
-	const id = useId();
-
 	const [state, setState] = useState<StateProps>({
 		open: false,
 		selected: {
@@ -50,11 +48,10 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 			Children.map(children as ReactElement, ({ props, type }) => {
 				if (type === Option) getChild.$state(props);
 
-				if (type === OptGroup) {
+				if (type === OptGroup)
 					Children.map(props.children as ReactElement, ({ props, type }) => {
 						if (type === Option) getChild.$state(props);
 					});
-				}
 			});
 		};
 
@@ -106,7 +103,7 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 	})();
 
 	return (
-		<TagView className={classNames} id={id} ref={ref} {...rest}>
+		<TagView className={classNames} ref={ref} {...rest}>
 			<SelectGroup onPress={setState} placeholder={placeholder} state={state} svgIcon={icon} />
 			{state.open && (
 				<Scroll className={menuClassName} contentContainerClassName="gap-2 p-2">
