@@ -12,7 +12,7 @@ const db = mysql.createConnection({ host, database, user, password, multipleStat
 const setError = (error: QueryError | null, response: Response) => {
 	if (error) {
 		// eslint-disable-next-line no-console
-		console.error("[server]: An error occurred during the connection to the database!");
+		console.error("[server]:", "An error occurred during the connection to the database!");
 		response.status(400).json({ status: false, ...error });
 	}
 };
