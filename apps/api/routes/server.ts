@@ -7,7 +7,7 @@ import Methods, { Delete, Get, Patch, Post, Put } from "@app/api/routes";
 const app = express();
 
 const port = Number(env.SERVER_PORT) || 4000;
-const message = `[server] Started on: http://localhost:${port}/ ou http://${address()}:${port}/`;
+const message = `http://localhost:${port}/ ou http://${address()}:${port}/`;
 
 app.use(($, response, next) => {
 	response.setHeader("Access-Control-Allow-Origin", "*");
@@ -28,4 +28,4 @@ app.use(Post);
 app.use(Put);
 
 // eslint-disable-next-line no-console
-app.listen(port, () => console.info(message));
+app.listen(port, () => console.info("[server] Started on:", message));
