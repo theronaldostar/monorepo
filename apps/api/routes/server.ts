@@ -6,7 +6,7 @@ import Methods, { Delete, Get, Patch, Post, Put } from "@app/api/routes";
 
 const app = express();
 
-const port = env.SERVER_PORT;
+const port = Number(env.SERVER_PORT) || 4000;
 const message = `[server] Started on: http://localhost:${port}/ ou http://${address()}:${port}/`;
 
 app.use(($, response, next) => {
@@ -27,4 +27,5 @@ app.use(Patch);
 app.use(Post);
 app.use(Put);
 
-app.listen(port, () => console.log(message));
+// eslint-disable-next-line no-console
+app.listen(port, () => console.info(message));
