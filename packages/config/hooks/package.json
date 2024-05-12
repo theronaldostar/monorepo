@@ -5,7 +5,11 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"**/*.ts",
+		"class/**/*.ts",
+		"clipboard/**/*.ts",
+		"date/*.ts",
+		"routes/**/*.ts",
+		"secret/*.ts",
 		"index.ts"
 	]
 }
