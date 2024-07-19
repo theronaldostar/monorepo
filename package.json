@@ -8,8 +8,17 @@
 		"dev": "turbo run dev",
 		"build": "turbo run build",
 		"lint": "turbo run lint",
-		"clean": "turbo run clean"
+		"clean": "turbo run clean && rm -rf node_modules",
+		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
 	},
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"packages/assets/*",
+		"packages/config/*",
+		"packages/config/hooks/*",
+		"packages/lib/*"
+	],
 	"author": {
 		"name": "Ronaldo S.",
 		"email": "ronaldo.rs44@gmail.com",
@@ -27,15 +36,7 @@
 		"@config/types": "0.0.0",
 		"@lib/prettier-eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0",
-		"turbo": "^1.13.3"
+		"turbo": "^2.0.7"
 	},
-	"workspaces": [
-		"apps/*",
-		"packages/*",
-		"packages/assets/*",
-		"packages/config/*",
-		"packages/config/hooks/*",
-		"packages/lib/*"
-	],
-	"packageManager": "yarn@4.2.2"
+	"packageManager": "yarn@4.3.1"
 }

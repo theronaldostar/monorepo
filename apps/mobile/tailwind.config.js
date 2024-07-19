@@ -3,6 +3,6 @@ import { withTV } from "tailwind-variants/transformer";
 import preset from "@lib/tailwindcss";
 
 export default withTV({
-	content: ["**/*.{js,ts,tsx}", "app/**/*.{js,ts,tsx}", "../../packages/**/*.{js,ts,tsx}"],
+	content: ["**/*.{js,jsx,ts,tsx}", "app/**/*.{js,jsx,ts,tsx}", "../../packages/**/*.{js,jsx,ts,tsx}"],
 	presets: [preset],
 });

@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 
-import { Envelope } from "@lib/heroicons";
 import { useClipboard, useNavigate } from "@config/hooks";
+import { Envelope } from "@lib/heroicons";
 
 import { Button, CheckBox, IconButton, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
@@ -35,14 +35,11 @@ const Back = () => {
 };
 
 const Example = () => {
-	const [state, setState] = useState({
-		button: 0,
-	});
+	const [state, setState] = useState({ button: 0 });
 
 	const { copy, fetchCopied } = useClipboard();
 
 	const handleButton = () => setState(prev => ({ ...prev, button: prev.button + 1 }));
-
 	const handleChange = (value: string) => console.log(value);
 
 	return (

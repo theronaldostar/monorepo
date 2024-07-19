@@ -61,7 +61,6 @@ buck-out/
 web-build/
 
 **/*/.expo
-**/*/.next
 
 **/*/ios
 **/*/android

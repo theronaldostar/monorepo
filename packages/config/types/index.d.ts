@@ -36,4 +36,4 @@ type ColorType = `#${string}` | `rgba(${number}, ${number}, ${number}, ${number}
 
 type twColor = `${Props}-${string}-${number}` | `${Props}-[${ColorType}]`;
 
-export type { ColorType, twColor };
+export type { Props, ColorType, twColor };

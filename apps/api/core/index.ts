@@ -1,1 +1,1 @@
-export * from "@app/api/core/mail";
+export * from "@app/api/core/smtp";

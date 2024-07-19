@@ -3,7 +3,7 @@ import preset from "nativewind/preset";
 
 /** @type {import("tailwindcss").Config} */
 export default {
-	content: ["**/*.{js,ts,tsx}"],
+	content: ["**/*.{js,jsx,ts,tsx}"],
 	darkMode: "media",
 	plugins: [],
 	presets: [preset],

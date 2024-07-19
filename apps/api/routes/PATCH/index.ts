@@ -4,4 +4,6 @@ import { Router } from "express";
 
 const route = Router();
 
-export default route.patch("/", () => {});
+route.patch("/", () => {});
+
+export default route;

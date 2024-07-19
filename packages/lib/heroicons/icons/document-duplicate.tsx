@@ -1,7 +1,7 @@
 import Svg, { Path, type SvgProps } from "react-native-svg";
 
 const DocumentDuplicate = (props: SvgProps) => (
-	<Svg width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+	<Svg width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" {...props}>
 		<Path
 			strokeLinecap="round"
 			strokeLinejoin="round"

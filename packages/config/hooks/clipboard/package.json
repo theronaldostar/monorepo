@@ -10,6 +10,6 @@
 	],
 	"dependencies": {
 		"await-to-js": "^3.0.0",
-		"expo-clipboard": "~5.0.1"
+		"expo-clipboard": "~6.0.3"
 	}
 }
