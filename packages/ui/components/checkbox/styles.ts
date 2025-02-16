@@ -18,15 +18,15 @@ const selection = tv({
 			true: "rounded-full",
 		},
 		size: {
-			small: "h-4 w-4",
-			medium: "h-5 w-5",
-			large: "h-6 w-6",
+			sm: "h-4 w-4",
+			md: "h-5 w-5",
+			lg: "h-6 w-6",
 		},
 	},
 	defaultVariants: {
 		checked: false,
 		rounded: false,
-		size: "small",
+		size: "sm",
 	},
 });
 
@@ -34,13 +34,13 @@ const text = tv({
 	base: "select-none",
 	variants: {
 		size: {
-			small: "text-xs",
-			medium: "text-sm",
-			large: "text-base",
+			sm: "text-xs",
+			md: "text-sm",
+			lg: "text-base",
 		},
 	},
 	defaultVariants: {
-		size: "small",
+		size: "sm",
 	},
 });
 

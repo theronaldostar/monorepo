@@ -71,7 +71,9 @@ __metadata:
     expo-router: "npm:~4.0.17"
     expo-splash-screen: "npm:~0.29.21"
     expo-status-bar: "npm:~2.0.1"
+    expo-system-ui: "npm:~4.0.6"
     expo-updates: "npm:~0.26.15"
+    react: "npm:18.3.1"
     react-native: "npm:~0.76.6"
     react-native-gesture-handler: "npm:~2.20.2"
     react-native-reanimated: "npm:~3.16.3"
@@ -6571,6 +6573,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-system-ui@npm:~4.0.6":
+  version: 4.0.8
+  resolution: "expo-system-ui@npm:4.0.8"
+  dependencies:
+    "@react-native/normalize-colors": "npm:0.76.7"
+    debug: "npm:^4.3.2"
+  peerDependencies:
+    expo: "*"
+    react-native: "*"
+    react-native-web: "*"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: 10c9/0bb96555a5c6f70a40bc00245c7b1583e0dea67486f9af0e82ffc741cf4bfd6adf5cd4bce4f672bb08ec1c7c28884639567c46df87590c5b8a1bc082e60d5fa4
+  languageName: node
+  linkType: hard
+
 "expo-updates-interface@npm:~1.0.0":
   version: 1.0.0
   resolution: "expo-updates-interface@npm:1.0.0"
@@ -11046,7 +11065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
+"react@npm:18.3.1, react@npm:^18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:

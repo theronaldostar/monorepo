@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Switch } from "react-native";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 import { useNavigate } from "@hooks/routes";
 
@@ -7,28 +10,41 @@ import Label, { Link } from "ui/components/label";
 import { SafeView, TagView } from "ui/layout";
 
 const HomeScreen = () => {
-	const [state, setState] = useState(false);
+	const [state, setState] = useState(() => {
+		const isPtbr = i18next.language === "pt";
+		return {
+			truncate: false,
+			isPtbr,
+		};
+	});
+
+	const { t } = useTranslation();
 
 	const { navigate } = useNavigate();
 
-	const handleShow = () => setState(prev => !prev);
+	const handleShow = () => setState(prev => ({ ...prev, truncate: !prev.truncate }));
 	const handlePress = (path: string) => navigate(path);
 
+	const handleSwitch = () => {
+		const newLanguage = state.isPtbr ? "en" : "pt";
+		i18next.changeLanguage(newLanguage);
+		setState(prev => ({ ...prev, isPtbr: !prev.isPtbr }));
+	};
+
 	return (
-		<SafeView className="justify-middle">
+		<SafeView className="content-middle">
 			<TagView className="w-full max-w-2xl gap-6 px-4">
-				<Label className="select-none" align="center" onPress={handleShow} size="4xl" truncate={state} weight="bold">
-					Welcome to a perfect Monorepo.
+				<Label className="select-none" align="center" onPress={handleShow} size="4xl" truncate={state.truncate} weight="bold">
+					{t("home.title")}
 				</Label>
 
 				<TagView className="gap-2">
-					<Label align="center" onPress={handleShow} size="lg" truncate={state}>
-						Here is a basic starter to show you how you can navigate from one screen to another. This screen uses the same code on Vite and React
-						Native.
+					<Label align="center" onPress={handleShow} size="lg" truncate={state.truncate}>
+						{t("home.description")}
 					</Label>
 
 					<Label align="center" weight="semibold">
-						Monorepo is made by{" "}
+						{t("home.credits.one")}{" "}
 						<Link href="https://twitter.com/theronaldostar" target="_blank">
 							Ronaldo S
 						</Link>
@@ -36,7 +52,7 @@ const HomeScreen = () => {
 					</Label>
 
 					<Label align="center" weight="semibold">
-						NativeWind is made by{" "}
+						{t("home.credits.two")}{" "}
 						<Link href="https://twitter.com/mark__lawlor" target="_blank">
 							Mark Lawlor
 						</Link>
@@ -44,11 +60,18 @@ const HomeScreen = () => {
 					</Label>
 				</TagView>
 
-				<TagView className="justify-middle gap-4" direction="row">
-					<Button title="All Components" onPress={() => handlePress("example")} />
+				<TagView className="content-middle gap-4" direction="row">
+					<Button title={t("buttons.components")} onPress={() => handlePress("example")} />
 					<Link href="/user/ronaldo" onPress={() => handlePress("/user/ronaldo")}>
-						Profile Link!
+						{t("home.textLink")}!
 					</Link>
+				</TagView>
+
+				<TagView className="content-middle gap-4" direction="row">
+					<Label>{t("home.language")}</Label>
+					<Label weight="semibold">en-US</Label>
+					<Switch onValueChange={handleSwitch} value={state.isPtbr} />
+					<Label weight="semibold">pt-BR</Label>
 				</TagView>
 			</TagView>
 		</SafeView>

@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useClipboard, useNavigate } from "@config/hooks";
 import { Envelope } from "@lib/heroicons";
@@ -24,12 +25,13 @@ const GroupExample = ({ children, title }: GroupExampleProps) => (
 
 const Back = () => {
 	const { navigate } = useNavigate();
+	const { t } = useTranslation();
 
 	const handlePress = () => navigate("/");
 
 	return (
-		<TagView className="justify-middle">
-			<Button rounded title="👈 Go Home" onPress={handlePress} />
+		<TagView className="content-middle">
+			<Button rounded title={t("buttons.back")} onPress={handlePress} />
 		</TagView>
 	);
 };
@@ -75,9 +77,9 @@ const Example = () => {
 
 					<GroupExample title={`Buttons: Count ~ ${state.button}`}>
 						<TagView className="items-center justify-evenly gap-2" direction="row">
-							<Button icon={{ position: "left", svg: Envelope }} onPress={handleButton} rounded size="large" title={`Count: ${state.button}`} />
+							<Button icon={{ position: "left", svg: Envelope }} onPress={handleButton} rounded size="lg" title={`Count: ${state.button}`} />
 							<Button disabled onPress={handleButton} rounded title={`Count: ${state.button}`} />
-							<Button onPress={handleButton} rounded size="small" title={`Count: ${state.button}`} />
+							<Button onPress={handleButton} rounded size="sm" title={`Count: ${state.button}`} />
 						</TagView>
 
 						<TagView className="items-center justify-evenly gap-2" direction="row">
@@ -86,11 +88,11 @@ const Example = () => {
 								icon={{ position: "left", svg: Envelope }}
 								onPress={handleButton}
 								outline
-								size="large"
+								size="lg"
 								title={`Count: ${state.button}`}
 							/>
 							<Button onPress={handleButton} outline title={`Count: ${state.button}`} />
-							<Button onPress={handleButton} outline size="small" title={`Count: ${state.button}`} />
+							<Button onPress={handleButton} outline size="sm" title={`Count: ${state.button}`} />
 						</TagView>
 					</GroupExample>
 
@@ -104,14 +106,14 @@ const Example = () => {
 					<GroupExample title="CheckBox">
 						<TagView className="gap-2">
 							<TagView className="justify-evenly gap-2" direction="row">
-								<CheckBox title="Checkbox" size="large" />
-								<CheckBox title="Checkbox" size="medium" />
+								<CheckBox title="Checkbox" size="lg" />
+								<CheckBox title="Checkbox" size="md" />
 								<CheckBox checked title="Checkbox" />
 							</TagView>
 
 							<TagView className="justify-evenly gap-2" direction="row">
-								<CheckBox rounded title="Checkbox" size="large" />
-								<CheckBox rounded title="Checkbox" size="medium" />
+								<CheckBox rounded title="Checkbox" size="lg" />
+								<CheckBox rounded title="Checkbox" size="md" />
 								<CheckBox checked rounded title="Checkbox" />
 							</TagView>
 						</TagView>

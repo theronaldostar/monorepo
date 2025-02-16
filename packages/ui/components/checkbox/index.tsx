@@ -15,7 +15,7 @@ interface CheckBoxProps extends TagViewProps {
 	checkClassName?: string;
 	onChange?: (checked: boolean) => void;
 	rounded?: boolean;
-	size?: "medium" | "large";
+	size?: "md" | "lg";
 	title?: string;
 	titleClassName?: string;
 }
