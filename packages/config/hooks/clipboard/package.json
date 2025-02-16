@@ -5,8 +5,8 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"functions/**/*.ts",
-		"index.ts"
+		"index.ts",
+		"index.web.ts"
 	],
 	"dependencies": {
 		"await-to-js": "^3.0.0",

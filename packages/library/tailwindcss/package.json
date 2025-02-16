@@ -1,0 +1,23 @@
+{
+	"name": "@lib/tailwindcss",
+	"description": "Custom library to manage `Tailwind CSS/Nativewind` in the application",
+	"version": "0.0.0",
+	"private": true,
+	"main": "tailwind.config.ts",
+	"files": [
+		"config.css",
+		"tailwind.config.ts",
+		"theme.ts"
+	],
+	"dependencies": {
+		"nativewind": "^4.1.23",
+		"tailwind-variants": "^0.3.1"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.5.2",
+		"postcss-import": "^16.1.0",
+		"postcss-nesting": "^13.0.1",
+		"tailwindcss": "^3.4.17"
+	}
+}

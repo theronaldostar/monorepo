@@ -2,14 +2,14 @@ import express, { type Request, type Response, type NextFunction } from "express
 import { address } from "ip";
 import { env } from "process";
 
-import Methods, { Delete, Get, Patch, Post, Put } from "@app/api/routes";
+import All, { Delete, Get, Patch, Post, Put } from "@app/api/routes";
 
 const app = express();
 
 const port = Number(env.SERVER_PORT) || 4000;
-const message = `http://localhost:${port}/ or http://${address()}:${port}/`;
+const message = `http://localhost:${port} or http://${address()}:${port}`;
 
-app.use((_: Request, res: Response, next: NextFunction) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	res.setHeader("Access-Control-Allow-Methods", "OPTIONS, HEAD, DELETE, GET, PATCH, POST, PUT");
 	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -20,7 +20,7 @@ app.use((_: Request, res: Response, next: NextFunction) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(Methods);
+app.use(All);
 app.use(Delete);
 app.use(Get);
 app.use(Patch);
@@ -28,4 +28,4 @@ app.use(Post);
 app.use(Put);
 
 // eslint-disable-next-line no-console
-app.listen(port, () => console.info("[server]", "Started on:", message));
+app.listen(port, () => console.log("[server]", "Started on:", message));

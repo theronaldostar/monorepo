@@ -1,12 +1,15 @@
 {
 	"name": "@asset/image",
-	"description": "",
+	"description": "Collection of PNG and SVG assets for use in the application",
 	"version": "0.0.0",
 	"private": true,
 	"main": "index.ts",
+	"types": "index.d.ts",
 	"files": [
-		"png/*.png",
-		"svg/*.svg",
-		"index.ts"
+		"png/",
+		"svg/",
+		"index.d.ts",
+		"index.ts",
+		"tsconfig.json"
 	]
 }

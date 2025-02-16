@@ -1,10 +1,10 @@
 import type { Config } from "tailwindcss";
 import { withTV } from "tailwind-variants/transformer";
 
-import preset from "@lib/tailwindcss";
+import twPreset from "@lib/tailwindcss";
 
 export default withTV<Config>({
-	content: ["index.html", "**/*.{js,jsx,ts,tsx}", "src/**/*.{js,jsx,ts,tsx}", "../../packages/**/**/*.{js,jsx,ts,tsx}"],
+	content: ["index.html", "src/**/*.{js,ts,jsx,tsx,mdx}", "../../packages/ui/**/*.{js,ts,jsx,tsx,mdx}"],
 	important: "html",
-	presets: [preset],
+	presets: [twPreset],
 });

@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import { Linking, Platform, Text, type GestureResponderEvent } from "react-native";
 
-import { useClass } from "@hooks/class";
-
 import { Label, type LabelProps } from "ui/components/label/component";
+
+import { clsx } from "utils";
 
 type Url = `${"http" | "https"}://${string}` | `${"#" | "/"}${string}`;
 type Mail = `mailto:${string}@${string}.${string}`;
@@ -17,7 +17,7 @@ interface LinkProps extends LabelProps {
 }
 
 const Link = forwardRef<Text, LinkProps>(({ children, className, download, href, onPress, rel = "noreferrer", target, ...props }, ref) => {
-	const classNames = useClass("!text-blue-500 hover:underline active:underline", className);
+	const classNames = clsx("!text-blue-500 hover:underline active:underline", className);
 
 	const linkProps = Platform.select({
 		default: {},

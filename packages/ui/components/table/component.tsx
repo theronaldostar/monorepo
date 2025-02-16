@@ -1,9 +1,11 @@
-import { cloneElement, Children, forwardRef, type ReactElement } from "react";
+import { cloneElement, Children, forwardRef } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@hooks/class";
-
 import { TagView, type TagViewProps } from "ui/layout/view";
+
+import { clsx } from "utils";
+
+import type { ChildrenProps } from ".";
 
 type TableColors = {
 	colors?: { primary?: string; secondary?: string; text?: string };
@@ -13,9 +15,9 @@ type TableColors = {
 interface TableProps extends TagViewProps, TableColors {}
 
 const Table = forwardRef<View, TableProps>(({ children, className, colors, ...props }, ref) => {
-	const classNames = useClass("", className);
+	const classNames = clsx("", className);
 
-	const reactNode = Children.map(children as ReactElement, child => {
+	const reactNode = Children.map(children as ChildrenProps, child => {
 		const { className, ...rest } = child.props;
 		return cloneElement(child, { className, colors, ...rest });
 	});

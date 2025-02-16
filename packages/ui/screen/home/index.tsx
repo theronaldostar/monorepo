@@ -32,7 +32,7 @@ const HomeScreen = () => {
 						<Link href="https://twitter.com/theronaldostar" target="_blank">
 							Ronaldo S
 						</Link>
-						.
+						<>.</>
 					</Label>
 
 					<Label align="center" weight="semibold">
@@ -40,7 +40,7 @@ const HomeScreen = () => {
 						<Link href="https://twitter.com/mark__lawlor" target="_blank">
 							Mark Lawlor
 						</Link>
-						.
+						<>.</>
 					</Label>
 				</TagView>
 

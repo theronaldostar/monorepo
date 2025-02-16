@@ -5,7 +5,8 @@
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"functions**/*.ts",
+		"useNavigate/",
+		"useParams/",
 		"index.ts"
 	]
 }

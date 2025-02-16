@@ -1,5 +1,0 @@
-node_modules
-packages/**/*.js
-
-.eslintrc.js
-tsconfig.json

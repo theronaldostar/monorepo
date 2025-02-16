@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { View, type ViewProps } from "react-native";
 
-import clsx from "ui/layout/view/class";
+import tvClass from "ui/layout/view/class";
 
 type WrapProps = "full" | "half" | "screen";
 
@@ -15,7 +15,7 @@ interface TagViewProps extends ViewProps {
 }
 
 const TagView = forwardRef<View, TagViewProps>(({ center, className, direction, height, overflow, width, ...props }, ref) => {
-	const classNames = clsx({ className: className, center, direction, height, overflow, width });
+	const classNames = tvClass({ className: className, center, direction, height, overflow, width });
 
 	return <View className={classNames} ref={ref} {...props} />;
 });

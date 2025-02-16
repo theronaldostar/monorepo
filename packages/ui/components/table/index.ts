@@ -1,4 +1,14 @@
+import type { ReactElement } from "react";
+
 import { Table } from "ui/components/table/component";
+import type { TagViewProps } from "ui/layout/view";
+
+import type { TableColors } from "ui/components/table/component";
+
+export interface ChildrenProps extends ReactElement<TagViewProps & TableColors> {
+	text?: string;
+	value?: unknown;
+}
 
 export default Table;
 export * from "ui/components/table/body";

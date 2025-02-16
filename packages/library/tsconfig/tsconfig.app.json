@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+	"display": "React Library",
+	"extends": "@lib/tsconfig/tsconfig.base.json",
+	"compilerOptions": {
+		"declaration": true,
+		"jsx": "react-jsx",
+		"lib": ["ES2023", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"noEmit": true,
+		"target": "ES2023",
+		"skipLibCheck": true
+	}
+}

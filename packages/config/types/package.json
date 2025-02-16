@@ -1,20 +1,17 @@
 {
 	"name": "@config/types",
-	"description": "",
+	"description": "Shared TypeScript type definitions for the monorepo.",
 	"version": "0.0.0",
 	"private": true,
-	"main": "index.d.ts",
 	"types": "index.d.ts",
 	"files": [
 		"index.d.ts",
 		"tsconfig.json"
 	],
 	"dependencies": {
-		"@lib/tsconfig": "0.0.0"
+		"@types/node": "^22.13.4"
 	},
 	"devDependencies": {
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
-		"@types/react-native": "^0.73.0"
+		"@lib/tsconfig": "0.0.0"
 	}
 }

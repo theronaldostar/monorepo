@@ -17,7 +17,7 @@ const SeePassword = ({ disabled, onChange, show, svgClassName, visible, ...props
 	if (!show) return null;
 
 	return (
-		<PressView className="w-5.5 h-5.5" disabled={disabled} onPress={handlePress} {...props}>
+		<PressView disabled={disabled} onPress={handlePress} {...props}>
 			<Icon strokeWidth={2} className={svgClassName} />
 		</PressView>
 	);

@@ -1,0 +1,13 @@
+{
+	"name": "utils",
+	"description": "Internal library for custom functions throughout the application.",
+	"version": "0.0.0",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"clsx/",
+		"create-token/",
+		"date/",
+		"index.ts"
+	]
+}

@@ -1,6 +1,6 @@
 {
 	"name": "@asset/font",
-	"description": "",
+	"description": "Font asset package for the application, including the Inter font family",
 	"version": "0.0.0",
 	"private": true,
 	"main": "index.ts",

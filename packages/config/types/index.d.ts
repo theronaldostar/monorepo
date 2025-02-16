@@ -30,10 +30,10 @@ declare module "react-native" {
 	}
 }
 
-type Props = "text" | "bg";
-
 type ColorType = `#${string}` | `rgba(${number}, ${number}, ${number}, ${number})` | `hsl(${number}deg ${number}% ${number}%)`;
+
+type Props = "text" | "bg";
 
 type twColor = `${Props}-${string}-${number}` | `${Props}-[${ColorType}]`;
 
-export type { Props, ColorType, twColor };
+export type { ColorType, Props, twColor };

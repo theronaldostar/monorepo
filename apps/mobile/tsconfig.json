@@ -1,8 +1,5 @@
 {
-	"compilerOptions": {
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
-	},
-	"extends": "@lib/tsconfig/react-library.json",
-	"include": ["**/*.js", "**/*.ts", "**/*.tsx"],
+	"compilerOptions": {},
+	"extends": "@lib/tsconfig/tsconfig.app.json",
+	"include": ["**/*.js", "**/*.ts", "**/*.tsx", "nativewind-env.d.ts"]
 }

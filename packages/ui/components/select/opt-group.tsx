@@ -1,11 +1,11 @@
 import { Children, cloneElement, forwardRef, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { useClass as clsx } from "@hooks/class";
-
-import Label from "ui/components/label";
+import { Label } from "ui/components/label";
 import { TagView, type TagViewProps } from "ui/layout";
-import { optGroup } from "ui/components/select/class";
+import { optGroup } from "ui/components/select/styles";
+
+import { clsx } from "utils";
 
 interface OptGroupProps extends TagViewProps {
 	disabled?: boolean;
@@ -21,7 +21,7 @@ const OptGroup = forwardRef<View, OptGroupProps>(({ children, className, disable
 				{title}
 			</Label>
 			<TagView className="gap-1">
-				{Children.map(children as ReactElement, child => {
+				{Children.map(children as ReactElement<{ className: string }>, child => {
 					const { className, ...rest } = child.props;
 					const clsxName = clsx("pl-6", className);
 					return cloneElement(child, { className: clsxName, ...rest });

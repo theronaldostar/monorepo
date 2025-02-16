@@ -1,11 +1,40 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js
+node_modules/
+.pnp.*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+web-build/
+.metro-health-check*
+
+turbo/
+.turbo/
+
 # OSX
 .DS_Store
 
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 # Xcode
-
-# vite
-
-build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -14,61 +43,37 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+xcuserdata/
 *.xccheckout
 *.moved-aside
-DerivedData
+DerivedData/
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
+project.xcworkspace/
 
 # Android/IntelliJ
-build/
-.idea
-.gradle
+.gradle/
 local.properties
 *.iml
-
-# node.js
-node_modules/
-npm-debug.log
-yarn-error.log
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
 
 # BUCK
 buck-out/
-\.buckd/
-*.keystore
+.buckd/
 
 # fastlane
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
-
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
 
-# Bundle artifacts
-*.jsbundle
-
-# CocoaPods
-/ios/Pods/
-
 # Expo
-.expo/*
-web-build/
+.expo/
 
-**/*/.expo
-
-**/*/ios
-**/*/android
-
-.turbo
-build/**
-
-.pnp.*
+# Yarn & pnpm
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -76,5 +81,8 @@ build/**
 !.yarn/sdks
 !.yarn/versions
 
-# env
+# Environment variables
 .env
+
+# Temporary files
+*.jsbundle

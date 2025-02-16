@@ -1,13 +1,14 @@
-import { env } from "process";
 import type { Response } from "express";
 import mysql, { QueryError } from "mysql2";
+import { env } from "process";
 
 const host = env.DB_HOST;
 const database = env.DB_NAME;
 const user = env.DB_USER;
 const password = env.DB_PASSWORD;
 
-const db = mysql.createConnection({ host, database, user, password, multipleStatements: true });
+const config = { host, database, user, password, multipleStatements: true };
+const db = mysql.createConnection(config);
 
 const setError = (error: QueryError | null, response: Response) => {
 	if (error) {

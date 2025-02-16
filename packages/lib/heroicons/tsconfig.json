@@ -1,7 +1,0 @@
-{
-	"extends": "@lib/tsconfig/react-library.json",
-	"include": ["**/*.ts", "**/*.tsx"],
-	"compilerOptions": {
-		"jsx": "react-native",
-	},
-}

@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import { Text, type TextProps } from "react-native";
 
-import { useClass } from "@hooks/class";
+import { text } from "ui/components/label/styles";
 
-import { text } from "ui/components/label/class";
+import { clsx } from "utils";
 
 type lineHeight = "none" | "tight" | "snug" | "normal" | "relaxed" | "loose";
 
@@ -18,7 +18,7 @@ interface LabelProps extends TextProps {
 }
 
 const Label = forwardRef<Text, LabelProps>(({ align, className, color, decoration, leading, size, truncate, weight, ...props }, ref) => {
-	const classNames = useClass(className, text({ align, color, decoration, leading, size, weight }));
+	const classNames = clsx(className, text({ align, color, decoration, leading, size, weight }));
 
 	return <Text className={classNames} numberOfLines={truncate ? 1 : void 0} {...props} ref={ref} />;
 });

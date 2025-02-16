@@ -3,7 +3,7 @@ import { Text } from "react-native";
 
 import { PressView } from "ui/layout";
 import { Label, type LabelProps } from "ui/components/label";
-import { option } from "ui/components/select/class";
+import { option } from "ui/components/select/styles";
 
 interface OptionProps extends LabelProps {
 	selected?: boolean;

@@ -2,5 +2,5 @@
 	"delay": 1000,
 	"ignore": [".git", "node_modules/**/node_modules"],
 	"verbose": true,
-	"watch": ["**/*.{ts,js,json}", "controllers/**/*.ts", "core/**/*.ts", "database/**/*.ts", "routes/**/*.ts"]
+	"watch": ["**/*.{ts,js,json}", "core/**/*.ts", "database/**/*.ts", "routes/**/*.ts"]
 }

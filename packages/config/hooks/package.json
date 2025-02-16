@@ -1,15 +1,12 @@
 {
 	"name": "@config/hooks",
-	"description": "",
+	"description": "A collection of reusable React hooks for various use cases.",
 	"version": "0.0.0",
 	"private": true,
 	"main": "index.ts",
 	"files": [
-		"class/**/*.ts",
-		"clipboard/**/*.ts",
-		"date/*.ts",
-		"routes/**/*.ts",
-		"secret/*.ts",
+		"clipboard/",
+		"routes/",
 		"index.ts"
 	]
 }

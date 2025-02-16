@@ -1,30 +1,22 @@
 import { Children, cloneElement, forwardRef, useEffect, useState, type ReactElement } from "react";
 import { View } from "react-native";
 
-import { useClass } from "@hooks/class";
 import type { IconProps } from "@lib/heroicons";
 
-import { menu } from "ui/components/select/class";
 import OptGroup from "ui/components/select/opt-group";
 import Option from "ui/components/select/option";
-import { Scroll, TagView, type TagViewProps } from "ui/layout";
-
 import { SelectGroup } from "ui/components/select/group";
+import { menu } from "ui/components/select/styles";
+import { Scroll, TagView, type TagViewProps, type PressViewProps } from "ui/layout";
+
+import { clsx } from "utils";
 
 type StateProps = {
 	open: boolean;
-	selected: {
-		string: null | string;
-		value: null | string;
-	};
+	selected: { string: null | string; value: null | string };
 };
 
-type getChildProps = {
-	children: string;
-	id: string;
-	selected: boolean;
-	value: string;
-};
+type getChildProps = { children: string; id: string; selected: boolean; value: string };
 
 interface SelectProps extends TagViewProps {
 	icon?: IconProps;
@@ -37,27 +29,24 @@ interface SelectProps extends TagViewProps {
 const Select = forwardRef<View, SelectProps>(({ children, className, icon, onChange, placeholder = "Select an option", ...rest }, ref) => {
 	const [state, setState] = useState<StateProps>({
 		open: false,
-		selected: {
-			string: null,
-			value: null,
-		},
+		selected: { string: null, value: null },
 	});
 
 	useEffect(() => {
 		const updateFromChildren = () => {
-			Children.map(children as ReactElement, ({ props, type }) => {
+			Children.map(children, ({ props, type }) => {
 				if (type === Option) getChild.$state(props);
-
-				if (type === OptGroup)
-					Children.map(props.children as ReactElement, ({ props, type }) => {
+				if (type === OptGroup) {
+					Children.map(props.children, ({ props, type }) => {
 						if (type === Option) getChild.$state(props);
 					});
+				}
 			});
 		};
 
 		updateFromChildren();
 		return () => {};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line
 	}, [children]);
 
 	const handlePress = (child: string, value: string) => {
@@ -65,7 +54,7 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 		setState(prev => ({ ...prev, open: false, selected: { string: child, value } }));
 	};
 
-	const classNames = useClass("gap-2", className);
+	const classNames = clsx("gap-2", className);
 	const menuClassName = menu({ className: "" });
 
 	const getChild = (() => {
@@ -74,21 +63,21 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 			return "bg-sky-200 dark:bg-sky-600 pointer-events-none";
 		};
 
-		const element = (child: ReactElement) => {
+		const element = (child: ReactElement<PressViewProps & { value?: string }>) => {
 			const {
 				props: { children, value, ...$rest },
 				type,
 			} = child;
 
 			if (type === Option) {
-				return cloneElement(child, { className: isActive(value), onPress: () => handlePress(children, value), ...$rest });
+				return cloneElement(child, { className: isActive(value!), onPress: () => handlePress(children as string, value), ...$rest });
 			} else if (type === OptGroup) {
 				return cloneElement(
 					child,
 					{ ...$rest },
-					Children.map(children as ReactElement, child => {
+					Children.map(children, child => {
 						const { children: $children, value: $value, ...rest } = child.props;
-						return cloneElement(child, { className: isActive($value), onPress: () => handlePress($children, $value), ...rest });
+						return cloneElement(child, { className: isActive($value), onPress: () => handlePress($children as string, $value), ...rest });
 					}),
 				);
 			}
@@ -107,7 +96,7 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 			<SelectGroup onPress={setState} placeholder={placeholder} state={state} svgIcon={icon} />
 			{state.open && (
 				<Scroll className={menuClassName} contentContainerClassName="gap-2 p-2">
-					{Children.map(children as ReactElement, child => getChild.element(child))}
+					{Children.map(children, child => getChild.element(child))}
 				</Scroll>
 			)}
 		</TagView>

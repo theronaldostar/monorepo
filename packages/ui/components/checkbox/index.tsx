@@ -1,12 +1,13 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, type JSX } from "react";
 import { View } from "react-native";
 
 import { Circle, Check } from "@lib/heroicons";
-import { useClass } from "@hooks/class";
 
+import { check, selection, text } from "ui/components/checkbox/styles";
 import { Label } from "ui/components/label";
 import { PressView, TagView, type TagViewProps } from "ui/layout/view";
-import { check, selection, text } from "ui/components/checkbox/class";
+
+import { clsx } from "utils";
 
 interface CheckBoxProps extends TagViewProps {
 	boxClassName?: string;
@@ -23,7 +24,7 @@ const CheckBox = forwardRef<View, CheckBoxProps>(
 	({ boxClassName, className, checked = false, checkClassName, onChange, rounded, size, title, titleClassName, ...props }, ref): JSX.Element => {
 		const [state, setState] = useState(checked);
 
-		const classNames = useClass("items-center gap-1.5", className);
+		const classNames = clsx("items-center gap-1.5", className);
 		const checkClass = check({ className: checkClassName });
 		const selectionClass = selection({ className: boxClassName, checked: state, rounded, size });
 		const textClass = text({ size, className: titleClassName });

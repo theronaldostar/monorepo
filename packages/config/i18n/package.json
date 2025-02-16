@@ -1,0 +1,14 @@
+{
+	"name": "@config/i18n",
+	"description": "",
+	"version": "0.0.0",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"index.ts"
+	],
+	"dependencies": {
+		"i18next": "^24.2.2",
+		"react-i18next": "^15.4.0"
+	}
+}

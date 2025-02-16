@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {},
 	"exclude": ["node_modules"],
-	"extends": "@lib/tsconfig/react-library.json",
+	"extends": "@lib/tsconfig/tsconfig.app.json",
 	"include": ["**/*.ts", "**/*.tsx"]
 }

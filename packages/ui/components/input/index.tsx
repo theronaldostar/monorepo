@@ -4,7 +4,7 @@ import { TextInput, type TextInputProps, type InputModeOptions } from "react-nat
 import type { IconProps } from "@lib/heroicons";
 
 import { PressView, TagView } from "ui/layout/view";
-import { input, group, svg, texTitle } from "ui/components/input/class";
+import { input, group, svg, texTitle } from "ui/components/input/styles";
 import { SeePassword } from "ui/components/input/see-password";
 import { Label } from "ui/components/label";
 

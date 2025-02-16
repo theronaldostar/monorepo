@@ -8,3 +8,5 @@
 
 *.shot linguist-language=Jest-Snapshot
 *.shot linguist-generated
+
+*.pbxproj -text
