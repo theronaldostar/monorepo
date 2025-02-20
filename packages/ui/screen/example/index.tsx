@@ -4,10 +4,12 @@ import { useTranslation } from "react-i18next";
 import { useClipboard, useNavigate } from "@config/hooks";
 import { Envelope } from "@lib/heroicons";
 
-import { Button, CheckBox, IconButton, Label, Input } from "ui/components";
+import { Button, CheckBox, IconButton, Image, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
 import Table, { Body, Header, Group, Data } from "ui/components/table";
 import { SafeView, Scroll, TagView } from "ui/layout";
+
+import { dissection } from "@asset/image";
 
 type GroupExampleProps = {
 	children: ReactNode;
@@ -100,6 +102,12 @@ const Example = () => {
 						<TagView className="items-center justify-evenly gap-2" direction="row">
 							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} />
 							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} title="Icon Button!" />
+						</TagView>
+					</GroupExample>
+
+					<GroupExample title="Image">
+						<TagView className="items-center justify-evenly gap-2" direction="row">
+							<Image width={300} height={500} src={dissection} />
 						</TagView>
 					</GroupExample>
 

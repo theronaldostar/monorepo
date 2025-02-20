@@ -4,12 +4,14 @@
 	"version": "0.0.0",
 	"private": true,
 	"main": "index.ts",
-	"types": "index.d.ts",
 	"files": [
 		"png/",
 		"svg/",
 		"index.d.ts",
 		"index.ts",
 		"tsconfig.json"
-	]
+	],
+	"dependencies": {
+		"expo-image": "~2.0.6"
+	}
 }

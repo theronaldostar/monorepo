@@ -5,7 +5,6 @@ import { IconProps } from "@lib/heroicons";
 import { container, svg, text } from "ui/components/button/styles";
 import { Label } from "ui/components/label";
 import { PressView } from "ui/layout/view";
-import { clsx } from "utils";
 
 interface ButtonProps extends PressableProps {
 	icon?: {
@@ -23,10 +22,8 @@ interface ButtonProps extends PressableProps {
 const Button = forwardRef<View, ButtonProps>(({ className, disabled, icon, outline, rounded, size, titleClassName, title, uppercase, ...props }, ref) => {
 	const { position, svg: svgIcon } = icon! || {};
 
-	const classNames = clsx("", className);
-
-	const containerClass = container({ className: classNames, disabled: disabled!, direction: position, outline, rounded, size });
-	const iconClass = svg({ className: "", outline, size });
+	const containerClass = container({ className, disabled: disabled!, direction: position, outline, rounded, size });
+	const iconClass = svg({ outline, size });
 	const labelClass = text({ className: titleClassName, outline, size, uppercase });
 
 	return (

@@ -1,11 +1,10 @@
 import { cloneElement, Children, forwardRef } from "react";
 import { View } from "react-native";
 
+import type { ChildrenProps } from "ui/components/table";
 import { TagView, type TagViewProps } from "ui/layout/view";
 
 import { clsx } from "utils";
-
-import type { ChildrenProps } from ".";
 
 type TableColors = {
 	colors?: { primary?: string; secondary?: string; text?: string };

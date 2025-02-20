@@ -5,13 +5,13 @@ import { Label, type LabelProps } from "ui/components/label/component";
 
 import { clsx } from "utils";
 
-type Url = `${"http" | "https"}://${string}` | `${"#" | "/"}${string}`;
 type Mail = `mailto:${string}@${string}.${string}`;
+type ValidUrl = `${"http" | "https"}://${string}` | `${"#" | "/"}${string}` | `/@fs/${string}`;
 type TelSms = `${"tel" | "sms"}:+${number}`;
 
 interface LinkProps extends LabelProps {
 	download?: boolean | string;
-	href: Url | Mail | TelSms;
+	href: ValidUrl | Mail | TelSms;
 	rel?: string;
 	target?: "_blank" | "_self" | "_parent" | "_top";
 }
@@ -42,4 +42,4 @@ const Link = forwardRef<Text, LinkProps>(({ children, className, download, href,
 	);
 });
 
-export { Link, type LinkProps };
+export { Link, type Mail, type LinkProps, type TelSms, type ValidUrl };

@@ -64,6 +64,7 @@ __metadata:
     "@lib/prettier-eslint": "npm:0.0.0"
     "@lib/tailwindcss": "npm:0.0.0"
     "@lib/tsconfig": "npm:0.0.0"
+    "@react-native/assets-registry": "npm:^0.78.0"
     expo: "npm:~52.0.35"
     expo-constants: "npm:~17.0.5"
     expo-font: "npm:~13.0.3"
@@ -114,6 +115,8 @@ __metadata:
 "@asset/image@workspace:packages/assets/image":
   version: 0.0.0-use.local
   resolution: "@asset/image@workspace:packages/assets/image"
+  dependencies:
+    expo-image: "npm:~2.0.6"
   languageName: unknown
   linkType: soft
 
@@ -2419,6 +2422,13 @@ __metadata:
   version: 0.76.7
   resolution: "@react-native/assets-registry@npm:0.76.7"
   checksum: 10c9/9e8c49fb919a8a79ffff03bf5026b2dbf7eee10a435a09d55faef938734bfc71971fdce50577eaa5dd30017d8d786a23b0c1d6291be935c1a3df8a479af836ff
+  languageName: node
+  linkType: hard
+
+"@react-native/assets-registry@npm:^0.78.0":
+  version: 0.78.0
+  resolution: "@react-native/assets-registry@npm:0.78.0"
+  checksum: 10c9/708b7a4c1a9b08ba6596fef98bd2897ea3b4348196ae2abd7b6b7dfbbb6abd47e00c5873f91fc97aebbce6ee0e0bc18ea983094859609d59a087cb688c771549
   languageName: node
   linkType: hard
 
@@ -6437,6 +6447,21 @@ __metadata:
     expo: "*"
     react: "*"
   checksum: 10c9/bdec06dddc655d1d52c195497fbd9610a3f10f8781beb1eeda5172f48b2dc1c7e3d22ef85af75ab49ac9e1fcdd042572d122b61bdd22d114dfc7fac6d4a98227
+  languageName: node
+  linkType: hard
+
+"expo-image@npm:~2.0.6":
+  version: 2.0.6
+  resolution: "expo-image@npm:2.0.6"
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+    react-native-web: "*"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: 10c9/53c1847b167d3cdfe3492e05d0fbdcfb1b2639b52dde54f3340d010dc9ca1b6e9423b5e3c708fe1edbd6a04af6425de29d80fe39a74e85064526491e191750fb
   languageName: node
   linkType: hard
 

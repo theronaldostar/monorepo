@@ -1,12 +1,11 @@
 import { Children, cloneElement, forwardRef } from "react";
 import { View } from "react-native";
 
+import type { ChildrenProps } from "ui/components/table";
 import type { TableColors } from "ui/components/table/component";
 import { TagView, type TagViewProps } from "ui/layout/view";
 
 import { clsx } from "utils";
-
-import type { ChildrenProps } from ".";
 
 interface GroupProps extends TagViewProps, TableColors {}
 
