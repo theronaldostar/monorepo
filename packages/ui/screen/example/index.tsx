@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useClipboard, useNavigate } from "@config/hooks";
-import { Envelope } from "@lib/heroicons";
+import { Mail } from "@lib/lucide";
 
 import { Button, CheckBox, IconButton, Image, Label, Input } from "ui/components";
 import Select, { Option, OptGroup } from "ui/components/select";
@@ -79,20 +79,13 @@ const Example = () => {
 
 					<GroupExample title={`Buttons: Count ~ ${state.button}`}>
 						<TagView className="items-center justify-evenly gap-2" direction="row">
-							<Button icon={{ position: "left", svg: Envelope }} onPress={handleButton} rounded size="lg" title={`Count: ${state.button}`} />
+							<Button icon={{ position: "left", svg: Mail }} onPress={handleButton} rounded size="lg" title={`Count: ${state.button}`} />
 							<Button disabled onPress={handleButton} rounded title={`Count: ${state.button}`} />
 							<Button onPress={handleButton} rounded size="sm" title={`Count: ${state.button}`} />
 						</TagView>
 
 						<TagView className="items-center justify-evenly gap-2" direction="row">
-							<Button
-								disabled
-								icon={{ position: "left", svg: Envelope }}
-								onPress={handleButton}
-								outline
-								size="lg"
-								title={`Count: ${state.button}`}
-							/>
+							<Button disabled icon={{ position: "left", svg: Mail }} onPress={handleButton} outline size="lg" title={`Count: ${state.button}`} />
 							<Button onPress={handleButton} outline title={`Count: ${state.button}`} />
 							<Button onPress={handleButton} outline size="sm" title={`Count: ${state.button}`} />
 						</TagView>
@@ -100,8 +93,8 @@ const Example = () => {
 
 					<GroupExample title="Icon Button">
 						<TagView className="items-center justify-evenly gap-2" direction="row">
-							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} />
-							<IconButton icon={Envelope} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} title="Icon Button!" />
+							<IconButton icon={Mail} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} />
+							<IconButton icon={Mail} onPress={() => copy("https://youtube.com/ronaldo61?sub_confirmation=1")} title="Icon Button!" />
 						</TagView>
 					</GroupExample>
 
@@ -144,7 +137,7 @@ const Example = () => {
 							</OptGroup>
 						</Select>
 
-						<Select icon={Envelope} label="Choose a car:" onChange={handleChange}>
+						<Select icon={Mail} label="Choose a car:" onChange={handleChange}>
 							<Option value="">None</Option>
 							<OptGroup title="Swedish Cars">
 								<Option value="volvo">Volvo</Option>
@@ -155,17 +148,11 @@ const Example = () => {
 
 					<GroupExample title="Input?">
 						<Input onChangeText={handleChange} placeholder="Input" title="Normal Input" />
-						<Input icon={{ left: Envelope }} onChangeText={handleChange} placeholder="Your Email" title="Email" type="email" />
-						<Input
-							icon={{ left: Envelope, right: Envelope }}
-							onChangeText={handleChange}
-							placeholder="Your password"
-							title="Password"
-							type="password"
-						/>
+						<Input icon={{ left: Mail }} onChangeText={handleChange} placeholder="Your Email" title="Email" type="email" />
+						<Input icon={{ left: Mail, right: Mail }} onChangeText={handleChange} placeholder="Your password" title="Password" type="password" />
 						<Input
 							disabled
-							icon={{ left: Envelope, right: Envelope }}
+							icon={{ left: Mail, right: Mail }}
 							onChangeText={handleChange}
 							placeholder="Confirm your password"
 							title="Password"

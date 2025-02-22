@@ -1,4 +1,4 @@
-import { Eye, EyeSlash } from "@lib/heroicons";
+import { Eye, EyeOff } from "@lib/lucide";
 
 import { PressView } from "ui/layout/view";
 
@@ -11,7 +11,7 @@ type SeePasswordProps = {
 };
 
 const SeePassword = ({ disabled, onChange, show, svgClassName, visible, ...props }: SeePasswordProps) => {
-	const Icon = visible ? EyeSlash : Eye;
+	const Icon = visible ? EyeOff : Eye;
 	const handlePress = () => onChange?.();
 
 	if (!show) return null;

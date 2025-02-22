@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 
-import { ChevronDown, ChevronUp, type IconProps } from "@lib/heroicons";
+import { ChevronDown, ChevronUp, VoidIcon, type IconProps } from "@lib/lucide";
 
 import type { StateProps } from "ui/components/select/component";
 import { element, icon, text } from "ui/components/select/styles";
@@ -14,22 +14,24 @@ type SelectGroupProps = {
 	svgIcon?: IconProps;
 };
 
-const SelectGroup = ({ onPress, placeholder, state, svgIcon }: SelectGroupProps) => {
+const SelectGroup = ({ onPress, placeholder, state, svgIcon: Svg = VoidIcon }: SelectGroupProps) => {
 	const Chevron = state.open ? ChevronUp : ChevronDown;
 
 	const element_className = element({ className: "" });
-	const icon_className = icon({ className: "" });
-	const text_className = text({ className: "select-none" });
+	const iconClassName = icon({ className: "" });
+	const textClassName = text({ className: "select-none" });
 
 	return (
 		<PressView className={element_className} onPress={() => onPress(prev => ({ ...prev, open: !prev.open }))}>
 			<TagView className="items-center gap-2" direction="row">
-				{svgIcon?.({ className: icon_className, strokeWidth: 2 })}
-				<Label className={text_className} leading="tight" size="lg">
+				<Svg className={iconClassName} strokeWidth={2} />
+
+				<Label className={textClassName} leading="tight" size="lg">
 					{state.selected.string ?? placeholder}
 				</Label>
 			</TagView>
-			<Chevron className={icon_className} strokeWidth={3} />
+
+			<Chevron className={iconClassName} strokeWidth={3} />
 		</PressView>
 	);
 };

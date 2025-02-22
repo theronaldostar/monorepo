@@ -2266,12 +2266,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lib/heroicons@npm:0.0.0, @lib/heroicons@workspace:packages/library/heroicons":
+"@lib/lucide@npm:0.0.0, @lib/lucide@workspace:packages/library/lucide":
   version: 0.0.0-use.local
-  resolution: "@lib/heroicons@workspace:packages/library/heroicons"
+  resolution: "@lib/lucide@workspace:packages/library/lucide"
   dependencies:
-    "@config/types": "npm:0.0.0"
-    "@lib/tsconfig": "npm:0.0.0"
+    nativewind: "npm:*"
     react-native-svg: "npm:^15.11.1"
     react-native-svg-web: "npm:^1.0.9"
   languageName: unknown
@@ -9605,7 +9604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nativewind@npm:^4.1.23":
+"nativewind@npm:*, nativewind@npm:^4.1.23":
   version: 4.1.23
   resolution: "nativewind@npm:4.1.23"
   dependencies:
@@ -12951,7 +12950,7 @@ __metadata:
   resolution: "ui@workspace:packages/ui"
   dependencies:
     "@config/types": "npm:0.0.0"
-    "@lib/heroicons": "npm:0.0.0"
+    "@lib/lucide": "npm:0.0.0"
     "@lib/prettier-eslint": "npm:0.0.0"
     "@lib/tailwindcss": "npm:0.0.0"
     "@lib/tsconfig": "npm:0.0.0"

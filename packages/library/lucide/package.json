@@ -1,0 +1,17 @@
+{
+	"name": "@lib/lucide",
+	"description": "Library optimized for React Native and web using react-native-svg",
+	"version": "0.0.0",
+	"private": true,
+	"main": "index.ts",
+	"files": [
+		"icons",
+		"index.ts",
+		"tsconfig.json"
+	],
+	"dependencies": {
+		"nativewind": "*",
+		"react-native-svg": "^15.11.1",
+		"react-native-svg-web": "^1.0.9"
+	}
+}

@@ -1,7 +1,7 @@
 import { useId, useRef, useState } from "react";
 import { TextInput, type TextInputProps, type InputModeOptions } from "react-native";
 
-import type { IconProps } from "@lib/heroicons";
+import { VoidIcon, type IconProps } from "@lib/lucide";
 
 import { PressView, TagView } from "ui/layout/view";
 import { input, group, svg, texTitle } from "ui/components/input/styles";
@@ -26,7 +26,7 @@ interface InputProps extends TextInputProps {
 }
 
 const Input = ({ className, disabled, icon, iconClassName, textClassName, onChangeText, type, title, titleClassName, value = "", ...props }: InputProps) => {
-	const { left, right } = icon! || {};
+	const { left: Left = VoidIcon, right: Right = VoidIcon } = icon! || {};
 
 	const visible = type === "password";
 
@@ -64,7 +64,7 @@ const Input = ({ className, disabled, icon, iconClassName, textClassName, onChan
 			)}
 
 			<PressView disabled={disabled} className={classNames} onPress={handleFocus}>
-				{left?.({ className: svgClass })}
+				<Left className={svgClass} />
 
 				<TextInput
 					className={inputClass}
@@ -83,7 +83,7 @@ const Input = ({ className, disabled, icon, iconClassName, textClassName, onChan
 
 				<TagView className="gap-3" direction="row">
 					<SeePassword disabled={disabled} onChange={handleVisible} show={visible} svgClassName={svgClass} visible={state.visible} />
-					{right?.({ className: svgClass })}
+					<Right className={svgClass} />
 				</TagView>
 			</PressView>
 		</TagView>

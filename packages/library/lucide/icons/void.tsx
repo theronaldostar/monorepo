@@ -1,0 +1,3 @@
+const VoidIcon = () => <></>;
+
+export { VoidIcon };

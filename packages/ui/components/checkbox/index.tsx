@@ -1,8 +1,7 @@
 import { forwardRef, useState, type JSX } from "react";
 import { View } from "react-native";
 
-import { Circle, Check } from "@lib/heroicons";
-
+import { Circle, Check } from "@lib/lucide";
 import { check, selection, text } from "ui/components/checkbox/styles";
 import { Label } from "ui/components/label";
 import { PressView, TagView, type TagViewProps } from "ui/layout/view";

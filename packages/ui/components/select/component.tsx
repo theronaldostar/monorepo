@@ -1,7 +1,7 @@
 import { Children, cloneElement, forwardRef, useEffect, useState, type ReactElement } from "react";
 import { View } from "react-native";
 
-import type { IconProps } from "@lib/heroicons";
+import type { IconProps } from "@lib/lucide";
 
 import OptGroup from "ui/components/select/opt-group";
 import Option from "ui/components/select/option";
@@ -45,8 +45,6 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, onCha
 		};
 
 		updateFromChildren();
-		return () => {};
-		// eslint-disable-next-line
 	}, [children]);
 
 	const handlePress = (child: string, value: string) => {

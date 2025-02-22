@@ -17,7 +17,6 @@ export default defineConfig({
 			loader: { ".js": "tsx" },
 			resolveExtensions: extensions,
 		},
-		force: true,
 	},
 	plugins: [basicSsl(), react({ jsxImportSource: "nativewind" })],
 	resolve: {
