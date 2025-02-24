@@ -21,11 +21,7 @@ const Table = forwardRef<View, TableProps>(({ children, className, colors, ...pr
 		return cloneElement(child, { className, colors, ...rest });
 	});
 
-	return (
-		<TagView className={classNames} ref={ref} {...props}>
-			{reactNode}
-		</TagView>
-	);
+	return <TagView children={reactNode} className={classNames} ref={ref} {...props} />;
 });
 
 export default Table;

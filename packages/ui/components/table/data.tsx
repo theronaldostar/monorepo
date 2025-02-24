@@ -1,6 +1,6 @@
-import { Label, type LabelProps } from "ui/components/label";
+import Label, { type LabelProps } from "ui/components/label";
 import type { TableColors } from "ui/components/table/component";
-import { defaultColor } from "ui/components/table/default";
+import { theme } from "ui/components/table/styles";
 import { TagView } from "ui/layout";
 
 import { clsx } from "utils";
@@ -8,7 +8,7 @@ import { clsx } from "utils";
 interface DataProps extends LabelProps, TableColors {}
 
 const Data = ({ className, text, ...props }: DataProps) => {
-	const classNames = clsx("content-middle flex-1", className, text ?? defaultColor.text);
+	const classNames = clsx("content-middle flex-1", className, text ?? theme.text);
 
 	return (
 		<TagView className={classNames}>

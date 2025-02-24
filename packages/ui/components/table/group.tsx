@@ -1,5 +1,4 @@
-import { Children, cloneElement, forwardRef } from "react";
-import { View } from "react-native";
+import { Children, cloneElement } from "react";
 
 import type { ChildrenProps } from "ui/components/table";
 import type { TableColors } from "ui/components/table/component";
@@ -9,7 +8,7 @@ import { clsx } from "utils";
 
 interface GroupProps extends TagViewProps, TableColors {}
 
-const Group = forwardRef<View, GroupProps>(({ children, className, text, ...props }, ref) => {
+const Group = ({ children, className, text, ...props }: GroupProps) => {
 	const reactNode = Children.map(children as ChildrenProps, child => {
 		const { className, ...rest } = child.props;
 		return cloneElement(child, { className, text, ...rest });
@@ -17,11 +16,7 @@ const Group = forwardRef<View, GroupProps>(({ children, className, text, ...prop
 
 	const classNames = clsx("py-2", className);
 
-	return (
-		<TagView className={classNames} direction="row" ref={ref} {...props}>
-			{reactNode}
-		</TagView>
-	);
-});
+	return <TagView children={reactNode} className={classNames} direction="row" {...props} />;
+};
 
 export { Group, type GroupProps };

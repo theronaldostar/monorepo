@@ -1,9 +1,8 @@
-import { Children, cloneElement, forwardRef, type ReactElement } from "react";
-import { View } from "react-native";
+import { Children, cloneElement, type ReactElement } from "react";
 
-import { Label } from "ui/components/label";
-import { TagView, type TagViewProps } from "ui/layout";
+import Label from "ui/components/label";
 import { optGroup } from "ui/components/select/styles";
+import { TagView, type TagViewProps } from "ui/layout";
 
 import { clsx } from "utils";
 
@@ -12,16 +11,15 @@ interface OptGroupProps extends TagViewProps {
 	title: string;
 }
 
-const OptGroup = forwardRef<View, OptGroupProps>(({ children, className, disabled, title, ...props }, ref) => {
+const OptGroup = ({ children, className, disabled, title, ...props }: OptGroupProps) => {
 	const classNames = optGroup({ className, disabled });
 
 	return (
-		<TagView className={classNames} ref={ref} {...props}>
-			<Label size="lg" weight="semibold" className="select-none">
-				{title}
-			</Label>
-			<TagView className="gap-1">
-				{Children.map(children as ReactElement<{ className: string }>, child => {
+		<TagView className={classNames} {...props}>
+			<Label children={title} className="select-none" size="lg" weight="semibold" />
+
+			<TagView className="gap-2">
+				{Children.map(children as ReactElement<TagViewProps>, child => {
 					const { className, ...rest } = child.props;
 					const clsxName = clsx("pl-6", className);
 					return cloneElement(child, { className: clsxName, ...rest });
@@ -29,7 +27,6 @@ const OptGroup = forwardRef<View, OptGroupProps>(({ children, className, disable
 			</TagView>
 		</TagView>
 	);
-});
+};
 
-export default OptGroup;
 export { OptGroup, type OptGroupProps };

@@ -39,7 +39,7 @@ const option = tv({
 });
 
 const text = tv({
-	base: "text-slate-400",
+	base: "select-none text-slate-400",
 	variants: {},
 	defaultVariants: {},
 });

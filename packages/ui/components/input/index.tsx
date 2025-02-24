@@ -3,10 +3,10 @@ import { TextInput, type TextInputProps, type InputModeOptions } from "react-nat
 
 import { VoidIcon, type IconProps } from "@lib/lucide";
 
-import { PressView, TagView } from "ui/layout/view";
 import { input, group, svg, texTitle } from "ui/components/input/styles";
 import { SeePassword } from "ui/components/input/see-password";
-import { Label } from "ui/components/label";
+import Label from "ui/components/label";
+import { PressView, TagView } from "ui/layout/view";
 
 type InputTypeProps = InputModeOptions | "password";
 
