@@ -4,11 +4,12 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import react from "@vitejs/plugin-react-swc";
 
 const extensions = [".css", ".json", ".web.mjs", ".web.js", ".web.mts", ".web.ts", ".web.jsx", ".web.tsx", ".mjs", ".js", ".mts", ".ts", ".jsx", ".tsx"];
+const nodeEnv = env.NODE_ENV;
 
 export default defineConfig({
 	build: { sourcemap: false },
 	define: {
-		__DEV__: JSON.stringify(env.NODE_ENV === "development"),
+		__DEV__: JSON.stringify(nodeEnv === "development"),
 		global: "window",
 		process: { env: { EXPO_OS: "web" } },
 	},

@@ -9,7 +9,7 @@
 		"tsconfig.json"
 	],
 	"dependencies": {
-		"@types/node": "^22.13.4"
+		"@types/node": "^22.13.5"
 	},
 	"devDependencies": {
 		"@lib/tsconfig": "0.0.0"

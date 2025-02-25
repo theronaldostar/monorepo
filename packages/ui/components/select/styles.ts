@@ -13,16 +13,16 @@ const icon = tv({
 });
 
 const menu = tv({
-	base: "max-h-36 rounded bg-slate-200 dark:bg-slate-700",
+	base: "max-h-36 rounded bg-slate-200 px-3 py-2 dark:bg-slate-700",
 	variants: {},
 	defaultVariants: {},
 });
 
 const optGroup = tv({
-	base: "gap-2 rounded px-2",
+	base: "gap-2 rounded bg-slate-300 p-2 dark:bg-slate-600",
 	variants: {
 		disabled: {
-			true: "web:!cursor-not-allowed pointer-events-none select-none bg-slate-300 p-2 dark:bg-slate-600",
+			true: "web:!cursor-not-allowed pointer-events-none select-none bg-slate-400 p-2 dark:bg-slate-600/30",
 		},
 	},
 	defaultVariants: {},

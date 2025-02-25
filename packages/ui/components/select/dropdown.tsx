@@ -7,16 +7,16 @@ import { element, icon, text } from "ui/components/select/styles";
 import { PressView, TagView } from "ui/layout";
 
 type DropdownProps = {
-	onPress: Dispatch<SetStateAction<StateProps>>;
+	setState: Dispatch<SetStateAction<StateProps>>;
 	placeholder: string;
 	state: StateProps;
 	svgIcon?: IconProps;
 };
 
-const Dropdown = ({ onPress, placeholder, state, svgIcon: Svg = VoidIcon }: DropdownProps) => {
+const Dropdown = ({ placeholder, state, setState, svgIcon: Svg = VoidIcon }: DropdownProps) => {
 	const Chevron = state.open ? ChevronUp : ChevronDown;
 
-	const handleSelect = () => onPress(prev => ({ ...prev, open: !prev.open }));
+	const handleSelect = () => setState(prev => ({ ...prev, open: !prev.open }));
 
 	return (
 		<PressView className={element()} onPress={handleSelect}>

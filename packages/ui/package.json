@@ -9,13 +9,13 @@
 		"@lib/tailwindcss": "0.0.0",
 		"axios": "^1.7.9",
 		"pager-view": "^1.0.5",
-		"react": "^18.3.1",
+		"react": "^19.0.0",
 		"utils": "0.0.0"
 	},
 	"devDependencies": {
 		"@config/types": "0.0.0",
 		"@lib/prettier-eslint": "0.0.0",
 		"@lib/tsconfig": "0.0.0",
-		"@types/react": "^19.0.9"
+		"@types/react": "^19.0.10"
 	}
 }

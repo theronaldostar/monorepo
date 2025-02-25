@@ -11,7 +11,7 @@
 	],
 	"dependencies": {
 		"nativewind": "*",
-		"react-native-svg": "^15.11.1",
+		"react-native-svg": "^15.11.2",
 		"react-native-svg-web": "^1.0.9"
 	}
 }

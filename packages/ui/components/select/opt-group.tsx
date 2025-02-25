@@ -16,9 +16,9 @@ const OptGroup = ({ children, className, disabled, title, ...props }: OptGroupPr
 
 	return (
 		<TagView className={classNames} {...props}>
-			<Label children={title} className="select-none" size="lg" weight="semibold" />
+			<Label children={title} className="select-none" leading="none" size="lg" weight="semibold" />
 
-			<TagView className="gap-2">
+			<TagView className="gap-1 border-t border-slate-600 pt-2 dark:border-slate-200">
 				{Children.map(children as ReactElement<TagViewProps>, child => {
 					const { className, ...rest } = child.props;
 					const clsxName = clsx("pl-6", className);

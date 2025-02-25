@@ -1,12 +1,9 @@
-import { fontFamily as $fontFamily } from "tailwindcss/defaultTheme";
+import { fontFamily as fonts } from "tailwindcss/defaultTheme";
 
 const colors = {
 	current: "currentColor",
-	main: {
-		primary: "#",
-		secondary: "#",
-		tertiary: "#",
-	},
+	primary: "#f472b6",
+	secondary: "#c084fc",
 	state: {
 		error: "#f6465d",
 		success: "#0ecb81",
@@ -16,9 +13,8 @@ const colors = {
 
 const backgroundColor = {
 	...colors,
-	primary: "#",
-	secondary: "#",
-	tertiary: "#",
+	dark: { primary: "#21222c", secondary: "#343746", tertiary: "#44475a" },
+	light: { primary: "#e2e8f0", secondary: "#f0f2f5", tertiary: "#fff" },
 };
 
 const boxShadow = {
@@ -26,7 +22,7 @@ const boxShadow = {
 };
 
 const fontFamily = {
-	sans: [...$fontFamily.sans, "var(--font-inter)"],
+	sans: [...fonts.sans, "var(--font-inter)"],
 };
 
 const fontSize = {

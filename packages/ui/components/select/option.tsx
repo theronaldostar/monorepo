@@ -1,18 +1,21 @@
-import Label, { type LabelProps } from "ui/components/label";
-import { option } from "ui/components/select/styles";
-import { PressView } from "ui/layout";
+import type { ReactNode } from "react";
 
-interface OptionProps extends LabelProps {
+import Label from "ui/components/label";
+import { option } from "ui/components/select/styles";
+import { PressView, type PressViewProps } from "ui/layout";
+
+interface OptionProps extends PressViewProps {
+	children: ReactNode;
 	selected?: boolean;
-	value: string;
+	value: unknown;
 }
 
 const Option = ({ children, className, disabled, ...props }: OptionProps) => {
-	const classNames = option({ className, disabled });
+	const classNames = option({ className, disabled: disabled! });
 
 	return (
-		<PressView className={classNames}>
-			<Label children={children} leading="tight" size="lg" {...props} />
+		<PressView className={classNames} {...props}>
+			<Label children={children} leading="none" size="lg" />
 		</PressView>
 	);
 };

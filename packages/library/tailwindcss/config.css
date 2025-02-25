@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	/* :root {
+		color: theme("");
+	} */
+
+	@media (prefers-color-scheme: dark) {
+		/* :root {
+			color: theme("");
+		} */
+	}
+}
+
 @layer components {
 	.content-middle {
 		@apply items-center justify-center;

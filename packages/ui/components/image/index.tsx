@@ -8,7 +8,7 @@ interface ImageProps extends ExpoImageProps {
 	placeholder?: string;
 }
 
-const Image = forwardRef<ExpoImage, ImageProps>(({ src, placeholder, ...rest }, ref) => {
+const Image = forwardRef<ExpoImage, ImageProps>(({ src, placeholder, height, width, style, ...rest }, ref) => {
 	const blurhash =
 		"|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
@@ -16,6 +16,7 @@ const Image = forwardRef<ExpoImage, ImageProps>(({ src, placeholder, ...rest }, 
 		ref,
 		source: typeof src === "string" ? { uri: src } : src,
 		placeholder: { blurhash: placeholder ?? blurhash },
+		style: [{ height, width }, style],
 		...rest,
 	};
 

@@ -1,4 +1,4 @@
-import { Children, cloneElement, forwardRef, useEffect, useState, type ReactNode, type ReactElement } from "react";
+import { Children, cloneElement, forwardRef, isValidElement, useEffect, useState, type ReactElement } from "react";
 import { View } from "react-native";
 
 import type { IconProps } from "@lib/lucide";
@@ -17,9 +17,11 @@ interface ChildProps extends OptionProps {
 	value: string;
 }
 
+type ChildrenProps = ReactElement<ChildProps>;
+
 type StateProps = {
 	open: boolean;
-	selected: { title: string; value: string };
+	selected: { title: string | null; value: string | null };
 };
 
 interface SelectProps extends TagViewProps {
@@ -30,23 +32,21 @@ interface SelectProps extends TagViewProps {
 	placeholder?: string;
 }
 
-const isReactElement = (child: ReactNode): child is ReactElement => typeof child === "object" && child !== null && "type" in child;
-
 const Select = forwardRef<View, SelectProps>(({ children, className, icon, menuClassName, onChange, placeholder, ...props }, ref) => {
 	const [state, setState] = useState<StateProps>({
 		open: false,
-		selected: { title: "", value: "" },
+		selected: { title: null, value: null },
 	});
 
 	useEffect(() => {
-		Children.map(children as ReactElement<ChildProps>, ({ type, props }) => {
+		Children.map(children as ChildrenProps, ({ type, props }) => {
 			if (type === Option) handleChild().dispatch(props);
 			if (type === OptGroup) {
-				if (isReactElement(props.children)) {
-					Children.map(props.children as ReactElement<ChildProps>, ({ type, props }) => {
-						if (type === Option) handleChild().dispatch(props);
-					});
-				}
+				Children.toArray(props.children).map(child => {
+					if (!isValidElement<ChildProps>(child)) return null;
+					const { type, props } = child;
+					if (type === Option) handleChild().dispatch(props);
+				});
 			}
 		});
 	}, [children]);
@@ -55,40 +55,44 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, menuC
 	const menuClass = menu({ className: menuClassName });
 
 	const handleChild = () => {
-		const isActive = (value: string) => {
-			if (value !== state.selected.value) return;
+		const active = (value: string) => {
+			if (value !== state.selected.value) return "";
 			return "bg-sky-200 dark:bg-sky-600 pointer-events-none";
 		};
 
 		const handlePress = (child: string, value: string) => {
 			onChange?.(value);
-			setState(prev => ({ ...prev, open: false, selected: { title: child, value } }));
+			setState({ open: false, selected: { title: child, value } });
 		};
 
-		const element = (child: ReactElement<ChildProps>) => {
+		type CloneProps = { child: ChildrenProps; title: string; value: string };
+
+		const createClone = ({ child, title, value, ...rest }: CloneProps) => {
+			return cloneElement(child, {
+				className: active(value),
+				onPress: () => handlePress(title, value),
+				...rest,
+			});
+		};
+
+		const element = (child: ChildrenProps) => {
 			const {
-				props: { children, value, ...restMain },
+				props: { children, value, ...rest },
 				type,
 			} = child;
 
-			if (type === Option) {
-				return cloneElement(child, {
-					className: isActive(value),
-					onPress: () => handlePress(children, value!),
-					...restMain,
-				});
-			} else if (type === OptGroup) {
-				if (isReactElement(children)) {
-					return cloneElement(
-						child,
-						{ ...restMain },
-						Children.map(children as ReactElement<OptionProps>, child => {
-							const { children: nestedChild, value, ...rest } = child.props;
-							return cloneElement(child, { className: isActive(value), onPress: () => handlePress(nestedChild as string, value), ...rest });
-						}),
-					);
-				}
-			}
+			if (type === Option) return createClone({ child, title: children, value, ...rest });
+
+			if (type === OptGroup)
+				return cloneElement(
+					child,
+					{ ...rest },
+					Children.toArray(children).map(nestedChild => {
+						if (!isValidElement<ChildProps>(nestedChild)) return;
+						const { children: nestedContent, value, ...rest } = nestedChild.props;
+						return createClone({ child: nestedChild, title: nestedContent, value, ...rest });
+					}),
+				);
 		};
 
 		const dispatch = (props: ChildProps) => {
@@ -101,10 +105,13 @@ const Select = forwardRef<View, SelectProps>(({ children, className, icon, menuC
 
 	return (
 		<TagView className={classNames} ref={ref} {...props}>
-			<Dropdown onPress={setState} placeholder={placeholder ?? "Select an option"} state={state} svgIcon={icon} />
+			<Dropdown placeholder={placeholder || "Select an option"} state={state} setState={setState} svgIcon={icon} />
 			{state.open && (
-				<Scroll className={menuClass} contentContainerClassName="gap-2 p-2">
-					{Children.map(children, child => handleChild().element(child as ReactElement<ChildProps>))}
+				<Scroll className={menuClass} contentContainerClassName="gap-1">
+					{Children.map(children, child => {
+						if (!isValidElement<ChildProps>(child)) return;
+						return handleChild().element(child);
+					})}
 				</Scroll>
 			)}
 		</TagView>
