@@ -5,7 +5,7 @@ import { withTV } from "tailwind-variants/transformer";
 import extend from "@lib/tailwindcss/theme";
 
 export default withTV<Config>({
-	content: ["**/*.{js,ts,jsx,tsx,mdx}"],
+	content: ["**/*.{js,ts,jsx,tsx}"],
 	darkMode: "media",
 	theme: { extend },
 	presets: [nativewind],

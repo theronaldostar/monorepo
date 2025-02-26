@@ -1,26 +1,23 @@
 import { env } from "process";
 import { defineConfig } from "vite";
-import basicSsl from "@vitejs/plugin-basic-ssl";
 import react from "@vitejs/plugin-react-swc";
 
 const extensions = [".css", ".json", ".web.mjs", ".web.js", ".web.mts", ".web.ts", ".web.jsx", ".web.tsx", ".mjs", ".js", ".mts", ".ts", ".jsx", ".tsx"];
-const nodeEnv = env.NODE_ENV;
 
 export default defineConfig({
 	build: { sourcemap: false },
 	define: {
-		__DEV__: JSON.stringify(nodeEnv === "development"),
+		__DEV__: JSON.stringify(env.NODE_ENV === "development"),
 		global: "window",
-		process: { env: { EXPO_OS: "web" } },
+		process: { env: {} },
 	},
 	optimizeDeps: {
 		esbuildOptions: {
-			loader: { ".js": "tsx" },
+			loader: { ".js": "jsx" },
 			resolveExtensions: extensions,
 		},
-		force: true,
 	},
-	plugins: [basicSsl(), react({ jsxImportSource: "nativewind" })],
+	plugins: [react({ jsxImportSource: "nativewind" })],
 	resolve: {
 		alias: {
 			"react-native": "react-native-web",
@@ -28,5 +25,5 @@ export default defineConfig({
 		},
 		extensions,
 	},
-	server: { port: 3000, host: true },
+	server: { hmr: true, host: true, open: true },
 });

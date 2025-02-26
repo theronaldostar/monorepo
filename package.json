@@ -3,6 +3,7 @@
 	"description": "A monorepo project to enable the use of the platform across all available platforms!",
 	"version": "1.0.0",
 	"license": "MIT",
+	"type": "module",
 	"private": true,
 	"scripts": {
 		"dev": "turbo run dev",

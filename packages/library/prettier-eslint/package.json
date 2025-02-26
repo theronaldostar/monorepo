@@ -10,7 +10,6 @@
 		"lint": "eslint ."
 	},
 	"files": [
-		".eslintignore",
 		"eslint.config.js"
 	],
 	"dependencies": {
