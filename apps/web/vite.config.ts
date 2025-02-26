@@ -9,7 +9,7 @@ export default defineConfig({
 	define: {
 		__DEV__: JSON.stringify(env.NODE_ENV === "development"),
 		global: "window",
-		process: { env: {} },
+		process: { env: { EXPO_OS: "web" } },
 	},
 	optimizeDeps: {
 		esbuildOptions: {
